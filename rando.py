@@ -19,12 +19,12 @@ def paletterandomizer(game):
         # It's split into 3 variables since I plan to do operations so the randomized palettes aren't too crazy.
     maincolor = random.choice(colors)
     secondary = random.choice(colors)
-    window = random.choice(colors)
-    print(hex(maincolor), hex(secondary),hex(window))
-    game[0x75D7] = maincolor
-    game[0x75E1] = maincolor
-    game[0x75D8] = secondary
-    game[0x75D6] = window
+    # game[0x75D6] = random.choice(colors)  # window color
+    # game[0x75D7] = maincolor  # Main color
+    # game[0x75D8] = secondary  # secondary color
+    game[0x75E1] = game[0x75D7] # Icon color
+    game[0x75E2] = random.choice(colors)
+    game[0x75E3] = random.choice(colors)
 
 
 with open("ROM.nes", "rb") as original:
