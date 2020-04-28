@@ -20,8 +20,8 @@ def paletterandomizer(game):
     maincolor = random.choice(colors)
     secondary = random.choice(colors)
     window = random.choice(colors)
-    print(maincolor, secondary,window)
-    game[0x75D6] = maincolor
+    print(hex(maincolor), hex(secondary),hex(window))
+    game[0x75D7] = maincolor
     game[0x75E1] = maincolor
     game[0x75D8] = secondary
     game[0x75D6] = window
