@@ -10,14 +10,21 @@ class infos:
     """
     def __init__(self):
         self.infos = {
-                        hex(0x0075D6) : "Rocket window palette" ,
-                        hex(0x0075D7) : "Rocket main palette",
-                        hex(0x0075E1) : "Rocket icon palette",
-                        hex(0x0075D8) : "Rocket sec palette",
-                        hex(0x0075E2) : "Score palette",
-                        hex(0x0075E3) : "Bars palette"
+                        hex(0x75D6) : "Rocket window palette" ,
+                        hex(0x75D7) : "Rocket main palette",
+                        hex(0x75E1) : "Rocket icon palette",
+                        hex(0x75D8) : "Rocket sec palette",
+                        hex(0x75E2) : "Score palette",
+                        hex(0x75E3) : "Bars palette",
+                        hex(0x753C) : "Palette intro level",  # FIXME
+                        hex(0x753D) : "Palette intro level", # FIXME
+                        hex(0x753E) : "Palette intro level", # FIXME
+                        hex(0x75AC) : "Dot palette of Title screen",
+                        hex(0x99) : "Wall invicibility timer"
                     }
-        self.categories ={"palettes" : [hex(0x0075D6), hex(0x0075D7),hex(0x0075E1), hex(0x0075D8), hex(0x0075E2),hex(0x0075E3)]
+        self.categories ={"palettes" : [hex(0x75D6), hex(0x75D7),hex(0x75E1),
+                                        hex(0x75D8), hex(0x75E2),hex(0x75E3),
+                                        hex(0x75AC), hex(0x753C),hex(0x753D),hex(0x753E)]
                         }
 
     def check(self,adress):
