@@ -8,6 +8,8 @@ infos.listadresses("palettes")
 def paletterandomizer(game):
     #Create the pool of colors
         #FIXME : I'm sure it can be improved. But for the time being it will be like that
+            # idea 1 : create a for _ ion range 4
+            # idea 2 : create the entire palette 90 to EF or somethimg, then remove the colors with a loop
     colors = list(range(0x0, 0x0E))
     colors += list(range(0x10, 0x1E))
     colors += list(range(0x20, 0x2E))

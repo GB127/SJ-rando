@@ -1,5 +1,5 @@
 class InfoError(BaseException):
-    # We'll see if I need this. But fo rnow I'm not seeing any use
+    # We'll see if I need this. But for now I'm not seeing any use
     pass
 
 class infos:
