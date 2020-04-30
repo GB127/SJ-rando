@@ -48,14 +48,15 @@ class infos:
         else:
             return self.infos[hex(adress)]
 
-
-    def pcheck(self,adress):
-        print(self.check(adress))
-
-    def listadresses(self,key):
-        # FIXME : Do some code here!
+    def listadresses(self,seeked):
+        if isinstance(seeked,str): seeked = [seeked]
+        listad = []
+        for i in list(self.infos):
+            for key in seeked:
+                if self.infos[i].count(key) > 0:
+                    listad.append(i)
         print("------------------------------")
-        print(" : ",  self.check())
+        for x in listad: print(x, " : ", self.check(x))
         print("------------------------------")
 
 
