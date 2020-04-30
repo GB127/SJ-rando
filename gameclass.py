@@ -48,15 +48,12 @@ class infos:
         else:
             return self.infos[hex(adress)]
 
-    def listadresses(self,seeked):
-        if isinstance(seeked,str): seeked = [seeked]
-        listad = []
+    def listadresses(self,*seeked):
+        print("------------------------------")
         for i in list(self.infos):
             for key in seeked:
                 if self.infos[i].count(key) > 0:
-                    listad.append(i)
-        print("------------------------------")
-        for x in listad: print(x, " : ", self.check(x))
+                    print(i, " : ", self.check(i))
         print("------------------------------")
 
 
