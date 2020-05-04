@@ -40,7 +40,12 @@ class infos:
                         hex(0x021F)  : "Rocket Xpos * 256",
                         hex(0x0197)  : "Rocket subXpos",
                         hex(0x029B)  : "Rocket Xpos speed",
-                        hex(0x02BA)  : "Rocket Xpos speed *256"
+                        hex(0x02BA)  : "Rocket Xpos speed *256",
+                        hex(0x025D) : "Rocket Ypos",
+                        hex(0x027C) : "Rocket Ypos*256",
+                        hex(0x023E) : "Rockey subYpos",
+                        hex(0x02D9) : "Rocket Ypos speed",
+                        hex(0x02F8) : "Rocket Ypos speed * 256"
                     }
     def check(self,adress):
         if isinstance(adress,str):

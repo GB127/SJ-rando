@@ -2,7 +2,7 @@ from gameclass import ROM, infos
 import random
 infos = infos()
 
-infos.listadresses("palettes")
+infos.listadresses("Rocket")
 
 
 def paletterandomizer(game):
@@ -33,7 +33,7 @@ def paletterandomizer(game):
     # game[0x75D7] = maincolor  # Main color
     # game[0x75D8] = secondary  # secondary color
     game[0x75E1] = game[0x75D7] # Icon color
-
+"""
 
 
 with open("ROM.nes", "rb") as original:
@@ -42,3 +42,5 @@ with open("ROM.nes", "rb") as original:
     paletterandomizer(randogame)
     with open("ROM2.nes", "wb") as newrom:
         newrom.write(randogame.data)
+
+"""
