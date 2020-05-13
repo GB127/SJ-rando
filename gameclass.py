@@ -37,12 +37,12 @@ class infos:
                         hex(0x753E)  : "palette intro level", # FIXME
                         hex(0x75AC)  : "palette of dot Title screen",
                         hex(0x99)    : "Current Wall invicibility timer",
-                        hex(0x011011): "Wall Invicibility timer Duration",  # FIXME : Default value?
-                        hex(0x0386B7): "Rocket fuel consumption on press A",  # FIXME : Default value?
+                        hex(0x011011): "Wall Invicibility timer Duration, default value = 30",
+                        hex(0x0386B7): "Rocket fuel consumption on press A, default value = 2",
                         hex(0xC6)    : "Rocket Current fuel (2B)",
                         hex(0x0374)  : "Direction of the Rocket",
                         hex(0x4C)    : "Camera Xpos",
-                        hex(0x007202) : "Starting fuel and weapon",  # Initial value : E0
+                        hex(0x007202) : "Starting fuel and weapon, Default value = E0(224)",
                         hex(0x4E)    : "Camera Ypos",
                         hex(0x5D)    : "Level timer",
                         hex(0x0200)  : "Rocket Xpos",
@@ -89,6 +89,7 @@ class ROM:
     def __getitem__(self,offset):
         return self.data[offset]
     def __setitem__(self,offset, value):
+        print(f'{hex(offset)} has been set to {value}')  # FIXME
         self.data[offset] = value
 
     def checkchange(self,adress):
