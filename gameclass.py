@@ -19,12 +19,14 @@ class infos:
             # speed
             # max
             # fuel
+            # points
         self.PC = {"?? : CC37" : "Something with Spx",
                    "0E : B886": "Add Xspeed",
                    "0E : B907" : "Decrease Yspeed",
                    "OE : B8EC" : "Increase Yspeed"}
         self.infos = {
                         hex(0x75D6)  : "Rocket window palette" ,
+                        hex(0x0022AD) : "Green points 25pts",
                         hex(0x75D7)  : "Rocket main palette",
                         hex(0x75E1)  : "Rocket icon palette",
                         hex(0x75D8)  : "Rocket sec palette",
