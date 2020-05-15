@@ -1,8 +1,6 @@
 from gameclass import ROM, infos
 import random
 
-infos = infos()
-
 def paletterandomizer(game):
     #Create the pool of colors
         #FIXME : I'm sure it can be improved. But for the time being it will be like that
@@ -21,14 +19,13 @@ def paletterandomizer(game):
 
     # Rocket palette
         # It's split into 3 variables since I plan to do operations so the randomized palettes aren't too crazy.
+    game[0x75E1] = game[0x75D7] # Icon color
+
     maincolor = random.choice(colors)
     secondary = random.choice(colors)
     # game[0x75D6] = random.choice(colors)  # window color
     # game[0x75D7] = maincolor  # Main color
     # game[0x75D8] = secondary  # secondary color
-    game[0x75E1] = game[0x75D7] # Icon color
-
-
 
 def engine_randomizer(game):
     """
@@ -49,8 +46,6 @@ def engine_randomizer(game):
     game[0x3b909] = game[0x48D3]  # y speed
     game[0x3b912] = game[0x48D3]  # y speed
 
-infos.listadresses("timer")
-print(0xFF)
 
 def manage_randomizer(game):
     """ 
@@ -83,14 +78,16 @@ def manage_randomizer(game):
         # 255 being the max value of a byte
     game[0x11011] = random.randint(1,255)
 
-"""
+if __name__ == "__main__" :
+    #infos = infos()
+    #infos.listadresses("timer")
 
 
-with open("ROM.nes", "rb") as original:
-    originaldata = original.read()
-    randogame = ROM(originaldata)
-    paletterandomizer(randogame)
-    with open("ROM2.nes", "wb") as newrom:
-        newrom.write(randogame.data)
 
-"""
+
+    colors = list(range(0x0, 0x0D))
+    colors += list(range(0x10, 0x1D))
+    colors += list(range(0x20, 0x2D))
+    colors += list(range(0x30, 0x3D))
+    print(colors)
+    print(len(colors))
