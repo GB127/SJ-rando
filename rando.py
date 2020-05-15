@@ -6,18 +6,18 @@ def paletterandomizer(game):
         #FIXME : I'm sure it can be improved. But for the time being it will be like that
             # idea 1 : create a for _ ion range 4
             # idea 2 : create the entire palette 90 to EF or somethimg, then remove the colors with a loop
-    colors = list(range(0x0, 0x0D))
-    colors += list(range(0x10, 0x1D))
-    colors += list(range(0x20, 0x2D))
-    colors += list(range(0x30, 0x3D))
+    colors = list(range(0x1, 0x0D))
+    colors += list(range(0x11, 0x1D))
+    colors += list(range(0x21, 0x2D))
+    colors += list(range(0x31, 0x3D))
 
     # HUD display
     game[0x75E2] = random.choice(colors)  # Score palette
     game[0x75E3] = random.choice(colors)  # Bars palette
 
     # Rocket palette
-    game[0x75D7] = random.choice(colors)  # Main color
-    game[0x75D8] = colors[(random.randint(-2,2) + random.randint(0,3) * 13 + colors.index(game[0x75D7])) % len(colors)]  # secondary color
+    game[0x75D8] = random.choice(colors[0:31])  # Main color
+    game[0x75D7] = colors[(random.randint(-2,2) + random.randint(0,3) * 12 + colors.index(game[0x75D8])) % len(colors)]  # secondary color
     # game[0x75D6] = random.choice(colors)  # window color
     game[0x75E1] = game[0x75D7] # Icon color is the same as the main color
 
