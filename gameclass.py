@@ -60,7 +60,24 @@ class infos:
                         hex(0x03B8AC) : "Rocket Xspeed * 256 max set if max",
                         hex(0x03B909) : "Rocket max Yspeed * 256 compare",
                         hex(0x03B912) : "Rocket max Yspeed * 256 set if max",
-                        hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2"
+                        hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",
+                        hex(0x38866) : "Rocket acceleration dir = 8, Default= 40",
+                        hex(0x38867) : "Rocket acceleration dir = 9, Default = 3E",
+                        hex(0x38868) : "Rocket acceleration dir = 10, Default = 3B",
+                        hex(0x38869) : "Rocket acceleration dir = 11, Default = 35",
+                        hex(0x3886A) : "Rocket acceleration dir = 12, Default = 2D",
+                        hex(0x3886B) : "Rocket acceleration dir = 13, Default = 23",
+                        hex(0x3886C) : "Rocket acceleration dir = 14, Default = 18",
+                        hex(0x3886D) : "Rocket acceleration dir = 15, Default = 0C",
+                        hex(0x3886E) : "Rocket acceleration dir = 16, Default = 00",
+                        hex(0x3886F) : "Rocket acceleration dir = 17, Default = 0C",
+                        hex(0x38870) : "Rocket acceleration dir = 18 Default = 18",
+                        hex(0x38871) : "Rocket acceleration dir = 19, Default = 23",
+                        hex(0x38872) : "Rocket acceleration dir = 20, Default = 2D",
+                        hex(0x38873) : "Rocket acceleration dir = 21, Default = 35",
+                        hex(0x38874) : "Rocket acceleration dir = 22, Default = 3B",
+                        hex(0x38875) : "Rocket acceleration dir = 23, Default = 3E",
+
 
                     }
     def check(self,adress):
