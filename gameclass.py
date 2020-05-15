@@ -51,6 +51,7 @@ class infos:
                         hex(0x029B)  : "Rocket Xspeed",
                         hex(0x02BA)  : "Rocket Xspeed *256",
                         hex(0x025D) : "Rocket Ypos",
+                        hex(0x0386AF) : "fuel usage thruster Default value = 10",
                         hex(0x027C) : "Rocket Ypos*256",
                         hex(0x023E) : "Rockey subYpos",
                         hex(0x02D9) : "Rocket Yspeed",
