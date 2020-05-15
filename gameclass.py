@@ -89,7 +89,7 @@ class ROM:
     def __getitem__(self,offset):
         return self.data[offset]
     def __setitem__(self,offset, value):
-        print(f'{hex(offset)} has been set to {value}')  # FIXME
+        print(f'{hex(offset)} has been set to {hex(value)}')  # FIXME
         self.data[offset] = value
 
     def checkchange(self,adress):
