@@ -18,8 +18,8 @@ def paletterandomizer(game):
     # Rocket palette
     game[0x75D8] = random.choice(colors[0:31])  # Main color
     game[0x75D7] = colors[(random.randint(-2,2) + random.randint(0,3) * 12 + colors.index(game[0x75D8])) % len(colors)]  # secondary color
-    # game[0x75D6] = random.choice(colors)  # window color
     game[0x75E1] = game[0x75D7] # Icon color is the same as the main color
+    # game[0x75D6] = random.choice(colors)  # window color
 
 
 def engine_randomizer(game):
@@ -52,8 +52,10 @@ def manage_randomizer(game):
     # This is for the fuel consumption.
         # On press A
         # Default value is 2, which is abysmal IMO. So let's crank it a big notch :D
-        # The possible range is 0 (yes yes, free fuel!) up to 255
-    game[0x386B7] = random.randint(0,255)
+        # The possible range is 0 (yes yes, free fuel!) up to 254
+        # The double thruster is always higher by at least one.
+    game[0x386B7] = random.randint(0,254)
+    game[0x386AF] = random.randint(game[0x386B7] +1, 255)
 
     # This is the starting fuel.
         # Default value is E0 for 224 * 255 unit.
@@ -74,16 +76,5 @@ def manage_randomizer(game):
     game[0x11011] = random.randint(1,255)
 
 if __name__ == "__main__" :
-    #infos = infos()
-    #infos.listadresses("timer")
-
-    colors = list(range(0x0, 0x0D))
-    colors += list(range(0x10, 0x1D))
-    colors += list(range(0x20, 0x2D))
-    colors += list(range(0x30, 0x3D))
-
-    test1 = random.choice(colors)  # Main color
-    test2 = colors[(random.randint(-2,2) + random.randint(0,3) * 13 + colors.index(test1)) % len(colors)]  # secondary color
-
-    print(hex(test1))
-    print(hex(test2))
+    infos = infos()
+    infos.listadresses("fuel")
