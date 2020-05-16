@@ -54,13 +54,17 @@ def engine_randomizer(game):
         # So I'm going to alter all of them.
         # Approach:
             # First, Either flip the acceleration table, linearize it or keep it.
-    delta_acceleration = [12,12,11,10,8,6,3,2]
-    reversaccel = list(reversed(delta_acceleration))
-    linearized = [8,8,8,8,8,8,8,8]
-    rando_delta_accel = random.choice([delta_acceleration,reversaccel,linearized])
-    randoaccel = []
-    for i in range(len(rando_delta_accel)):
-        randoaccel.append(sum(rando_delta_accel[:i+1]))
+
+    def getdistributionaccel():
+        delta_acceleration = [12,12,11,10,8,6,3,2]
+        reversaccel = list(reversed(delta_acceleration))
+        linearized = [8,8,8,8,8,8,8,8]
+        rando_delta_accel = random.choice([delta_acceleration,reversaccel,linearized])
+        liste = []
+        for i in range(len(rando_delta_accel)):
+            liste.append(sum(rando_delta_accel[:i+1]))
+        return liste
+    randoaccel = getdistributionaccel()
     game[0x38866] = random.randint(randoaccel[-1], 255)   # This is the max accel.
         # Wrote it ike that in case I change something
     ratio = game[0x38866] / 64
