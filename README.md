@@ -7,10 +7,10 @@ Features :
         -- Rocket palettes
         -- Bars
         -- Score
-        -- Title screen (only the dos currently)
+        -- Title screen (only the dots currently)
     -> Engine Randomizer
         -- Rocket max speed
-        -- Rocket acceleration
+        -- Rocket acceleration (with or without thruster)
     -> Management Randomizer
         -- Fuel consumption (With or without thruster)
         -- Initial fuel

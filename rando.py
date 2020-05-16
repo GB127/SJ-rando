@@ -49,7 +49,8 @@ def engine_randomizer(game):
     randoaccel = []
     for i in range(len(rando_delta_accel)):
         randoaccel.append(sum(rando_delta_accel[:i+1]))
-    game[0x38866] = random.randint(randoaccel[-1], 255)   # This is the max accel. Wrote it ike that in case I change something
+    game[0x38866] = random.randint(randoaccel[-1], 255)   # This is the max accel.
+        # Wrote it ike that in case I change something
     ratio = game[0x38866] / 64
     game[0x38867] = int(randoaccel[-2] * ratio)
     game[0x38868] = int(randoaccel[-3] * ratio)
@@ -63,28 +64,26 @@ def engine_randomizer(game):
 
 def manage_randomizer(game):
     """ 
-    This function will randomize the following stuffs:
-        - Fuel related stuffs
-        - Invicibility timer
+        This function will randomize the following stuffs:
+            - Fuel related stuffs
+            - Invicibility timer
     """
     # This is for the fuel consumption.
         # On press A
         # Default value is 2, which is abysmal IMO. So let's crank it a big notch :D
-        # The possible range is 0 (yes yes, free fuel!) up to 254
+        # The possible range is 0 (free fuel!) up to 254
         # The double thruster is always higher by at least one.
-    game[0x386B7] = random.randint(0,255)  # Normal
-    game[0x386AF] = random.randint(0, 255)  # Thruster
+    game[0x386B7] = random.randint(0,254)  # Normal
+    game[0x386AF] = random.randint(game[0x386B7], 255)  # Thruster
 
     # This is the starting fuel.
         # Default value is E0 for 224 * 255 unit.
         # In other words, you start with 57 120 fuel!
         # this is a big number. So let's crank it down, shall we?
-        # This is going to be hard to finetune. Help needed.
-        # The goal is to have a minimum where you have to not use fuel 
-        # while traveling
-        # to save on fuel or to use fuel tanks.
-    game[0x7202] = random.randint(1,255)
-    game[0x8589] = random.randint(game[0x7202], 255)  
+        # The goal is to have a minimum where you have to not use fuel
+        # and use momentum to travel to save on fuel or to find and use fuel tanks.
+    game[0x7202] = random.randint(1,255)  # Home
+    game[0x8589] = random.randint(game[0x7202], 255)  # Fuel tanks
         # So it will always either give you more health
         # or give the same max health
 
