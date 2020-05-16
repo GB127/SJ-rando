@@ -42,7 +42,7 @@ def engine_randomizer(game):
         # But the fast fall is not the same.
         # So you could have a lower free fall max speed with this randomizer.
         # Or a plain 0 max speed :)
-    game[0x448f] = random.randint(1,255)
+    game[0x448f] = random.randint(3,255)
     game[0x3a25] = game[0x448f]  # X speed
     game[0x3a2E] = game[0x448f]  # X speed
     game[0x3a8f] = random.randint(0,255)  # Freefall maxspeed Y
