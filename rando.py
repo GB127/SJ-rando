@@ -11,7 +11,7 @@ def paletterandomizer(game):
     # HUD display
     game[0x75E2] = random.choice(colors)  # Score palette
     game[0x75E3] = random.choice(colors)  # Bars palette
-
+    game[0x75ac] = random.choice(colors)  # Title screen dots
     # Rocket palette
     game[0x75D8] = random.choice(colors[0:31])  # Main color
     game[0x75D7] = colors[(random.randint(-2,2) + random.randint(0,3) * 12 + colors.index(game[0x75D8])) % len(colors)]  # secondary color
