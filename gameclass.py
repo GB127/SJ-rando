@@ -75,7 +75,10 @@ class infos:
                         hex(0x38873) : "Rocket accelerationx dir = 21, Default = 35",
                         hex(0x38874) : "Rocket accelerationx dir = 22, Default = 3B",
                         hex(0x38875) : "Rocket accelerationx dir = 23, Default = 3E",
-                        hex(0x8589) :  "Fuel tank refill amount"
+                        hex(0x8589) :  "Fuel tank refill amount",
+                        hex(0x00448F) : "Astronaut Xspeed max",
+                        hex(0x003a25) : "Astronaut Xspeed max2",
+                        hex(0x003a2e) : "Astronaut Xspeed max3"
 
 
                     }
