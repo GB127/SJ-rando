@@ -24,9 +24,7 @@ def engine_randomizer(game):
         This function will randomize these elements:
             - Acceleration of the rocket
             - Speed max of the rocket
-            - Gravity
     """
-    print("Speed rando!")
     # Randomize speedmaxs:
         # The original value is 3, which is slow IMO.
         # So the randomizer will randomize to something higher.
@@ -37,7 +35,6 @@ def engine_randomizer(game):
     game[0x3b8ac] = game[0x48D3]  # x speed
     game[0x3b909] = game[0x48D3]  # y speed
     game[0x3b912] = game[0x48D3]  # y speed
-    print("Accelrando!")
     # Randomize acceleration!
         # The acceleration depends on the rocket direction and each
         # rocket's acceleration are stored independently.
@@ -66,7 +63,6 @@ def engine_randomizer(game):
 def manage_randomizer(game):
     """ 
     This function will randomize the following stuffs:
-        - Scoring stuffs
         - Fuel related stuffs
         - Invicibility timer
     """
@@ -83,11 +79,13 @@ def manage_randomizer(game):
         # In other words, you start with 57 120 fuel!
         # this is a big number. So let's crank it down, shall we?
         # This is going to be hard to finetune. Help needed.
-        # The goal is to have a minimum where you have to not use fuel while traveling
+        # The goal is to have a minimum where you have to not use fuel 
+        # while traveling
         # to save on fuel or to use fuel tanks.
-        # Will have to think on how to finetune this.
     game[0x7202] = random.randint(1,255)
-    game[0x8589] = random.randint(game[0x7202], 255)  # So it will always either give you more health, or give the same max health
+    game[0x8589] = random.randint(game[0x7202], 255)  
+        # So it will always either give you more health
+        # or give the same max health
 
 
     # This is for the invicibility timer on wall collision.
