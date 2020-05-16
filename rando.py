@@ -1,12 +1,10 @@
 from gameclass import ROM, infos
+from subrando import nescolors
 import random
 
 def paletterandomizer(game):
+    colors = nescolors()
     #Create the pool of colors
-    colors = list(range(0x1, 0x0D))
-    colors += list(range(0x11, 0x1D))
-    colors += list(range(0x21, 0x2D))
-    colors += list(range(0x31, 0x3D))
 
     # HUD display
     game[0x75E2] = random.choice(colors)  # Score palette
@@ -112,4 +110,4 @@ def manage_randomizer(game):
 
 if __name__ == "__main__" :
     infos = infos()
-    infos.listadresses("acceleration")
+    infos.listadresses("palette")
