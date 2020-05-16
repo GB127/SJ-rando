@@ -32,7 +32,7 @@ class infos:
                         hex(0x75D8)  : "Rocket sec palette",
                         hex(0x75E2)  : "Score palette",
                         hex(0x75E3)  : "Bars palette",
-                        hex(0x753C)  : "score palette intro level", # FIXME
+                        hex(0x753C)  : "score palette intro level",
                         hex(0x75AC)  : "palette of dot Title screen",
                         hex(0x99)    : "Current Wall invicibility timer",
                         hex(0x011011): "Wall Invicibility timer Duration, default value = 30",
