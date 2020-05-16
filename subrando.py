@@ -7,6 +7,17 @@ def nescolors():
     liste += list(range(0x31, 0x3D))
     return liste
 
+def getdistributionaccel():
+    delta_acceleration = [12,12,11,10,8,6,3,2]
+    reversaccel = list(reversed(delta_acceleration))
+    linearized = [8,8,8,8,8,8,8,8]
+    rando_delta_accel = random.choice([delta_acceleration,reversaccel,linearized])
+    liste = []
+    for i in range(len(rando_delta_accel)):
+        liste.append(sum(rando_delta_accel[:i+1]))
+    return liste
+
+
 
 def getnewcolor(indice, colors):
     if indice < 13 :
