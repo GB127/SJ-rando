@@ -25,6 +25,10 @@ class infos:
                    "0E : B907" : "Decrease Yspeed",
                    "OE : B8EC" : "Increase Yspeed"}
         self.infos = {
+                        hex(0x008403) : "Fuel STA on enemy bullet hit",
+                        hex(0x008404) : "Operand for 0x008403",
+                        hex(0x008405) : "Fuel STA on enemy bullet hit",
+                        hex(0x008406) : "Operand for 0x008403",
                         hex(0x75D6)  : "Rocket window palette" ,
                         hex(0x0022AD) : "Green points 25pts",
                         hex(0x75D7)  : "Rocket main palette",
