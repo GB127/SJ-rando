@@ -10,6 +10,8 @@ Features :
         -- Title screen (only the dots currently)
     -> Engine Randomizer
         -- Rocket max speed
+        -- Astronaut max speed
+        -- Astronaut max fastfall speed
         -- Rocket acceleration (with or without thruster)
     -> Management Randomizer
         -- Fuel consumption (With or without thruster)
