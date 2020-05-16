@@ -12,9 +12,14 @@ def paletterandomizer(game):
     game[0x75E3] = random.choice(colors)  # Bars palette
     game[0x75ac] = random.choice(colors)  # Title screen dots
     # Rocket palette
-    game[0x75D8] = random.choice(colors[0:31])  # Main color
-    game[0x75D7] = colors[(random.randint(-2,2) + random.randint(0,3) * 12 + colors.index(game[0x75D8])) % len(colors)]  # secondary color
-    game[0x75E1] = game[0x75D7] # Icon color is the same as the main color
+    game[0x75D8] = random.choice(colors[0:27])  # Main color
+    def getnewcolor(indice):
+        if indice < 13 :
+            return random.randint(-2,2) + random.randint(1,2) * 12  + indice  % len(colors)
+        if indice >= 13:
+            return random.randint(-2,2) + 12  + indice  % len(colors)
+    game[0x75D7] = colors[getnewcolor(colors.index(game[0x75D8]))]  # secondary color
+    game[0x75E1] = game[0x75D8] # Icon color is the same as the main color
     # game[0x75D6] = random.choice(colors)  # window color
 
 
