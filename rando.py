@@ -10,6 +10,7 @@ def paletterandomizer(game):
 
     # HUD display
     game[0x75E2] = random.choice(colors)  # Score palette
+    game[0x753C] = game[0x75E2]  # Score palette too
     game[0x75E3] = random.choice(colors)  # Bars palette
     game[0x75ac] = random.choice(colors)  # Title screen dots
     # Rocket palette
