@@ -56,8 +56,8 @@ class infos:
                         hex(0x02F8) : "Rocket Yspeed * 256",
                         hex(0x03B8A3) : "Rocket Xspeed * 256 max compare",
                         hex(0x03B8AC) : "Rocket Xspeed * 256 max set if max",
-                        hex(0x03B909) : "Rocket max Yspeed * 256 compare",
-                        hex(0x03B912) : "Rocket max Yspeed * 256 set if max",
+                        hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",
+                        hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max",
                         hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",
                         hex(0x38866) : "Rocket accelerationx dir = 8, Default= 40",
                         hex(0x38867) : "Rocket accelerationx dir = 9, Default = 3E",
@@ -78,9 +78,9 @@ class infos:
                         hex(0x8589) :  "Fuel tank refill amount",
                         hex(0x00448F) : "Astronaut Xspeed max",
                         hex(0x003a25) : "Astronaut Xspeed max2",
-                        hex(0x003a2e) : "Astronaut Xspeed max3"
-
-
+                        hex(0x003a2e) : "Astronaut Xspeed max3",
+                        hex(0x003a98) : "Astronaut fastfall Yspeed max",
+                        hex(0x3a8f) : "Astronaut fastfall Yspeed max"
                     }
     def check(self,adress):
         if isinstance(adress,str):

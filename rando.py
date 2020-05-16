@@ -26,7 +26,7 @@ def engine_randomizer(game):
             - Acceleration of the rocket
             - Speed max of the rocket
     """
-    # Randomize speedmaxs:
+    # Randomize Rocket speedmaxs:
         # The original value is 3, which is slow IMO.
         # So the randomizer will randomize to something higher.
         # The goal is to have a worst case scenario of vanilla feature,
@@ -36,6 +36,20 @@ def engine_randomizer(game):
     game[0x3b8ac] = game[0x48D3]  # x speed
     game[0x3b909] = game[0x48D3]  # y speed
     game[0x3b912] = game[0x48D3]  # y speed
+
+    # Randomize Astronaut's speedmaxs:
+        # Like the rocket, the original value is 3.
+        # The randomizer will also randomize the astronaut speed maxs.
+        # One thing to note : freefall Y speed max is the same as the rocket
+        # But the fast fall is not the same.
+        # So you could have a lower free fall max speed with this randomizer.
+        # Or a plain 0 max speed :)
+    game[0x448f] = random.randint(1,255)
+    game[0x3a25] = game[0x448f]  # X speed
+    game[0x3a2E] = game[0x448f]  # X speed
+    game[0x3a8f] = random.randint(0,255)  # Freefall maxspeed Y
+    game[0x3a98] = game[0x3a8f]  # Freefall maxspeed Y
+
     # Randomize acceleration!
         # The acceleration depends on the rocket direction and each
         # rocket's acceleration are stored independently.
