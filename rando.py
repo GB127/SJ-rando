@@ -75,8 +75,8 @@ def manage_randomizer(game):
         # Default value is 2, which is abysmal IMO. So let's crank it a big notch :D
         # The possible range is 0 (yes yes, free fuel!) up to 254
         # The double thruster is always higher by at least one.
-    game[0x386B7] = random.randint(0,254)  # Normal
-    game[0x386AF] = random.randint(game[0x386B7] +1, 255)  # Thruster : I'll have to think on this.
+    game[0x386B7] = random.randint(0,255)  # Normal
+    game[0x386AF] = random.randint(0, 255)  # Thruster
 
     # This is the starting fuel.
         # Default value is E0 for 224 * 255 unit.
@@ -87,6 +87,8 @@ def manage_randomizer(game):
         # to save on fuel or to use fuel tanks.
         # Will have to think on how to finetune this.
     game[0x7202] = random.randint(1,255)
+    game[0x8589] = random.randint(game[0x7202], 255)  # So it will always either give you more health, or give the same max health
+
 
     # This is for the invicibility timer on wall collision.
         # Default value is 30 (28 in decimal).

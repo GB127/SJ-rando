@@ -77,6 +77,7 @@ class infos:
                         hex(0x38873) : "Rocket acceleration dir = 21, Default = 35",
                         hex(0x38874) : "Rocket acceleration dir = 22, Default = 3B",
                         hex(0x38875) : "Rocket acceleration dir = 23, Default = 3E",
+                        hex(0x8589) :  "Fuel tank refill amount"
 
 
                     }
