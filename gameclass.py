@@ -25,6 +25,8 @@ class infos:
                    "0E : B907" : "Decrease Yspeed",
                    "OE : B8EC" : "Increase Yspeed"}
         self.infos = {
+                        hex(0x00454A) : "Astronaut Yacceleration",
+                        hex(0x004559) : "Astronaut Yacceleration",
                         hex(0x008403) : "Fuel STA on enemy bullet hit",
                         hex(0x008404) : "Operand for 0x008403",
                         hex(0x008405) : "Fuel STA on enemy bullet hit",
