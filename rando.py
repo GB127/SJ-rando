@@ -2,7 +2,8 @@ from gameclass import ROM, infos
 from subrando import nescolors, getnewcolor, getdistributionaccel
 import random
 
-def paletterandomizer(game):
+def paletterandomizer(game, seed):
+    random.seed(seed)
     colors = nescolors()
     #Create the pool of colors
 
@@ -18,7 +19,7 @@ def paletterandomizer(game):
     # game[0x75D6] = random.choice(colors)  # window color
 
 
-def engine_randomizer(game):
+def engine_randomizer(game, seed):
     """
         This function will randomize these elements:
             - Acceleration of the rocket
@@ -26,6 +27,8 @@ def engine_randomizer(game):
             - Speed max of the astronaut
             - Acceleration of the astornaut
     """
+    random.seed(seed)
+
     # Randomize Rocket speedmaxs:
         # The original value is 3, which is slow IMO.
         # So the randomizer will randomize to something higher.
@@ -72,12 +75,14 @@ def engine_randomizer(game):
     game[0x3886E] = 0 # I don't change this, but just to "Know that it's considered" I'm writting it down.
 
 
-def manage_randomizer(game):
+def manage_randomizer(game, seed):
     """ 
         This function will randomize the following stuffs:
             - Fuel related stuffs
             - Invicibility timer
     """
+    random.seed(seed)
+
     # This is for the fuel consumption.
         # On press A
         # Default value is 2, which is abysmal IMO. So let's crank it a big notch :D
