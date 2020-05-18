@@ -56,9 +56,6 @@ def engine_randomizer(game):
     game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
     # Randomize acceleration!
-        # The acceleration depends on the rocket direction and each
-        # rocket's acceleration are stored independently.
-        # So I'm going to alter all of them.
         # Approach:
             # First, Either flip the acceleration table, linearize it or keep it.
     randoaccel = getdistributionaccel()
