@@ -21,3 +21,9 @@ Features :
 
 Current version : Beta version
 Wrote by Niamek.
+
+
+
+ACKNOLEDGEMENTS:
+MeleeWizard : For suggesting this game
+sbm : For helping in understanding upcodes

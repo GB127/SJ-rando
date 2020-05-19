@@ -120,6 +120,3 @@ class ROM:
         return self.data[offset]
     def __setitem__(self,offset, value):
         self.data[offset] = value
-
-    def checkchange(self,adress):
-        print(self[adress-2: adress +2])
