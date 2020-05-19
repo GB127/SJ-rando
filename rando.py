@@ -19,13 +19,36 @@ def paletterandomizer(game, seed):
     # game[0x75D6] = random.choice(colors)  # window color
 
 
-def engine_randomizer(game, seed):
+def astro_randomizer(game,seed):
     """
         This function will randomize these elements:
-            - Acceleration of the rocket
+        - X Speed max of the astronaut
+        - Y speed max of the FAST falling
+        - X/Y Acceleration of the astornaut
+    """
+    random.seed(seed)
+
+
+    # Randomize Astronaut's speedmaxs:
+        # Like the rocket, the original value is 3.
+        # One thing to note : freefall Y speed max 
+        # is the same as the rocket.
+        # But X max speed is not.
+        # But the fast fall is not the same.
+        # So you could have a lower free fall max speed with this randomizer.
+        # Or a plain 0 max speed :)
+    game[0x448f] = random.randint(3,8)
+    game[0x3a25] = game[0x448f]  # X speed
+    game[0x3a2E] = game[0x448f]  # X speed
+    game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
+    game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
+
+
+def rocket_randomizer(game, seed):
+    """
+        This function will randomize these elements:
+            - X/Y Acceleration of the rocket
             - Speed max of the rocket
-            - Speed max of the astronaut
-            - Acceleration of the astornaut
     """
     random.seed(seed)
 
@@ -44,23 +67,10 @@ def engine_randomizer(game, seed):
     game[0x3b909] = game[0x48D3]  # y speed
     game[0x3b912] = game[0x48D3]  # y speed
 
-    # Randomize Astronaut's speedmaxs:
-        # Like the rocket, the original value is 3.
-        # One thing to note : freefall Y speed max 
-        # is the same as the rocket.
-        # But X max speed is not.
-        # But the fast fall is not the same.
-        # So you could have a lower free fall max speed with this randomizer.
-        # Or a plain 0 max speed :)
-    game[0x448f] = random.randint(3,8)
-    game[0x3a25] = game[0x448f]  # X speed
-    game[0x3a2E] = game[0x448f]  # X speed
-    game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
-    game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
     # Randomize acceleration!
-        # Approach:
-            # First, Either flip the acceleration table, linearize it or keep it.
+        # Either flip the acceleration table, linearize it or keep it.
+        # Then randomize the highest, then keep the same ratio.
     randoaccel = getdistributionaccel()
     game[0x38866] = random.randint(randoaccel[-1], 255)   # This is the max accel.
         # Wrote it ike that in case I change something
@@ -75,7 +85,7 @@ def engine_randomizer(game, seed):
     game[0x3886E] = 0 # I don't change this, but just to "Know that it's considered" I'm writting it down.
 
 
-def manage_randomizer(game, seed):
+def fuel_randomizer(game, seed):
     """ 
         This function will randomize the following stuffs:
             - Fuel related stuffs
@@ -103,6 +113,11 @@ def manage_randomizer(game, seed):
         # or give the same max health
 
 
+
+
+
+
+def others_randomizer(game,seed):
     # This is for the invicibility timer on wall collision.
         # Default value is 30 (28 in decimal).
         # This game run 30 FPS per seconds I think. So you have 1 second of invicibility.
