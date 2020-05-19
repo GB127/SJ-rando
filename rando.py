@@ -44,6 +44,17 @@ def astro_randomizer(game,seed):
     game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
 
+def gravity_randomizer(game,seed):
+    gravity = random.randint(0,255)  # FIXME
+    game[0x01040D] = 169  # This is the opperation
+    game[0x01040E] = gravity # This is the operand. Normally it's F8.
+    game[0x0107B3] = 169
+    game[0x0107B4] = gravity
+
+    with open("test_gravity200.nes", "wb") as newrom:
+        newrom.write(game.data)
+
+
 def rocket_randomizer(game, seed):
     """
         This function will randomize these elements:

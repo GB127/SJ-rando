@@ -26,11 +26,15 @@ class infos:
                    "OE : B8EC" : "Increase Yspeed"}
         self.infos = {
                         
-                        hex(0x0049f0) : "Decrement 1st byte of shield usage",
-                        hex(0x0049f1) : " Decrement 2nd byte of shield usage",
+                        hex(0x0049f0) : "opcode Decrement 1st byte of shield usage",
+                        hex(0x0049f1) : "opcode Decrement 2nd byte of shield usage",
                         hex(0x00454A) : "Astronaut Yacceleration",
                         hex(0x004559) : "Astronaut Yacceleration",
                         hex(0x008403) : "Fuel STA on enemy bullet hit",
+                        hex(0x01040D) : "Gravity AND for display",
+                        hex(0x01040E) : "Gravity operand for AND for display",
+                        hex(0x0107B3) : "Gravity AND for actual gravity",
+                        hex(0x0107B4) : "Gravity operand for actual AND gravity",
                         hex(0x008404) : "Operand for 0x008403",
                         hex(0x008405) : "Fuel STA on enemy bullet hit",
                         hex(0x008406) : "Operand for 0x008403",
