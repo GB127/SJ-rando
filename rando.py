@@ -133,16 +133,19 @@ def weapon_randomizer(game, seed):
         # There isn't much to be done with them. 
         # They instantly remove enemies on screen.
         # Could be potentially broken if really cheap Wusage 
-    game[0x4EBC] = random.randint(1,255)  # Smart Bomb
+    game[0x4EBC] = random.randint(1,255)
 
     # Anti Gravity:
         # There isn't much to be done with them. 
         # They simply remove gravity, 
         # at the expense of Wusage per frame
-    game[0x3ED7] = random.randint(1,255)  # Ani Grav
+    game[0x3ED7] = random.randint(1,255)
 
 
-    game[0x4EBE] = random.randint(1,255)  # Time bomb
+    game[0x4EBE] = 1 #random.randint(1,255)  # Time bomb
+
+
+
     game[0x4EC1] = random.randint(1,255)  # Star bullet
 
     # Warhead / Homing missile:
@@ -155,7 +158,7 @@ def weapon_randomizer(game, seed):
     # Randomize the acceleration (So their behaviour aren't always the same :o) )
     distri = getwarheadaccel()
     game[0x03c3c2] = 0
-    game[0x03c3c3] = random.randint(distri[-2], 255)
+    game[0x03c3c3] = random.randint(distri[-2], 255)  # FIXME
     game[0x03c3c4] = random.randint(distri[-1], 255)
     game[0x03c3c5] = game[0x03c3c3]
     game[0x03c3c6] = game[0x03c3c2]
