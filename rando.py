@@ -158,13 +158,14 @@ def weapon_randomizer(game, seed):
     # Randomize the acceleration (So their behaviour aren't always the same :o) )
     distri = getwarheadaccel()
     game[0x03c3c2] = 0
-    game[0x03c3c3] = random.randint(distri[-2], 255)  # FIXME
-    game[0x03c3c4] = random.randint(distri[-1], 255)
-    game[0x03c3c5] = game[0x03c3c3]
-    game[0x03c3c6] = game[0x03c3c2]
-    game[0x03c3c7] = game[0x03c3c3]
-    game[0x03c3c8] = game[0x03c3c4]
-    game[0x03c3c9] = game[0x03c3c3]
+    game[0x03c3c4] = random.randint(1, 255)  #20
+    game[0x03c3c3] = int(distri[-2] * (game[0x03c3c4] / distri[-1])) # 14
+
+    game[0x03c3c5] = game[0x03c3c3] # 14
+    game[0x03c3c6] = game[0x03c3c2]  # 0
+    game[0x03c3c7] = game[0x03c3c3]  # 14
+    game[0x03c3c8] = game[0x03c3c4]  # 20
+    game[0x03c3c9] = game[0x03c3c3]  # 14
 
 
 

@@ -18,9 +18,9 @@ def getdistributionaccel():
     return liste
 
 def getwarheadaccel():
-    liste1 = [0, 14, 20]
-    liste2 = [0, 10, 20]
-    liste3 = [0, 6,  20]
+    liste1 = [0, 20, 32]# transform to hex
+    liste2 = [0, 16, 32]
+    liste3 = [0, 12, 32]
 
     randoliste = random.choice([liste1, liste2, liste3])
     return randoliste
