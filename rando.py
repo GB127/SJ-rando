@@ -1,5 +1,5 @@
 from gameclass import ROM, infos
-from subrando import nescolors, getnewcolor, getdistributionaccel
+from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
 import random
 
 def paletterandomizer(game, seed):
@@ -72,6 +72,9 @@ def rocket_randomizer(game, seed):
         # From my testing, 8 seemed to be a nice max speed. Can see stuffs coming.
         # Can manage to a certain extent with the least powerful rocket. It's hard, but
         # Doable.
+
+
+        # NOTE : This randomize the max speed of the warhead things too!
     game[0x048D3] = random.randint(3,8)  # both speed
     game[0x3b8a3] = game[0x48D3]  # x speed
     game[0x3b8ac] = game[0x48D3]  # x speed
@@ -124,6 +127,32 @@ def fuel_randomizer(game, seed):
         # or give the same max health
 
 
+def weapon_randomizer(game, seed):
+    random.seed(seed)
+
+    # Randomize costs
+    game[0x4EBC] = random.randint(0,255)  # Smart Bomb
+    game[0x3ED7] = random.randint(0,255)  # Ani Grav
+    game[0x4EBE] = random.randint(0,255)  # Time bomb
+    game[0x4EC1] = random.randint(0,255)  # Star bullet
+
+    # Warhead / Homing missile:
+        # They are the same thing, but the warhead don't leave after one hit
+        # The prices are split though.
+    game[0x4EBA] = random.randint(0,255)  # Homing Miss
+    game[0x4EBF] = random.randint(0,255)  # Multi Warhead
+    game[0x004dc1] = 30 #random.randint(1,255)  # Timer
+
+    # Randomize the acceleration (So their behaviour aren't always the same :o) )
+    distri = getwarheadaccel()
+    game[0x03c3c2] = 0
+    game[0x03c3c3] = random.randint(distri[-2], 255)
+    game[0x03c3c4] = random.randint(distri[-1], 255)
+    game[0x03c3c5] = game[0x03c3c3]
+    game[0x03c3c6] = game[0x03c3c2]
+    game[0x03c3c7] = game[0x03c3c3]
+    game[0x03c3c8] = game[0x03c3c4]
+    game[0x03c3c9] = game[0x03c3c3]
 
 
 
