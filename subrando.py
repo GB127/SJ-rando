@@ -17,7 +17,13 @@ def getdistributionaccel():
         liste.append(sum(rando_delta_accel[:i+1]))
     return liste
 
+def getwarheadaccel():
+    liste1 = [0, 14, 20]
+    liste2 = [0, 10, 20]
+    liste3 = [0, 6,  20]
 
+    randoliste = random.choice([liste1, liste2, liste3])
+    return randoliste
 
 def getnewcolor(indice, colors):
     if indice < 13 :
