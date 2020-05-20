@@ -129,18 +129,27 @@ def fuel_randomizer(game, seed):
 
 def weapon_randomizer(game, seed):
     random.seed(seed)
+    # Smart bombs:
+        # There isn't much to be done with them. 
+        # They instantly remove enemies on screen.
+        # Could be potentially broken if really cheap Wusage 
+    game[0x4EBC] = random.randint(1,255)  # Smart Bomb
 
-    # Randomize costs
-    game[0x4EBC] = random.randint(0,255)  # Smart Bomb
-    game[0x3ED7] = random.randint(0,255)  # Ani Grav
-    game[0x4EBE] = random.randint(0,255)  # Time bomb
-    game[0x4EC1] = random.randint(0,255)  # Star bullet
+    # Anti Gravity:
+        # There isn't much to be done with them. 
+        # They simply remove gravity, 
+        # at the expense of Wusage per frame
+    game[0x3ED7] = random.randint(1,255)  # Ani Grav
+
+
+    game[0x4EBE] = random.randint(1,255)  # Time bomb
+    game[0x4EC1] = random.randint(1,255)  # Star bullet
 
     # Warhead / Homing missile:
         # They are the same thing, but the warhead don't leave after one hit
         # The prices are split though.
-    game[0x4EBA] = random.randint(0,255)  # Homing Miss
-    game[0x4EBF] = random.randint(0,255)  # Multi Warhead
+    game[0x4EBA] = random.randint(1,255)  # Homing Miss
+    game[0x4EBF] = random.randint(1,255)  # Multi Warhead
     game[0x004dc1] = 30 #random.randint(1,255)  # Timer
 
     # Randomize the acceleration (So their behaviour aren't always the same :o) )
