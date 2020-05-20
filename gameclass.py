@@ -21,7 +21,15 @@ class infos:
             # fuel
             # points
         self.infos = {
-                        
+                        hex(0x03b919): "opcode Gravity Y speed",
+                        hex(0x03b91A) : "operande Yspeed - gravity, low byte  Yspeed",
+                        hex(0x03b91B): "operange Yspeed - gravity hight byte, Yspeed",
+
+                        hex(0x03b922): "opcode Gravity Y speed, H",
+                        hex(0x03b923) : "operande Yspeed - gravity, low byte  Yspeed H",
+                        hex(0x03b924): "operange Yspeed - gravity hight byte, Yspeed H",
+
+
                         hex(0x0049f0) : "opcode Decrement 1st byte of shield usage",
                         hex(0x0049f1) : "opcode Decrement 2nd byte of shield usage",
                         hex(0x00454A) : "Astronaut Yacceleration",
@@ -123,3 +131,7 @@ class ROM:
         return self.data[offset]
     def __setitem__(self,offset, value):
         self.data[offset] = value
+
+    def x_to_y(self):
+        for i in self.data:
+            
