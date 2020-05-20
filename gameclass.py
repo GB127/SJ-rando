@@ -60,10 +60,10 @@ class infos:
                         hex(0x0386B7): "Rocket fuel consumption on press A, default value = 2",  # DONE
                         hex(0xC6)    : "Rocket Current fuel (2B)",  # INFO
                         hex(0x0374)  : "Direction of the Rocket",  # INFO
-                        hex(0x4C)    : "Camera Xpos",
+                        hex(0x4C)    : "Camera Xpos",  # INFO
                         hex(0x007202) : "Starting fuel and weapon, Default value = E0(224)",  # DONE
-                        hex(0x4E)    : "Camera Ypos",
-                        hex(0x5D)    : "Level timer",
+                        hex(0x4E)    : "Camera Ypos",  # INFO
+                        hex(0x5D)    : "Level timer",  # INFO
                         hex(0x0200)  : "Rocket Xpos",  # INFO
                         hex(0x021F)  : "Rocket Xpos * 256",  # INFO
                         hex(0x0197)  : "Rocket subXpos",  # INFO
@@ -121,15 +121,15 @@ class infos:
 
                         # Multi Warhead
                         hex(0x004ebf) : "Multi Warhead Wusage",  # DONE
-                        hex(0x004dc1) : "Multi Warhead Timer",
-                        hex(0x03c3c2) : "Warhead accel def = 0",
-                        hex(0x03c3c3) : "Warhead accel def = 14",
-                        hex(0x03c3c4) : "Warhead accel def = 20",
-                        hex(0x03c3c5) : "Warhead accel def = 14",
-                        hex(0x03c3c6) : "Warhead accel def = 0",
-                        hex(0x03c3c7) : "Warhead accel def = 14",
-                        hex(0x03c3c8) : "Warhead accel def = 20",
-                        hex(0x03c3c9) : "Warhead accel def = 14",
+                        hex(0x004dc1) : "Multi Warhead Timer",  # DONE
+                        hex(0x03c3c2) : "Warhead accel def = 0",  # DONE
+                        hex(0x03c3c3) : "Warhead accel def = 14",  # DONE
+                        hex(0x03c3c4) : "Warhead accel def = 20",  # DONME
+                        hex(0x03c3c5) : "Warhead accel def = 14",  # DONE
+                        hex(0x03c3c6) : "Warhead accel def = 0",  # DONE
+                        hex(0x03c3c7) : "Warhead accel def = 14",  # DOne
+                        hex(0x03c3c8) : "Warhead accel def = 20",  # DONE
+                        hex(0x03c3c9) : "Warhead accel def = 14",  # DONe
                     }
     def check(self,adress):
         if isinstance(adress,str):
