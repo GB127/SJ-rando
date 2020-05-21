@@ -36,13 +36,13 @@ def astro_randomizer(game,seed):
         # is the same as the rocket.
         # But X max speed is not.
         # But the fast fall is not the same.
-        # So you could have a lower free fall max speed with this randomizer.
+        # So you could have a lower free fall max speed with this randomizer. But never higher.
         # Or a plain 0 max speed :)
-    game[0x448f] = random.randint(3,8)
-    game[0x3a25] = game[0x448f]  # X speed
-    game[0x3a2E] = game[0x448f]  # X speed
-    game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
-    game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
+    #game[0x448f] = random.randint(3,8)
+    #game[0x3a25] = game[0x448f]  # X speed
+    #game[0x3a2E] = game[0x448f]  # X speed
+    #game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
+    #game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
 
 def gravity_randomizer(game,seed, test):
@@ -163,8 +163,6 @@ def weapon_randomizer(game, seed):
     game[0x03c3c7] = game[0x03c3c3]  # 14
     game[0x03c3c8] = game[0x03c3c4]  # 20
     game[0x03c3c9] = game[0x03c3c3]  # 14
-
-
 
 
 def others_randomizer(game,seed):
