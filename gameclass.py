@@ -1,7 +1,3 @@
-class InfoError(BaseException):
-    # We'll see if I need this. But for now I'm not seeing any use
-    pass
-
 class infos:
     """
         This class is more of a tool for me. I will store my findings of infos here.
