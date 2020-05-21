@@ -53,7 +53,7 @@ class infos:
                         hex(0x11031) : "Wall Collision suubstract fuel opcode",
                         hex(0x11036) : "Wall Collision substract fuel opcode",
                         hex(0x11037) : "Wall Collision substract fuel opcode",
-                        hex(0x753C)  : "score palette intro level",
+                        hex(0x753C)  : "score palette intro level",  # DONE
                         hex(0x75AC)  : "palette of dot Title screen",  # DONE
                         hex(0x99)    : "Current Wall invicibility timer",  # INFO
                         hex(0x011011): "Wall Invicibility timer Duration, default value = 30",  # Done
@@ -102,6 +102,9 @@ class infos:
                         hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
                         hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
                         hex(0x3a8f) : "Astronaut fastfall Yspeed max",  # DONE
+                        hex(0x0075ad): "Astronaut fire palette intro",
+                        hex(0x0075aE): "Astronaut fire palette intro 2",
+                        hex(0x00753B) : "Icon Rocket Intro palette",  # Done
 
                         # Weapons
                         #Smart bomb

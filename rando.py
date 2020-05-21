@@ -16,6 +16,7 @@ def paletterandomizer(game, seed):
     game[0x75D8] = random.choice(colors[0:27])  # Main color
     game[0x75D7] = colors[getnewcolor(colors.index(game[0x75D8]), colors)]  # secondary color
     game[0x75E1] = game[0x75D8] # Icon color is the same as the main color
+    game[0x00753B] = game[0x75D8]
     # game[0x75D6] = random.choice(colors)  # window color
 
 
@@ -44,16 +45,12 @@ def astro_randomizer(game,seed):
     game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
 
-def gravity_randomizer(game,seed):
-    gravity = random.randint(0,255)  # FIXME
+def gravity_randomizer(game,seed, test):
+    gravity = test# random.randint(0,255)  # FIXME
     game[0x01040D] = 169  # This is the opperation
     game[0x01040E] = gravity # This is the operand. Normally it's F8.
     game[0x0107B3] = 169
     game[0x0107B4] = gravity
-
-    with open("test_gravity200.nes", "wb") as newrom:
-        newrom.write(game.data)
-
 
 def rocket_randomizer(game, seed):
     """
@@ -141,11 +138,11 @@ def weapon_randomizer(game, seed):
         # at the expense of Wusage per frame
     game[0x3ED7] = random.randint(1,255)
 
-
+    # Time Bomb
     game[0x4EBE] = 1 #random.randint(1,255)  # Time bomb
 
 
-
+    # Star Bullet
     game[0x4EC1] = random.randint(1,255)  # Star bullet
 
     # Warhead / Homing missile:
