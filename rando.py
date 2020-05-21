@@ -38,11 +38,11 @@ def astro_randomizer(game,seed):
         # But the fast fall is not the same.
         # So you could have a lower free fall max speed with this randomizer. But never higher.
         # Or a plain 0 max speed :)
-    #game[0x448f] = random.randint(3,8)
-    #game[0x3a25] = game[0x448f]  # X speed
-    #game[0x3a2E] = game[0x448f]  # X speed
-    #game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
-    #game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
+    game[0x448f] = random.randint(3,8)
+    game[0x3a25] = game[0x448f]  # X speed
+    game[0x3a2E] = game[0x448f]  # X speed
+    game[0x3a8f] = random.randint(0,8)  # Fastfall maxspeed Y
+    game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
 
 def gravity_randomizer(game,seed, test):
@@ -124,6 +124,17 @@ def fuel_randomizer(game, seed):
         # or give the same max health
 
 
+
+    # This is for the invicibility timer on wall collision.
+        # Default value is 30 (28 in decimal).
+        # This game run 30 FPS per seconds I think. So you have 1 second of invicibility.
+        # Let's alter this a little bit.
+        # 1 being no invicibility at all
+        # 255 being the max value of a byte
+    game[0x11011] = random.randint(1,255)
+
+
+
 def weapon_randomizer(game, seed):
     random.seed(seed)
     # Smart bombs:
@@ -165,14 +176,6 @@ def weapon_randomizer(game, seed):
     game[0x03c3c9] = game[0x03c3c3]  # 14
 
 
-def others_randomizer(game,seed):
-    # This is for the invicibility timer on wall collision.
-        # Default value is 30 (28 in decimal).
-        # This game run 30 FPS per seconds I think. So you have 1 second of invicibility.
-        # Let's alter this a little bit.
-        # 1 being no invicibility at all
-        # 255 being the max value of a byte
-    game[0x11011] = random.randint(1,255)
 
 if __name__ == "__main__" :
     infos = infos()
