@@ -18,7 +18,7 @@ def getdistributionaccel():
     return liste
 
 def getwarheadaccel():
-    liste1 = [0, 20, 32]# transform to hex
+    liste1 = [0, 20, 32]
     liste2 = [0, 16, 32]
     liste3 = [0, 12, 32]
 
