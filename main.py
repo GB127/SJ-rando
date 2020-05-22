@@ -1,6 +1,6 @@
 import argparse
 from rando import *
-
+from qol import *
 
 def getoptions():
     parser = argparse.ArgumentParser(description='Solar Jet Randomizer : Randomizers selected')
@@ -18,13 +18,13 @@ def getoptions():
                         help="Randomize things related to the fuel", dest="Rfuel")
     parser.add_argument("-w", "--weapon", action="store_true",
                         help="Randomize the weapons' properties", dest="Rweapon")
+    parser.add_argument("--mode", choices=[None, "reckless"], default=None, dest="mode", help="Game mode")
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     options = getoptions()
     seed = options.seed
-    print(seed, type(seed))
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = ROM(originaldata)
@@ -40,6 +40,12 @@ if __name__ == "__main__":
             fuel_randomizer(randogame,seed)
         if options.Rweapon:
             weapon_randomizer(randogame,seed)
+        if options.mode:
+            if options.mode == "reckless":
+                disable_fuelusage(randogame)
+                disable_shield_fuelusage(randogame)
+                disable_fuelloss_collisions(randogame)
+                disable_ohko(randogame)
         with open("testing.nes", "wb") as newrom:
             newrom.write(randogame.data)
 
