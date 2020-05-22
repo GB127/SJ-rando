@@ -5,7 +5,7 @@ from qol import *
 def getoptions():
     parser = argparse.ArgumentParser(description='Solar Jet Randomizer : Randomizers selected')
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
-                        dest="seed", default="0", metavar="")
+                        dest="seed", default=random.random(), metavar="")
     parser.add_argument('-p', "--palette", action="store_true",
                     help='Randomize the colors', dest="Rpalette")
     parser.add_argument("-a", "--astro", action="store_true", 
@@ -18,7 +18,8 @@ def getoptions():
                         help="Randomize things related to the fuel", dest="Rfuel")
     parser.add_argument("-w", "--weapon", action="store_true",
                         help="Randomize the weapons' properties", dest="Rweapon")
-    parser.add_argument("--mode", choices=[None, "reckless"], default=None, dest="mode", help="Game mode")
+    parser.add_argument("--mode", choices=[None, "reckless"],
+                        default=None, dest="mode", help="Game mode")
     return parser.parse_args()
 
 
