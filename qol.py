@@ -15,3 +15,7 @@ def invicible_collisions(game):
 def disable_shield_fuelusage(game):
     game[0x0049f0] = 234
     game[0x0049f1] = 234
+
+def disable_fuelusage(game):
+    game[0x386B7] = 0  # Normal
+    game[0x386AF] = 0
