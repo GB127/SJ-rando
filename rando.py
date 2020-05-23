@@ -19,6 +19,11 @@ def paletterandomizer(game, seed):
     game[0x00753B] = game[0x75D8]
     # game[0x75D6] = random.choice(colors)  # window color
 
+    game[0x0075ad] = random.choice(colors) # C'est le milieu
+    game[0x0075aE] = random.choice(colors)  # C'est l'autre
+
+
+
 
 def astro_randomizer(game,seed):
     """
