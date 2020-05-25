@@ -27,8 +27,7 @@ BB86 : add_Xspeed(A)
     $B898:9D 9B 02  STA $029B,X @ $029B = #$0F                   A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
     $B89B:A9 03     LDA #$03                                     A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
     $B89D:9D BA 02  STA $02BA,X @ $02BA = #$03                   A:03 X:00 Y:1E S:F2 P:nvUBdizC 
-    $B8A0:60        RTS ---------------------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
-
+    $B8A0:60        RTS (from BB86)----------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
 
 B8A1 : remove_Xspeed(A):
     --A register already have the acceleration
@@ -55,11 +54,6 @@ B8A1 : remove_Xspeed(A):
         $B8EB:60        RTS (from $B8A1) --------------------------- A:7F X:00 Y:12 S:F2 P:nvUBdizC 
     $B8B3 reverse_Xspeed()
 
-
-
-
-
-
 B8B3 : reverse_Xspeed()
     -- This is to change the current speed back to positive
        X register is the speed concerned
@@ -82,3 +76,21 @@ B8B3 : reverse_Xspeed()
     $B8C8:9D BA 02  STA $02BA,X @ $02BA = #$FF                   A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
     $B8CB:A9 00     LDA #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
     $B8CD:60        RTS (from $B8A1) --------------------------- A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+
+
+8834 : reverse_Xdirection()
+    -- This will reverse X's direction.
+
+    -- $0336 : direction of X
+
+    -- Summary
+
+
+    $8834:D0 1F     BNE $8855                                    A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+    $8836:A9 00     LDA #$00                                     A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+    $8838:85 C4     STA $00C4 = #$01                             A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+    $883A:BD 36 03  LDA $0336,X @ $0336 = #$00                   A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+    $883D:49 01     EOR #$01                                     A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+    $883F:9D 36 03  STA $0336,X @ $0336 = #$00                   A:01 X:00 Y:11 S:F4 P:nvUBdizC 
+    $8842:4C 55 88  JMP $8855                                    A:01 X:00 Y:11 S:F4 P:nvUBdizC 
+    $8855:60        RTS (from $87D2) --------------------------- A:01 X:00 Y:11 S:F4 P:nvUBdizC 
