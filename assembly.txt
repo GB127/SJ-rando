@@ -94,3 +94,27 @@ B8B3 : reverse_Xspeed()
     $B8CB:A9 00     LDA #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
     $B8CD:60        RTS (from $B8A1) --------------------------- A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
 
+B8EC : add_Yspeed(A)
+    -- A register already have the acceleration
+
+    -- Addresses:
+        $02D9 : Y speed
+        $02F8 : Y speed H
+
+    -- Summary
+
+    $B8EC:18        CLC                                          A:02 X:00 Y:07 S:F4 P:nvubdizC 
+    $B8ED:7D D9 02  ADC $02D9,X @ $02D9 = #$00                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
+    $B8F0:9D D9 02  STA $02D9,X @ $02D9 = #$00                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
+    $B8F3:BD F8 02  LDA $02F8,X @ $02F8 = #$03                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
+    $B8F6:69 00     ADC #$00                                     A:03 X:00 Y:07 S:F4 P:nvubdizc 
+    $B8F8:C9 03     CMP #$03                                     A:03 X:00 Y:07 S:F4 P:nvubdizc 
+    $B8FA:90 07     BCC $B903                                    A:03 X:00 Y:07 S:F4 P:nvubdiZC 
+        -> If lower or equal to 3 : skip setting the max speed
+        $B903:9D F8 02  STA $02F8,X @ $02F8 = #$03                   A:03 X:00 Y:07 S:F4 P:nvubdizC 
+        $B906:60        RTS (from $B8EC) --------------------------- A:03 X:00 Y:07 S:F4 P:nvubdizC 
+    $B8FC:A9 00     LDA #$00                                     A:03 X:00 Y:07 S:F4 P:nvubdiZC 
+    $B8FE:9D D9 02  STA $02D9,X @ $02D9 = #$02                   A:00 X:00 Y:07 S:F4 P:nvubdiZC 
+    $B901:A9 03     LDA #$03                                     A:00 X:00 Y:07 S:F4 P:nvubdiZC 
+    $B903:9D F8 02  STA $02F8,X @ $02F8 = #$03                   A:03 X:00 Y:07 S:F4 P:nvubdizC 
+    $B906:60        RTS (from $B8EC) --------------------------- A:03 X:00 Y:07 S:F4 P:nvubdizC 
