@@ -15,6 +15,23 @@
     $8842:4C 55 88  JMP $8855                                    A:01 X:00 Y:11 S:F4 P:nvUBdizC 
     $8855:60        RTS (from $87D2) --------------------------- A:01 X:00 Y:11 S:F4 P:nvUBdizC 
 
+889F : reverse_Ydirection()
+    -- Notes
+
+    -- $0355 : Y direction
+
+    -- Summary
+
+    $889F:D0 24     BNE $88C5                                    A:00 X:00 Y:07 S:F6 P:nvubdiZc 
+    $88A1:AD 55 03  LDA $0355 = #$00                             A:00 X:00 Y:07 S:F6 P:nvubdiZc 
+    $88A4:49 01     EOR #$01                                     A:00 X:00 Y:07 S:F6 P:nvubdiZc 
+    $88A6:8D 55 03  STA $0355 = #$00                             A:01 X:00 Y:07 S:F6 P:nvubdizc 
+    $88A9:4C C5 88  JMP $88C5                                    A:01 X:00 Y:07 S:F6 P:nvubdizc 
+    $88C5:A6 66     LDX $0066 = #$00                             A:01 X:00 Y:07 S:F6 P:nvubdizc 
+    $88C7:F0 C0     BEQ $8889                                    A:01 X:00 Y:07 S:F6 P:nvubdiZc 
+    $8889:60        RTS (from $FFC8) --------------------------- A:01 X:00 Y:07 S:F6 P:nvubdiZc 
+
+
 BB86 : add_Xspeed(A)
     -- A register already have the acceleration
        Y register is not used in this function.
