@@ -1,4 +1,11 @@
-BB86 : Add_Xspeed(A)
+XXXX : function
+    -- Notes
+
+    -- Addresses
+
+    -- Summary
+
+BB86 : add_Xspeed(A)
     -- A register already have the acceleration
        Y register is not used in this function.
        X is used by this function.
@@ -21,3 +28,57 @@ BB86 : Add_Xspeed(A)
     $B89B:A9 03     LDA #$03                                     A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
     $B89D:9D BA 02  STA $02BA,X @ $02BA = #$03                   A:03 X:00 Y:1E S:F2 P:nvUBdizC 
     $B8A0:60        RTS ---------------------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
+
+
+B8A1 : remove_Xspeed(A):
+    --A register already have the acceleration
+      X also determine which speed to change.
+
+    --Addresses
+        $0064 : Tempo address for storing acceleration
+        $029B : X speed
+        $02BA : X speed H
+
+    --Summary
+
+    $B8A1:85 64     STA $0064 = #$02                             A:10 X:00 Y:10 S:F2 P:nvUBdizC 
+    $B8A3:BD 9B 02  LDA $029B,X @ $029B = #$08                   A:10 X:00 Y:10 S:F2 P:nvUBdizC 
+    $B8A6:38        SEC                                          A:08 X:00 Y:10 S:F2 P:nvUBdizC 
+    $B8A7:E5 64     SBC $0064 = #$10                             A:08 X:00 Y:10 S:F2 P:nvUBdizC 
+    $B8A9:9D 9B 02  STA $029B,X @ $029B = #$08                   A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8AC:BD BA 02  LDA $02BA,X @ $02BA = #$00                   A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8AF:E9 00     SBC #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+    $B8B1:10 32     BPL $B8E5                                    A:FF X:00 Y:10 S:F2 P:NvUBdizc 
+        -> If the new value is positive : skip the reversing speed instructions
+        $B8E5:9D BA 02  STA $02BA,X @ $02BA = #$02                   A:02 X:00 Y:12 S:F2 P:nvUBdizC 
+        $B8E8:1D 9B 02  ORA $029B,X @ $029B = #$7F                   A:02 X:00 Y:12 S:F2 P:nvUBdizC 
+        $B8EB:60        RTS (from $B8A1) --------------------------- A:7F X:00 Y:12 S:F2 P:nvUBdizC 
+    $B8B3 reverse_Xspeed()
+
+
+
+
+
+
+B8B3 : reverse_Xspeed()
+    -- This is to change the current speed back to positive
+       X register is the speed concerned
+
+    -- Addresses
+        $029B : X speed
+        $02BA : X speed H
+
+    -- Summary
+
+    $B8B3:9D BA 02  STA $02BA,X @ $02BA = #$00                   A:FF X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8B6:BD 9B 02  LDA $029B,X @ $029B = #$F8                   A:FF X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8B9:49 FF     EOR #$FF                                     A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8BB:18        CLC                                          A:07 X:00 Y:10 S:F2 P:nvUBdizc 
+    $B8BC:69 01     ADC #$01                                     A:07 X:00 Y:10 S:F2 P:nvUBdizc 
+    $B8BE:9D 9B 02  STA $029B,X @ $029B = #$F8                   A:08 X:00 Y:10 S:F2 P:nvUBdizc 
+    $B8C1:BD BA 02  LDA $02BA,X @ $02BA = #$FF                   A:08 X:00 Y:10 S:F2 P:nvUBdizc 
+    $B8C4:49 FF     EOR #$FF                                     A:FF X:00 Y:10 S:F2 P:NvUBdizc 
+    $B8C6:69 00     ADC #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+    $B8C8:9D BA 02  STA $02BA,X @ $02BA = #$FF                   A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+    $B8CB:A9 00     LDA #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+    $B8CD:60        RTS (from $B8A1) --------------------------- A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
