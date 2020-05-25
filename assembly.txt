@@ -1,0 +1,19 @@
+BB86 : Add_Xspeed(A)
+    -- A register already have the acceleration
+
+    Adresses:
+        $029B : X speed
+        $02BA : X speed H
+
+    $B886:18        CLC                                          A:0F X:00 Y:1E S:F2 P:nvUBdizC 
+    $B887:7D 9B 02  ADC $029B,X @ $029B = #$00                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
+    $B88A:9D 9B 02  STA $029B,X @ $029B = #$00                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
+    $B88D:BD BA 02  LDA $02BA,X @ $02BA = #$03                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
+    $B890:69 00     ADC #$00                                     A:03 X:00 Y:1E S:F2 P:nvUBdizc 
+    $B892:C9 03     CMP #$03                                     A:03 X:00 Y:1E S:F2 P:nvUBdizc 
+    $B894:90 07     BCC $B89D                                    A:03 X:00 Y:1E S:F2 P:nvUBdiZC 
+    $B896:A9 00     LDA #$00                                     A:03 X:00 Y:1E S:F2 P:nvUBdiZC 
+    $B898:9D 9B 02  STA $029B,X @ $029B = #$0F                   A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
+    $B89B:A9 03     LDA #$03                                     A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
+    $B89D:9D BA 02  STA $02BA,X @ $02BA = #$03                   A:03 X:00 Y:1E S:F2 P:nvUBdizC 
+    $B8A0:60        RTS ---------------------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
