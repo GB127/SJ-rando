@@ -1,167 +1,63 @@
-8834 : reverse_Xdirection()
-    -- This will reverse X's direction.
-
-    -- $0336 : direction of X
-
-    -- Summary
-
-
-    $8834:D0 1F     BNE $8855                                    A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
-    $8836:A9 00     LDA #$00                                     A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
-    $8838:85 C4     STA $00C4 = #$01                             A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
-    $883A:BD 36 03  LDA $0336,X @ $0336 = #$00                   A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
-    $883D:49 01     EOR #$01                                     A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
-    $883F:9D 36 03  STA $0336,X @ $0336 = #$00                   A:01 X:00 Y:11 S:F4 P:nvUBdizC 
-    $8842:4C 55 88  JMP $8855                                    A:01 X:00 Y:11 S:F4 P:nvUBdizC 
-    $8855:60        RTS (from $87D2) --------------------------- A:01 X:00 Y:11 S:F4 P:nvUBdizC 
-
-889F : reverse_Ydirection()
+87D2 : function
     -- Notes
 
-    -- $0355 : Y direction
-
-    -- Summary
-
-    $889F:D0 24     BNE $88C5                                    A:00 X:00 Y:07 S:F6 P:nvubdiZc 
-    $88A1:AD 55 03  LDA $0355 = #$00                             A:00 X:00 Y:07 S:F6 P:nvubdiZc 
-    $88A4:49 01     EOR #$01                                     A:00 X:00 Y:07 S:F6 P:nvubdiZc 
-    $88A6:8D 55 03  STA $0355 = #$00                             A:01 X:00 Y:07 S:F6 P:nvubdizc 
-    $88A9:4C C5 88  JMP $88C5                                    A:01 X:00 Y:07 S:F6 P:nvubdizc 
-    $88C5:A6 66     LDX $0066 = #$00                             A:01 X:00 Y:07 S:F6 P:nvubdizc 
-    $88C7:F0 C0     BEQ $8889                                    A:01 X:00 Y:07 S:F6 P:nvubdiZc 
-    $8889:60        RTS (from $FFC8) --------------------------- A:01 X:00 Y:07 S:F6 P:nvubdiZc 
-
-
-BB86 : add_Xspeed(A)
-    -- A register already have the acceleration
-       Y register is not used in this function.
-       X is used by this function.
-            Probably to determine which speed to mess with.
-
-    Adresses:
-        $029B : X speed
-        $02BA : X speed H
-
-    $B886:18        CLC                                          A:0F X:00 Y:1E S:F2 P:nvUBdizC 
-    $B887:7D 9B 02  ADC $029B,X @ $029B = #$00                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
-    $B88A:9D 9B 02  STA $029B,X @ $029B = #$00                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
-    $B88D:BD BA 02  LDA $02BA,X @ $02BA = #$03                   A:0F X:00 Y:1E S:F2 P:nvUBdizc 
-    $B890:69 00     ADC #$00                                     A:03 X:00 Y:1E S:F2 P:nvUBdizc 
-    $B892:C9 03     CMP #$03                                     A:03 X:00 Y:1E S:F2 P:nvUBdizc 
-    $B894:90 07     BCC $B89D                                    A:03 X:00 Y:1E S:F2 P:nvUBdiZC 
-        -> If the speed <= 3 : skip setting the max speed
-    $B896:A9 00     LDA #$00                                     A:03 X:00 Y:1E S:F2 P:nvUBdiZC 
-    $B898:9D 9B 02  STA $029B,X @ $029B = #$0F                   A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
-    $B89B:A9 03     LDA #$03                                     A:00 X:00 Y:1E S:F2 P:nvUBdiZC 
-    $B89D:9D BA 02  STA $02BA,X @ $02BA = #$03                   A:03 X:00 Y:1E S:F2 P:nvUBdizC 
-    $B8A0:60        RTS (from BB86)----------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
-
-B8A1 : reduce_Xspeed(A):
-    --A register already have the acceleration
-      X also determine which speed to change.
-
-    --Addresses
-        $0064 : Tempo address for storing acceleration
-        $029B : X speed
-        $02BA : X speed H
-
-    --Summary
-
-    $B8A1:85 64     STA $0064 = #$02                             A:10 X:00 Y:10 S:F2 P:nvUBdizC 
-    $B8A3:BD 9B 02  LDA $029B,X @ $029B = #$08                   A:10 X:00 Y:10 S:F2 P:nvUBdizC 
-    $B8A6:38        SEC                                          A:08 X:00 Y:10 S:F2 P:nvUBdizC 
-    $B8A7:E5 64     SBC $0064 = #$10                             A:08 X:00 Y:10 S:F2 P:nvUBdizC 
-    $B8A9:9D 9B 02  STA $029B,X @ $029B = #$08                   A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8AC:BD BA 02  LDA $02BA,X @ $02BA = #$00                   A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8AF:E9 00     SBC #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
-    $B8B1:10 32     BPL $B8E5                                    A:FF X:00 Y:10 S:F2 P:NvUBdizc 
-        -> If the new value is positive : skip the reversing speed instructions
-        $B8E5:9D BA 02  STA $02BA,X @ $02BA = #$02                   A:02 X:00 Y:12 S:F2 P:nvUBdizC 
-        $B8E8:1D 9B 02  ORA $029B,X @ $029B = #$7F                   A:02 X:00 Y:12 S:F2 P:nvUBdizC 
-        $B8EB:60        RTS (from $B8A1) --------------------------- A:7F X:00 Y:12 S:F2 P:nvUBdizC 
-    $B8B3 reverse_Xspeed()
-
-B8B3 : reverse_Xspeed()
-    -- This is to change the current speed back to positive
-       X register is the speed concerned
-
     -- Addresses
-        $029B : X speed
-        $02BA : X speed H
+        $0355 : Y direction
+        $0374 : Rocket direction
+        $00C4 : ???
+        $00C5 : ???
+        $8866 : Determine if need to add or substract speed according to the direction of the pod!
+        $000C : ??
+        $0061 : Y acceleration
+        $0062 : X acceleration
+        $0336 : X direction
 
     -- Summary
 
-    $B8B3:9D BA 02  STA $02BA,X @ $02BA = #$00                   A:FF X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8B6:BD 9B 02  LDA $029B,X @ $029B = #$F8                   A:FF X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8B9:49 FF     EOR #$FF                                     A:F8 X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8BB:18        CLC                                          A:07 X:00 Y:10 S:F2 P:nvUBdizc 
-    $B8BC:69 01     ADC #$01                                     A:07 X:00 Y:10 S:F2 P:nvUBdizc 
-    $B8BE:9D 9B 02  STA $029B,X @ $029B = #$F8                   A:08 X:00 Y:10 S:F2 P:nvUBdizc 
-    $B8C1:BD BA 02  LDA $02BA,X @ $02BA = #$FF                   A:08 X:00 Y:10 S:F2 P:nvUBdizc 
-    $B8C4:49 FF     EOR #$FF                                     A:FF X:00 Y:10 S:F2 P:NvUBdizc 
-    $B8C6:69 00     ADC #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
-    $B8C8:9D BA 02  STA $02BA,X @ $02BA = #$FF                   A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
-    $B8CB:A9 00     LDA #$00                                     A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
-    $B8CD:60        RTS (from $B8A1) --------------------------- A:00 X:00 Y:10 S:F2 P:nvUBdiZc 
+    $87D2:BD 55 03  LDA $0355,X @ $0355 = #$00                   A:3B X:00 Y:00 S:F4 P:nvUBdiZC 
+    $87D5:29 01     AND #$01                                     A:00 X:00 Y:00 S:F4 P:nvUBdiZC 
+    $87D7:AC 74 03  LDY $0374 = #$1A                             A:00 X:00 Y:00 S:F4 P:nvUBdiZC 
+    $87DA:59 66 88  EOR $8866,Y @ $8880 = #$00                   A:00 X:00 Y:1A S:F4 P:nvUBdizC 
+    $87DD:F0 1E     BEQ $87FD                                    A:00 X:00 Y:1A S:F4 P:nvUBdiZC 
+        $87FD:A5 C5     LDA $00C5 = #$00                             A:00 X:00 Y:1A S:F4 P:nvUBdiZC 
+        $87FF:18        CLC                                          A:00 X:00 Y:1A S:F4 P:nvUBdiZC 
+        $8800:65 0C     ADC $000C = #$08                             A:00 X:00 Y:1A S:F4 P:nvUBdiZc 
+        $8802:85 C5     STA $00C5 = #$00                             A:08 X:00 Y:1A S:F4 P:nvUBdizc 
+        $8804:90 02     BCC $8808                                    A:08 X:00 Y:1A S:F4 P:nvUBdizc 
+            $8808:A5 61     LDA $0061 = #$06                             A:08 X:00 Y:1A S:F4 P:nvUBdizc 
+            $880A:20 EC B8  JSR $B8EC                                    A:06 X:00 Y:1A S:F4 P:nvUBdizc 
+                $B8EC : add_Yspeed(A)
+            $880D:A5 62     LDA $0062 = #$0E                             A:00 X:00 Y:1A S:F4 P:NvUBdizc 
+            $880F:F0 44     BEQ $8855                                    A:0E X:00 Y:1A S:F4 P:nvUBdizc 
+                -> Si on n'a pas d'accelération à faire pour X, on saute ça!
+                $8855:60        RTS (from $87D2) ------------------------------------------------------ 
 
-B8EC : add_Yspeed(A)
-    -- A register already have the acceleration
-
-    -- Addresses:
-        $02D9 : Y speed
-        $02F8 : Y speed H
-
-    -- Summary
-
-    $B8EC:18        CLC                                          A:02 X:00 Y:07 S:F4 P:nvubdizC 
-    $B8ED:7D D9 02  ADC $02D9,X @ $02D9 = #$00                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
-    $B8F0:9D D9 02  STA $02D9,X @ $02D9 = #$00                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
-    $B8F3:BD F8 02  LDA $02F8,X @ $02F8 = #$03                   A:02 X:00 Y:07 S:F4 P:nvubdizc 
-    $B8F6:69 00     ADC #$00                                     A:03 X:00 Y:07 S:F4 P:nvubdizc 
-    $B8F8:C9 03     CMP #$03                                     A:03 X:00 Y:07 S:F4 P:nvubdizc 
-    $B8FA:90 07     BCC $B903                                    A:03 X:00 Y:07 S:F4 P:nvubdiZC 
-        -> If lower or equal to 3 : skip setting the max speed
-        $B903:9D F8 02  STA $02F8,X @ $02F8 = #$03                   A:03 X:00 Y:07 S:F4 P:nvubdizC 
-        $B906:60        RTS (from $B8EC) --------------------------- A:03 X:00 Y:07 S:F4 P:nvubdizC 
-    $B8FC:A9 00     LDA #$00                                     A:03 X:00 Y:07 S:F4 P:nvubdiZC 
-    $B8FE:9D D9 02  STA $02D9,X @ $02D9 = #$02                   A:00 X:00 Y:07 S:F4 P:nvubdiZC 
-    $B901:A9 03     LDA #$03                                     A:00 X:00 Y:07 S:F4 P:nvubdiZC 
-    $B903:9D F8 02  STA $02F8,X @ $02F8 = #$03                   A:03 X:00 Y:07 S:F4 P:nvubdizC 
-    $B906:60        RTS (from $B8EC) --------------------------- A:03 X:00 Y:07 S:F4 P:nvubdizC 
-
-B907 : reduce_Yspeed(A)
-    -- A register already have the acceleration
-
-    -- Addresses
-        $02D9 : Y speed
-        $02F8 : Y speed H
-
-    -- Summary
-
-    $B907:85 64     STA $0064 = #$10                             A:10 X:00 Y:00 S:F2 P:nvUBdizC 
-    $B909:BD D9 02  LDA $02D9,X @ $02D9 = #$0B                   A:10 X:00 Y:00 S:F2 P:nvUBdizC 
-    $B90C:38        SEC                                          A:0B X:00 Y:00 S:F2 P:nvUBdizC 
-    $B90D:E5 64     SBC $0064 = #$10                             A:0B X:00 Y:00 S:F2 P:nvUBdizC 
-    $B90F:9D D9 02  STA $02D9,X @ $02D9 = #$0B                   A:FB X:00 Y:00 S:F2 P:NvUBdizc 
-    $B912:BD F8 02  LDA $02F8,X @ $02F8 = #$00                   A:FB X:00 Y:00 S:F2 P:NvUBdizc 
-    $B915:E9 00     SBC #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
-    $B917:10 32     BPL $B94B                                    A:FF X:00 Y:00 S:F2 P:NvUBdizc 
-        -> If speed is positive : no need to reverse the speed
-        $B94B:9D F8 02  STA $02F8,X @ $02F8 = #$01                   A:01 X:00 Y:07 S:F4 P:nvubdizC 
-        $B94E:1D D9 02  ORA $02D9,X @ $02D9 = #$64                   A:01 X:00 Y:07 S:F4 P:nvubdizC 
-        $B951:60        RTS (from $B907) --------------------------- A:65 X:00 Y:07 S:F4 P:nvubdizC 
-    $B919: reverse_Yspeed()
-
-B919 : reverse_Yspeed()
-    $B919:9D F8 02  STA $02F8,X @ $02F8 = #$00                   A:FF X:00 Y:00 S:F2 P:NvUBdizc 
-    $B91C:BD D9 02  LDA $02D9,X @ $02D9 = #$FB                   A:FF X:00 Y:00 S:F2 P:NvUBdizc 
-    $B91F:49 FF     EOR #$FF                                     A:FB X:00 Y:00 S:F2 P:NvUBdizc 
-    $B921:18        CLC                                          A:04 X:00 Y:00 S:F2 P:nvUBdizc 
-    $B922:69 01     ADC #$01                                     A:04 X:00 Y:00 S:F2 P:nvUBdizc 
-    $B924:9D D9 02  STA $02D9,X @ $02D9 = #$FB                   A:05 X:00 Y:00 S:F2 P:nvUBdizc 
-    $B927:BD F8 02  LDA $02F8,X @ $02F8 = #$FF                   A:05 X:00 Y:00 S:F2 P:nvUBdizc 
-    $B92A:49 FF     EOR #$FF                                     A:FF X:00 Y:00 S:F2 P:NvUBdizc 
-    $B92C:69 00     ADC #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
-    $B92E:9D F8 02  STA $02F8,X @ $02F8 = #$FF                   A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
-    $B931:A9 00     LDA #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
-    $B933:60        RTS (from $B907) --------------------------- A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+            $8811:AD 74 03  LDA $0374 = #$1A                             A:0E X:00 Y:1A S:F4 P:nvUBdizc 
+            $8814:38        SEC                                          A:1A X:00 Y:1A S:F4 P:nvUBdizc 
+            $8815:E9 08     SBC #$08                                     A:1A X:00 Y:1A S:F4 P:nvUBdizC 
+            $8817:29 1F     AND #$1F                                     A:12 X:00 Y:1A S:F4 P:nvUBdizC 
+            $8819:A8        TAY                                          A:12 X:00 Y:1A S:F4 P:nvUBdizC 
+            $881A:BD 36 03  LDA $0336,X @ $0336 = #$00                   A:12 X:00 Y:12 S:F4 P:nvUBdizC 
+            $881D:29 01     AND #$01                                     A:00 X:00 Y:12 S:F4 P:nvUBdiZC 
+            $881F:59 66 88  EOR $8866,Y @ $8878 = #$01                   A:00 X:00 Y:12 S:F4 P:nvUBdiZC 
+            $8822:F0 21     BEQ $8845                                    A:01 X:00 Y:12 S:F4 P:nvUBdizC 
+                $8845:A5 C4     LDA $00C4 = #$00                             A:00 X:00 Y:12 S:F4 P:nvUBdiZC 
+                $8847:18        CLC                                          A:00 X:00 Y:12 S:F4 P:nvUBdiZC 
+                $8848:65 0D     ADC $000D = #$00                             A:00 X:00 Y:12 S:F4 P:nvUBdiZc 
+                $884A:85 C4     STA $00C4 = #$00                             A:00 X:00 Y:12 S:F4 P:nvUBdiZc 
+                $884C:90 02     BCC $8850                                    A:00 X:00 Y:12 S:F4 P:nvUBdiZc 
+                    $8850:A5 62     LDA $0062 = #$0E                             A:00 X:00 Y:12 S:F4 P:nvUBdiZc 
+                    $8852:20 86 B8  JSR $B886                                    A:0E X:00 Y:12 S:F4 P:nvUBdizc 
+                        B886 : add_Xspeed(A)
+                    $8855:60        RTS (from $87D2) --------------------------- A:00 X:00 Y:12 S:F4 P:NvUBdizc 
+            $8824:A5 C4     LDA $00C4 = #$03                             A:01 X:00 Y:07 S:F4 P:nvUBdizC 
+            $8826:38        SEC                                          A:03 X:00 Y:07 S:F4 P:nvUBdizC 
+            $8827:E5 0D     SBC $000D = #$00                             A:03 X:00 Y:07 S:F4 P:nvUBdizC 
+            $8829:85 C4     STA $00C4 = #$03                             A:03 X:00 Y:07 S:F4 P:nvUBdizC 
+            $882B:B0 02     BCS $882F                                    A:03 X:00 Y:07 S:F4 P:nvUBdizC 
+                $882F:A5 62     LDA $0062 = #$03                             A:03 X:00 Y:07 S:F4 P:nvUBdizC 
+                $8831:20 A1 B8  JSR $B8A1                                    A:0E X:00 Y:12 S:F4 P:nvUBdizC 
+                    B8A1 : reduce_Xspeed(A)
+                $8834:D0 1F     BNE $8855                                    A:00 X:00 Y:11 S:F4 P:nvUBdiZC 
+                    $8855:60        RTS (from $87D2) --------------------------- A:00 X:00 Y:12 S:F4 P:NvUBdizc 
+                $8836 : reverse_Xdirection()
