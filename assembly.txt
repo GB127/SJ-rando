@@ -1,10 +1,3 @@
-XXXX : function
-    -- Notes
-
-    -- Addresses
-
-    -- Summary
-
 8834 : reverse_Xdirection()
     -- This will reverse X's direction.
 
@@ -46,7 +39,7 @@ BB86 : add_Xspeed(A)
     $B89D:9D BA 02  STA $02BA,X @ $02BA = #$03                   A:03 X:00 Y:1E S:F2 P:nvUBdizC 
     $B8A0:60        RTS (from BB86)----------------------------- A:03 X:00 Y:1E S:F2 P:nvUBdizC 
 
-B8A1 : remove_Xspeed(A):
+B8A1 : reduce_Xspeed(A):
     --A register already have the acceleration
       X also determine which speed to change.
 
@@ -118,3 +111,40 @@ B8EC : add_Yspeed(A)
     $B901:A9 03     LDA #$03                                     A:00 X:00 Y:07 S:F4 P:nvubdiZC 
     $B903:9D F8 02  STA $02F8,X @ $02F8 = #$03                   A:03 X:00 Y:07 S:F4 P:nvubdizC 
     $B906:60        RTS (from $B8EC) --------------------------- A:03 X:00 Y:07 S:F4 P:nvubdizC 
+
+B907 : reduce_Yspeed(A)
+    -- A register already have the acceleration
+
+    -- Addresses
+        $02D9 : Y speed
+        $02F8 : Y speed H
+
+    -- Summary
+
+    $B907:85 64     STA $0064 = #$10                             A:10 X:00 Y:00 S:F2 P:nvUBdizC 
+    $B909:BD D9 02  LDA $02D9,X @ $02D9 = #$0B                   A:10 X:00 Y:00 S:F2 P:nvUBdizC 
+    $B90C:38        SEC                                          A:0B X:00 Y:00 S:F2 P:nvUBdizC 
+    $B90D:E5 64     SBC $0064 = #$10                             A:0B X:00 Y:00 S:F2 P:nvUBdizC 
+    $B90F:9D D9 02  STA $02D9,X @ $02D9 = #$0B                   A:FB X:00 Y:00 S:F2 P:NvUBdizc 
+    $B912:BD F8 02  LDA $02F8,X @ $02F8 = #$00                   A:FB X:00 Y:00 S:F2 P:NvUBdizc 
+    $B915:E9 00     SBC #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+    $B917:10 32     BPL $B94B                                    A:FF X:00 Y:00 S:F2 P:NvUBdizc 
+        -> If speed is positive : no need to reverse the speed
+        $B94B:9D F8 02  STA $02F8,X @ $02F8 = #$01                   A:01 X:00 Y:07 S:F4 P:nvubdizC 
+        $B94E:1D D9 02  ORA $02D9,X @ $02D9 = #$64                   A:01 X:00 Y:07 S:F4 P:nvubdizC 
+        $B951:60        RTS (from $B907) --------------------------- A:65 X:00 Y:07 S:F4 P:nvubdizC 
+    $B919: reverse_Yspeed()
+
+B919 : reverse_Yspeed()
+    $B919:9D F8 02  STA $02F8,X @ $02F8 = #$00                   A:FF X:00 Y:00 S:F2 P:NvUBdizc 
+    $B91C:BD D9 02  LDA $02D9,X @ $02D9 = #$FB                   A:FF X:00 Y:00 S:F2 P:NvUBdizc 
+    $B91F:49 FF     EOR #$FF                                     A:FB X:00 Y:00 S:F2 P:NvUBdizc 
+    $B921:18        CLC                                          A:04 X:00 Y:00 S:F2 P:nvUBdizc 
+    $B922:69 01     ADC #$01                                     A:04 X:00 Y:00 S:F2 P:nvUBdizc 
+    $B924:9D D9 02  STA $02D9,X @ $02D9 = #$FB                   A:05 X:00 Y:00 S:F2 P:nvUBdizc 
+    $B927:BD F8 02  LDA $02F8,X @ $02F8 = #$FF                   A:05 X:00 Y:00 S:F2 P:nvUBdizc 
+    $B92A:49 FF     EOR #$FF                                     A:FF X:00 Y:00 S:F2 P:NvUBdizc 
+    $B92C:69 00     ADC #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+    $B92E:9D F8 02  STA $02F8,X @ $02F8 = #$FF                   A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+    $B931:A9 00     LDA #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+    $B933:60        RTS (from $B907) --------------------------- A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
