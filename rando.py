@@ -3,7 +3,7 @@ from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadacc
 import random
 from qol import shift_gravity
 
-def paletterandomizer(game, seed):
+def palette_randomizer(game, seed):
     random.seed(seed)
     colors = nescolors()
     #Create the pool of colors

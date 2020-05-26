@@ -30,7 +30,7 @@ if __name__ == "__main__":
         originaldata = original.read()
         randogame = ROM(originaldata)
         if options.Rpalette:
-            paletterandomizer(randogame, seed)
+            palette_randomizer(randogame, seed)
         if options.Rastro:
             astro_randomizer(randogame,seed)
         if options.Rgrav:
