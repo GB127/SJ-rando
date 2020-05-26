@@ -53,7 +53,6 @@ def astro_randomizer(game,seed):
 
 def gravity_randomizer(game,seed, test):
     shift_gravity(game, random.choice([True, False]))
-
     gravity = test# random.randint(0,255)  # FIXME
     game[0x01040D] = 169  # This is the opperation
     game[0x01040E] = gravity # This is the operand. Normally it's F8.
