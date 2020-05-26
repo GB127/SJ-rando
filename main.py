@@ -7,7 +7,7 @@ def getoptions():
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="")
     parser.add_argument('-p', "--palette", action="store_true",
-                    help='Randomize the colors', dest="Rpalette")
+                        help='Randomize the colors', dest="Rpalette")
     parser.add_argument("-a", "--astro", action="store_true", 
                         help="Randomize the Astronaut's properties", dest="Rastro")
     parser.add_argument("-g", "--gravity", action="store_true",
