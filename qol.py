@@ -20,19 +20,26 @@ def disable_fuelusage(game):
     game[0x386B7] = 0  # Normal
     game[0x386AF] = 0
 
-
-
-
-
-
-
 def disable_springeffect(game):
     game[0x48A1] = 0xEA
     game[0x48A2] = 0xEA
-    game[0x48A3] = 0xEA  # NOP au lieu de SEC (38 vanilla)
+    game[0x48A3] = 0xEA
     game[0x48A4] = 0xEA
     game[0x48A5] = 0xEA
     game[0x48A6] = 0xEA
     game[0x48A7] = 0xEA
     game[0x48A8] = 0xEA
     game[0x48A9] = 0xEA
+
+def shift_gravity(game,action=True):
+    if action:
+        disable_springeffect(game)
+        game[0x388A6] = 0x36
+        game[0x388BE] = 0x86
+        game[0x388BF] = 0xB8  
+        game[0x388AD] = 0xA1
+        game[0x388AE] = 0xB8
+        game[0x388b2] = 0x36
+        game[0x388B7] = 0x36
+    else:
+        pass
