@@ -18,7 +18,7 @@ def getoptions():
                         help="Randomize things related to the fuel", dest="Rfuel")
     parser.add_argument("-w", "--weapon", action="store_true",
                         help="Randomize the weapons' properties", dest="Rweapon")
-    parser.add_argument("--mode", choices=[None, "reckless"],
+    parser.add_argument("--mode", choices=[None, "reckless", "improved"],
                         default=None, dest="mode", help="Game mode")
     return parser.parse_args()
 
@@ -47,6 +47,8 @@ if __name__ == "__main__":
                 disable_shield_fuelusage(randogame)
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
+            if options.mode == "improved":
+                disable_springeffect(randogame)
         with open("testing.nes", "wb") as newrom:
             newrom.write(randogame.data)
 
