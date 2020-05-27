@@ -144,6 +144,26 @@ class infos:
                                 hex(0x03c3c7) : "Warhead accel def = 14",  # DOne
                                 hex(0x03c3c8) : "Warhead accel def = 20",  # DONE
                                 hex(0x03c3c9) : "Warhead accel def = 14",  # DONe
+
+                        # Items:
+                            hex(0x37F) : "Item sprite display?",
+                            hex(0x3BD) : "Item ID!"
+                                # 3 : shield
+                                # 4 : Booster
+                                # 5 : Pts
+                                # 6 : Map
+                                # 9 : Points item
+                                # A : Fuel
+                                # C : Points item
+                                # F : Crystal
+                                # 10 : Crystal
+                                # 13 : Golden part!
+
+
+
+
+
+
                     }
     def check(self,adress):
         if isinstance(adress,str):
