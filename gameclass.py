@@ -17,35 +17,39 @@ class infos:
             # fuel
             # points
         self.infos = {
-                        hex(0x00454A) : "Astronaut Yacceleration",
-                        hex(0x004559) : "Astronaut Yacceleration",
-                        hex(0x99)    : "Current Wall invicibility timer",  # INFO
-                        hex(0x011011): "Wall Invicibility timer Duration, default value = 30",  # Done
-                        hex(0xC6)    : "Rocket Current fuel (2B)",  # INFO
-                        hex(0x4C)    : "Camera Xpos",  # INFO
-                        hex(0x007202) : "Starting fuel and weapon, Default value = E0(224)",  # DONE
-                        hex(0x4E)    : "Camera Ypos",  # INFO
-                        hex(0x5D)    : "Level timer",  # INFO
-                        hex(0x0200)  : "Rocket Xpos",  # INFO
-                        hex(0x021F)  : "Rocket Xpos * 256",  # INFO
-                        hex(0x0197)  : "Rocket subXpos",  # INFO
-                        hex(0x029B)  : "Rocket Xspeed",  # INFO
-                        hex(0x02BA)  : "Rocket Xspeed *256",  # INFO
-                        hex(0x025D) : "Rocket Ypos",  # INFO
-                        hex(0x027C) : "Rocket Ypos*256",  # INFO
-                        hex(0x023E) : "Rockey subYpos",  # INFO
-                        hex(0x02D9) : "Rocket Yspeed",  # INFO
-                        hex(0x02F8) : "Rocket Yspeed * 256",  # INFO
-                        hex(0x03B8A3) : "Rocket Xspeed * 256 max compare",  # INFO
-                        hex(0x03B8AC) : "Rocket Xspeed * 256 max set if max",  # INFO
-                        hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
-                        hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
-                        hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",  # Done
-                        hex(0x00448F) : "Astronaut Xspeed max",  # DONE
-                        hex(0x003a25) : "Astronaut Xspeed max2",  # DONE
-                        hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
-                        hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
-                        hex(0x3a8f) : "Astronaut fastfall Yspeed max",  # DONE
+                        # Infos
+                            hex(0x99)    : "Current Wall invicibility timer",  # INFO
+                            hex(0xC6)    : "Rocket Current fuel (2B)",  # INFO
+                            hex(0x4C)    : "Camera Xpos",  # INFO
+                            hex(0x4E)    : "Camera Ypos",  # INFO
+                            hex(0x5D)    : "Level timer",  # INFO
+                            hex(0x0200)  : "Rocket Xpos",  # INFO
+                            hex(0x021F)  : "Rocket Xpos * 256",  # INFO
+                            hex(0x0197)  : "Rocket subXpos",  # INFO
+                            hex(0x029B)  : "Rocket Xspeed",  # INFO
+                            hex(0x02BA)  : "Rocket Xspeed *256",  # INFO
+                            hex(0x025D) : "Rocket Ypos",  # INFO
+                            hex(0x027C) : "Rocket Ypos*256",  # INFO
+                            hex(0x023E) : "Rockey subYpos",  # INFO
+                            hex(0x02D9) : "Rocket Yspeed",  # INFO
+                            hex(0x02F8) : "Rocket Yspeed * 256",  # INFO
+
+
+
+                        # To verify and test
+
+                            hex(0x03B8A3) : "Rocket Xspeed * 256 max compare",
+                            hex(0x03B8AC) : "Rocket Xspeed * 256 max set if max",
+                            hex(0x00454A) : "Astronaut Yacceleration",
+                            hex(0x004559) : "Astronaut Yacceleration",
+                            hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
+                            hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
+                            hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",  # Done
+                            hex(0x00448F) : "Astronaut Xspeed max",  # DONE
+                            hex(0x003a25) : "Astronaut Xspeed max2",  # DONE
+                            hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
+                            hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
+                            hex(0x3a8f) : "Astronaut fastfall Yspeed max",  # DONE
 
                         # Fuel:
                             hex(0x8589) :  "Fuel tank refill amount",  # DONE
@@ -65,6 +69,8 @@ class infos:
                             hex(0x11036) : "Wall Collision substract fuel opcode",
                             hex(0x11037) : "Wall Collision substract fuel opcode",
 
+                            hex(0x011011): "Wall Invicibility timer Duration, default value = 30",  # Done
+                            hex(0x007202) : "Starting fuel and weapon, Default value = E0(224)",  # DONE
 
 
                         # Palettes:
