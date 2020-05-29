@@ -43,8 +43,6 @@ if __name__ == "__main__":
             weapon_randomizer(randogame,seed)
         if options.mode:
             if options.mode == "reckless":
-                disable_fuelusage(randogame)
-                disable_shield_fuelusage(randogame)
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
             if options.mode == "improved":
