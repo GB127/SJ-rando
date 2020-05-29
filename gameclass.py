@@ -154,52 +154,61 @@ class infos:
                         # Items:
                             hex(0x37F) : "Item sprite display?",
                             hex(0x3BD) : "Item ID! or pointer....",
+                                # 1 : Extra life
+                                # 2 : Crash (Nice visual crash)
                                 # 3 : shield
                                 # 4 : Booster
                                 # 5 : Pts
-                                # 6 : Map
+                                # 6 : Map¸
+                                # 7 : Garbled sprite?
+                                # 8 : Garbled
                                 # 9 : Points item
                                 # A : Fuel
-                                # C : Points item
+                                # B : Fuel Tank
+                                # C : Points item (Radioactive item)
                                 # F : Crystal
                                 # 10 : Crystal
+                                # 11 : Warp for item transported too
                                 # 12 : Warp for golden ship
                                 # 13 : Golden part!
+                                # 18 : Fuel (I'm sure there is a range for this)
+                                # 1A : Warp for planet 2 middle section
+                                # 1B : Minigame Warp
 
                                 # Planet 1:
-                                    hex(0x11a4a) : "Item 1",  # Mother ship I assume...?
-                                    hex(0x11a4F) : "Item 2",  # Warp right of mother ship
-                                    hex(0x11a54) : "Item 3",  # Shield (Down left of mother ship)
-                                    hex(0x11a59) : "Item 4",  # Crystal of planet 1
-                                    hex(0x11a5E) : "Item 5",  # Fuel of planet 1
-                                    hex(0x11a63) : "Item 6",  # Warp for golden ship
+                                    hex(0x11a4a) : "Fuel bar planet 1 (Default = 0x18)",  # Do not change
+                                    hex(0x11a4F) : "Minigame warp planet 1 left mother ship",  # Warp left of mother ship
+                                    hex(0x11a54) : "Shield planet 1",  # Shield (Down left of mother ship)
+                                    hex(0x11a59) : "Crystal planet 1",  # Crystal of planet 1
+                                    hex(0x11a5E) : "Fuel planet 1",  # Fuel of planet 1
+                                    hex(0x11a63) : "Warp for golden ship planet 1",  # Warp for golden ship
 
 
                                 # Planet 2 :
-                                        hex(0x11E41) : "Item",
-                                        hex(0x11E46) : "Item",
-                                        hex(0x11E4B) : "Item",
-                                        hex(0x11E50) : "Item",
-                                        hex(0x11E55) : "Item",
-                                        hex(0x11E5A) : "Item",
-                                        hex(0x11E5F) : "Item",
-                                        hex(0x11E64) : "Item",
-                                        hex(0x11E69) : "Item",
-                                        hex(0x11E6E) : "Item",
-                                        hex(0x11E73) : "Item",
-                                        hex(0x11E78) : "Item",
-                                        hex(0x11E7D) : "Item",
-                                        hex(0x11E82) : "Item",
-                                        hex(0x11E87) : "Item",
-                                        hex(0x11E8C) : "Item",
-                                        hex(0x11E91) : "Item",
-                                        hex(0x11E96) : "Item",
-                                        hex(0x11E9B) : "Item",
-                                        hex(0x11EA0) : "Item",
-                                        hex(0x11EA5) : "Item",
-                                        hex(0x11EAA) : "Item",
-                                        hex(0x11EAF) : "Item",
-                                        hex(0x11EB4) : "Item",
+                                        hex(0x11E41) : "Planet 2 (Default : 0x16)",  # Fuel sprite
+                                        hex(0x11E46) : "Planet 2 (Default : 0x1A",  # It's the warp to the center
+                                        hex(0x11E4B) : "Planet 2 (Default : 0x12",  # It's the warp to the golden ship
+                                        hex(0x11E50) : "Planet 2 (Default : 0x4",  # Booster
+                                        hex(0x11E55) : "Planet 2 (Default : 0x6",  # Map
+                                        hex(0x11E5A) : "Planet 2 (Default : 0xA",  # Fuel on the right of mother ship
+                                        hex(0x11E5F) : "Planet 2 (Default : 0xF",  # Crystal on the left portion
+                                        hex(0x11E64) : "Planet 2 (Default : 0xA",  # Bottom fuel
+                                        hex(0x11E69) : "Planet 2 (Default : 0x9",  # Middle section bottom points
+                                        hex(0x11E6E) : "Planet 2 (Default : 0xF",  # Middle section crystal
+                                        hex(0x11E73) : "Planet 2 (Default : 0xA",  # Fuel on the left of mother ship
+                                        hex(0x11E78) : "Planet 2 (Default : 0xC",  # Middle section radioactive item (Upper left section)
+                                        hex(0x11E7D) : "Planet 2 (Default : 0x9",  # Points on the far right of mother ship
+                                        hex(0x11E82) : "Planet 2 (Default : 0xA",  # Fuel left tunnel
+                                        hex(0x11E87) : "Planet 2 (Default : 0x11", # Astro warp left tunnel
+                                        hex(0x11E8C) : "Planet 2 (Default : 0x9", # Middle section points item upper section
+                                        hex(0x11E91) : "Planet 2 (Default : 0xB",  # Fuel tank bottom section
+                                        hex(0x11E96) : "Planet 2 (Default : 0x11",  # Middle section astro warp
+                                        hex(0x11E9B) : "Planet 2 (Default : 0x11",  # Astro warp right tunnel
+                                        hex(0x11EA0) : "Planet 2 (Default : 0xB",  # Unused item?
+                                        hex(0x11EA5) : "Planet 2 (Default : 0x11",  # Unused item?
+                                        hex(0x11EAA) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                        hex(0x11EAF) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                        hex(0x11EB4) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
 
                                 # Planet 3:
                                     hex(0x11093) : "Item",
@@ -261,7 +270,22 @@ class infos:
                     print(self.check(i))
         print("-----------END OF ADRESSES--------------------")
 
-
+planetitems ={
+    "1" : [0x18,0x1B, 0x03, 0x10, 0xA,0x12],
+    "2" : [0x1A, 0x12, 0x04, 0x06, 0x0B, 0x06,0x0A, 0xF, 0xA, 0x09, 0xF,0xA, 0xC, 0x9, 0xA,0x11, 0x9, 0xB, 0x11, 0x11, 0x1, 0x1, 0x1],
+    "3" : [],
+    "4" : [],
+    "5" : [],
+    "6" : [],
+    "7" : [],
+    "8" : [],
+    "9" : [],
+    "10" : [],
+    "11" : [],
+    "12" : [],
+    "13" : [],
+    "14" : []
+}
 class ROM:
     def __init__(self,data):
         """
