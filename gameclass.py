@@ -45,7 +45,7 @@ class infos:
                             hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
                             hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
                             hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",  # Done
-                            hex(0x00448F) : "Astronaut Xspeed max",  # DONE
+                            hex(0x00448F) : "Astronaut Xspeed max",  # DONE  FIXME
                             hex(0x003a25) : "Astronaut Xspeed max2",  # DONE
                             hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
                             hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
@@ -153,7 +153,7 @@ class infos:
 
                         # Items:
                             hex(0x37F) : "Item sprite display?",
-                            hex(0x3BD) : "Item ID!"
+                            hex(0x3BD) : "Item ID! or pointer....",
                                 # 3 : shield
                                 # 4 : Booster
                                 # 5 : Pts
@@ -163,10 +163,86 @@ class infos:
                                 # C : Points item
                                 # F : Crystal
                                 # 10 : Crystal
+                                # 12 : Warp for golden ship
                                 # 13 : Golden part!
 
+                                # Planet 1:
+                                    hex(0x11a4a) : "Item 1",  # Mother ship I assume...?
+                                    hex(0x11a4F) : "Item 2",  # Warp right of mother ship
+                                    hex(0x11a54) : "Item 3",  # Shield (Down left of mother ship)
+                                    hex(0x11a59) : "Item 4",  # Crystal of planet 1
+                                    hex(0x11a5E) : "Item 5",  # Fuel of planet 1
+                                    hex(0x11a63) : "Item 6",  # Warp for golden ship
 
 
+                                # Planet 2 :
+                                        hex(0x11E41) : "Item",
+                                        hex(0x11E46) : "Item",
+                                        hex(0x11E4B) : "Item",
+                                        hex(0x11E50) : "Item",
+                                        hex(0x11E55) : "Item",
+                                        hex(0x11E5A) : "Item",
+                                        hex(0x11E5F) : "Item",
+                                        hex(0x11E64) : "Item",
+                                        hex(0x11E69) : "Item",
+                                        hex(0x11E6E) : "Item",
+                                        hex(0x11E73) : "Item",
+                                        hex(0x11E78) : "Item",
+                                        hex(0x11E7D) : "Item",
+                                        hex(0x11E82) : "Item",
+                                        hex(0x11E87) : "Item",
+                                        hex(0x11E8C) : "Item",
+                                        hex(0x11E91) : "Item",
+                                        hex(0x11E96) : "Item",
+                                        hex(0x11E9B) : "Item",
+                                        hex(0x11EA0) : "Item",
+                                        hex(0x11EA5) : "Item",
+                                        hex(0x11EAA) : "Item",
+                                        hex(0x11EAF) : "Item",
+                                        hex(0x11EB4) : "Item",
+
+                                # Planet 3:
+                                    hex(0x11093) : "Item",
+                                    hex(0x11098) : "Item",
+                                    hex(0x1109D) : "Item",
+                                    hex(0x110A2) : "Item",
+                                    hex(0x110A7) : "Item",
+                                    hex(0x110AC) : "Item",
+                                    hex(0x110B1) : "Item",
+                                    hex(0x110B6) : "Item",
+                                    hex(0x110BB) : "Item",
+                                    hex(0x110C0) : "Item",
+                                    hex(0x110C5) : "Item",
+                                    hex(0x110CA) : "Item",
+                                    hex(0x110CF) : "Item",
+                                    hex(0x110D4) : "Item",
+                                    hex(0x110D9) : "Item",
+                                    hex(0x110DE) : "Item",
+                                    hex(0x110F3) : "Item",
+
+                                # Planet 4:
+                                    hex(0x11a68) : "Item",
+                                    hex(0x11a6D) : "Item",
+                                    hex(0x11a72) : "Item",
+                                    hex(0x11a68) : "Item",
+                                    hex(0x11a77) : "Item",
+                                    hex(0x11a7c) : "Item",
+                                    hex(0x11a81) : "Item",
+                                    hex(0x11a86) : "Item",
+                                    hex(0x11a8B) : "Item",
+                                    hex(0x11a90) : "Item",
+                                    hex(0x11a95) : "Item",
+                                    hex(0x11a9A) : "Item",
+                                    hex(0x11a9F) : "Item",
+                                    hex(0x11aA4) : "Item",
+                                    hex(0x11aA9) : "Item",
+                                    hex(0x11aAE) : "Item",
+                                    hex(0x11aB3) : "Item",
+                                    hex(0x11aB8) : "Item",
+                                    hex(0x11aBD) : "Item",
+                                    hex(0x11aC2) : "Item",
+                                    hex(0x11aC7) : "Item",
+                                    hex(0x11aCC) : "Item",
 
 
 
@@ -199,3 +275,7 @@ class ROM:
         return self.data[offset]
     def __setitem__(self,offset, value):
         self.data[offset] = value
+        
+    def setmulti(self,offset1,offset2,value):
+        for i in range(offset1, offset2+1):
+            self.data[i] = value
