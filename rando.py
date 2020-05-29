@@ -43,14 +43,13 @@ def astro_randomizer(game,seed):
         # And the fast fall is distinct too.
         # So you could have a lower free fall max speed 
         # with this randomizer. But never higher.
-    game[0x448f] = random.randint(3,8)
-    game[0x3a25] = game[0x448f]  # X speed
+    game[0x448f] = random.randint(3,8)  # I'll remove this if the testing case still works
+    game[0x3a25] = game[0x448f]  # X speed  can't be lower than 5 or it will mess with the last level
     game[0x3a2E] = game[0x448f]  # X speed
 
     game[0x3a8f] = 10#random.randint(0,8)  # maxspeed Y up
     game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
 
-    #Looks like there is a second check?
 
 
 def gravity_randomizer(game,seed, test):
@@ -159,7 +158,7 @@ def weapon_randomizer(game, seed):
     game[0x3ED7] = random.randint(1,255)
 
     # Time Bomb
-    game[0x4EBE] = 1 #random.randint(1,255)  # Time bomb
+    game[0x4EBE] = random.randint(1,255)  # Time bomb
 
 
     # Star Bullet
@@ -170,7 +169,7 @@ def weapon_randomizer(game, seed):
         # The prices are split though.
     game[0x4EBA] = random.randint(1,255)  # Homing Miss
     game[0x4EBF] = random.randint(1,255)  # Multi Warhead
-    game[0x004dc1] = 30 #random.randint(1,255)  # Timer
+    game[0x004dc1] = random.randint(1,255)  # Timer
 
     # Randomize the acceleration (So their behaviour aren't always the same :o) )
     distri = getwarheadaccel()
