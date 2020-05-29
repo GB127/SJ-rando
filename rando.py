@@ -1,5 +1,5 @@
 from gameclass import ROM, infos
-from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
+from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, planetitem_shuffler
 import random
 from qol import shift_gravity
 
@@ -22,6 +22,18 @@ def palette_randomizer(game, seed):
 
     game[0x0075ad] = random.choice(colors) # C'est le milieu
     game[0x0075aE] = random.choice(colors)  # C'est l'autre
+
+def item_randomizer(game,seed):
+    random.seed(seed)
+
+    # Planet 1:
+    p1 = planetitem_shuffler("1")
+    game[0x11a4F] = p1[0]  # minigame
+    game[0x11a54] = p1[1]  # this is the shield
+    game[0x11a59] = p1[2]  # Crystal of planet 1
+    game[0x11a5E] = p1[3]  # Fuel of planet 1
+    game[0x11a63] = p1[4]  # Warp for golden 
+
 
 
 
