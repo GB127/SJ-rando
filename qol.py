@@ -31,15 +31,3 @@ def disable_springeffect(game):
     game[0x48A8] = 0xEA
     game[0x48A9] = 0xEA
 
-def shift_gravity(game,action=True):
-    if action:
-        disable_springeffect(game)
-        game[0x388A6] = 0x36
-        game[0x388BE] = 0x86
-        game[0x388BF] = 0xB8  
-        game[0x388AD] = 0xA1
-        game[0x388AE] = 0xB8
-        game[0x388b2] = 0x36
-        game[0x388B7] = 0x36
-    else:
-        pass
