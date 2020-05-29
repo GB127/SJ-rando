@@ -1,7 +1,6 @@
 from gameclass import ROM, infos
 from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, planetitem_shuffler
 import random
-from qol import shift_gravity
 
 def palette_randomizer(game, seed):
     random.seed(seed)
@@ -60,6 +59,28 @@ def item_randomizer(game,seed):
     game[0x11E96] = p2["5"][4]
 
 
+    # Planete 4:
+    p4 = planetitem_shuffler("2")
+    game[0x11a6D] = p4["main"][0]
+    game[0x11a72] = p4["main"][1]
+    game[0x11a77] = p4["main"][2]
+    game[0x11a7c] = p4["main"][3]
+    game[0x11a81] = p4["main"][4]
+    game[0x11a86] = p4["main"][5]
+    game[0x11a8B] = p4["main"][6]
+    game[0x11a90] = p4["main"][7]
+    game[0x11a95] = p4["main"][8]
+    game[0x11a9A] = p4["main"][9]
+    game[0x11a9F] = p4["main"][10]
+    game[0x11aA4] = p4["main"][11]
+    game[0x11aA9] = p4["main"][12]
+    game[0x11aAE] = p4["main"][13]
+    game[0x11aB3] = p4["main"][14]
+    game[0x11aB8] = p4["main"][15]
+    game[0x11aBD] = p4["main"][16]
+    game[0x11aC2] = p4["main"][17]
+    game[0x11aC7] = p4["main"][18]
+    game[0x11aCC] = p4["main"][19]
 
 
 
