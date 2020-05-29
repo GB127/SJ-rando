@@ -11,11 +11,10 @@ def planetitem_shuffler(planet,*groups):
             for _ in range(i):
                 planetitems[planet].pop()
         dicto.update({"main" : planetitems[planet]})
-        return dicto
-
     else:
         random.shuffle(planetitems[planet])
-        return {"main" : planetitems[planet]}
+        dicto.update(planetitems[planet])
+    return dicto
 
 def nescolors():
     liste = list(range(0x1, 0x0D))
