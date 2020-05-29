@@ -5,17 +5,18 @@ from gameclass import planetitems
 def planetitem_shuffler(planet,*groups):
     dicto = {}
     if len(groups) != 0:
-        for _ in range(len(groups)):
-            planetitems[planet].pop(planetitems[planet].index(0x11))  # On enlève un warp qui sera réintroduit dans le groupe
         random.shuffle(planetitems[planet])
+        for _ in range(len(groups)):
+            planetitems[planet].pop(planetitems[planet].index(0x11))
         for i in groups:
             dicto.update({str(i) : planetitems[planet][-(i-1):] + [0x11]})
-            for _ in range(i):
+            for _ in range(i-1):
                 planetitems[planet].pop()
-        dicto.update({"main" : planetitems[planet]})
+            dicto.update({"main" : planetitems[planet]})
     else:
-        random.shuffle(planetitems[planet])
-        dicto.update(planetitems[planet])
+        dicto.update({"main" : planetitems[planet]})
+    for x in dicto.keys():
+        random.shuffle(dicto[x])
     return dicto
 
 def nescolors():
