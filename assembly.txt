@@ -161,7 +161,6 @@ $C87F : springeffect()
         01:C897:0A        ASL
         01:C898:85 0C     STA $000C = #$00
 
-
 8836 : reverse_Xdirection(A)
     -- This will reverse X's direction.
         A will already have the info on if you need to switch direction.
@@ -203,7 +202,6 @@ $C87F : springeffect()
     $87F5:BD 55 03  LDA $0355,X @ $0355 = #$00                   A:00 X:00 Y:09 S:F4 P:nvUBdiZC 
     $87F8:49 01     EOR #$01                                     A:00 X:00 Y:09 S:F4 P:nvUBdiZC 
     $87FA:9D 55 03  STA $0355,X @ $0355 = #$00                   A:01 X:00 Y:09 S:F4 P:nvUBdizC 
-
 
 B886 : add_Xspeed(A)
     -- A register already have the acceleration
