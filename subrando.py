@@ -1,4 +1,21 @@
 import random
+from gameclass import planetitems
+
+
+def planetitem_shuffler(planet,*groups):
+    dicto = {}
+    if len(groups) != 0:
+        random.shuffle(planetitems[planet])
+        for i in groups:
+            dicto.update({str(i) : planetitems[planet][-i:]})
+            for _ in range(i):
+                planetitems[planet].pop()
+        dicto.update({"main" : planetitems[planet]})
+        return dicto
+
+    else:
+        random.shuffle(planetitems[planet])
+        return {"main" : planetitems[planet]}
 
 def nescolors():
     liste = list(range(0x1, 0x0D))
@@ -34,23 +51,3 @@ def getwarheadaccel():
     return randoliste
 
 
-planetitems ={
-    "1" : [0x18,0x1B, 0x03, 0x10, 0xA,0x12],
-    "2" : [0x16, 0x1A, 0x12, 0x04, 0x06, 0x0B, 0x06,0x0A, 0xF, 0xA, 0x09, 0xF,0xA, 0xC, 0x9, 0xA,0x11, 0x9, 0xB, 0x11, 0x11, 0xB, 0x11, 0x1, 0x1, 0x1],
-    "3" : [],
-    "4" : [],
-    "5" : [],
-    "6" : [],
-    "7" : [],
-    "8" : [],
-    "9" : [],
-    "10" : [],
-    "11" : [],
-    "12" : [],
-    "13" : [],
-    "14" : []
-
-
-
-
-}
