@@ -25,8 +25,9 @@ def astro_randomizer(game,seed):
     game[0x3a2E] = game[0x3a25]  # X speed
         # X speed  can't be lower than 5 or it will mess with the last level
 
-    game[0x3a8f] = 10#random.randint(0,8)  # maxspeed Y up
-    game[0x3a98] = game[0x3a8f]  # Fastfall maxspeed Y
+    game[0x3a8f] = 8#random.randint(0,8)  # maxspeed Y up
+        #10 is too fast
+    game[0x3a98] = game[0x3a8f]
 
 
 def fuel_randomizer(game, seed):
