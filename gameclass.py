@@ -272,6 +272,16 @@ class infos:
                                     hex(0x011dbf) : "Item",
                                 
                                 # Planet 11:
+                                    hex(0x11F2C) : "Item",
+                                    # ...
+                                    hex(0x11f9f) : "Item",
+
+                                # Planet 12:
+                                    hex(0x11B4E) : "Item",
+                                    # ...
+                                    hex(0x11bc6) : "Item",
+
+                                # Planet 13:
 
                     }
     def check(self,adress):
