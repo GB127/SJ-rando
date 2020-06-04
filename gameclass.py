@@ -222,17 +222,20 @@ class infos:
                                     hex(0x11CA2) : "Default value : 0xF",
                                     hex(0x11CA7) : "Default value : 0xA",
                                     hex(0x11CAC) : "Default value : 0xA",
+
                                     hex(0x11CB1) : "Default value : 0x10",
                                     hex(0x11CB6) : "Default value : 0xA",
                                     hex(0x11CBB) : "Default value : 0x5",
                                     hex(0x11CC0) : "Default value : 0x9",
                                     hex(0x11CC5) : "Default value : 0xC",
-                                    hex(0x11CCA) : "Item",
-                                    hex(0x11CCF) : "Item",
-                                    hex(0x11CD4) : "Item",
-                                    hex(0x11CD9) : "Item",
-                                    hex(0x11CDE) : "Item",
-                                    hex(0x11CF3) : "Item",
+                                    
+                                    hex(0x11CCA) : "Default value : 0x9",
+                                    hex(0x11CCF) : "Default value : 0x11",
+                                    hex(0x11CD4) : "Default value : 0xB",
+                                    hex(0x11CD9) : "Default value : 0x11",
+                                    hex(0x11CDE) : "Default value : 0x1",
+                                    
+                                    hex(0x11CE3) : "Default value : 0x1",
 
                                 # Planet 4:
                                     hex(0x11a68) : "Mother ship fuel sprite (Default 0x16)",
@@ -257,7 +260,19 @@ class infos:
                                     hex(0x11aC7) : "Default value : 0x1",
                                     hex(0x11aCC) : "Default value : 0x1",
 
+                                # Planet 5
+                                    hex(0x11c2f) : "Item",
+                                    # Bonds de 5
+                                    hex(0x11c8E) : "Item",
 
+
+                                # Planet 6:
+                                    hex(0x11dc4) : "Item",
+                                    # Bonds de 5
+                                    hex(0x11e3C) : "Item",
+
+                                # Planet 7:
+                                
 
                     }
     def check(self,adress):
@@ -281,11 +296,14 @@ planetitems ={
            0xC , 0x9 , 0xA , 0x11, 0x9 ,
            0xB , 0x11, 0x11, 0x1 , 0x1 ,
            0x1 ],
-    "3" : [0x12, 0xA , 0x10, 0xA , 0xA ,
+    "4" : [0x12, 0xA , 0x10, 0xA , 0xA ,
            0xF , 0x9 , 0xC , 0x5 , 0x5 ,
            0xB , 0xB , 0x9 , 0xB , 0x11,
            0x11, 0x11, 0x1 , 0x1 , 0x1],
-    "4" : [],
+    "3" : [0x12, 0xA , 0xF , 0xA , 0xA ,
+           0x10, 0xA , 0x5 , 0x9 , 0xC ,
+           0x9 , 0x11, 0xB , 0x11, 0x1 ,
+           0x1],
     "5" : [],
     "6" : [],
     "7" : [],
