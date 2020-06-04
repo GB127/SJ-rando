@@ -3,21 +3,28 @@
 This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship.
 
 Features :
-    -> Palette Randomizer
-        -- Rocket palettes
+    -> Palette randomizer
+        -- Rocket's palettes
         -- Bars
         -- Score
-        -- Title screen (only the dots currently)
-    -> Engine Randomizer
-        -- Rocket max speed
-        -- Astronaut max speed
-        -- Astronaut max fastfall speed
-        -- Rocket acceleration (with or without thruster)
-    -> Management Randomizer
-        -- Fuel consumption (With or without thruster)
-        -- Initial fuel
-        -- Fuel tank refill
-        -- Invicibility timer after a Wall hit
+        -- Title screen (Dots and astronaut's fire)
+    -> Pod randomizer :
+        -- Pod's max speed
+        -- Pod's acceleration
+    -> Astronaut randomizer :
+        -- Astronaut's max speed
+        -- Astronaut's acceleration
+
+
+Future features :
+    -> Gravity randomizer
+        WIP
+    -> Weapon randomizer
+    -> Item randomizer
+        WIP^
+    -> And much more!
+
+
 
 Current version : Beta version
 Wrote by Niamek.
@@ -25,5 +32,9 @@ Wrote by Niamek.
 
 
 ACKNOLEDGEMENTS:
-MeleeWizard : For suggesting this game
-sbm : For helping in understanding upcodes
+    steve_hacks : For answering my multiples questions and being patient.
+    MeleeWizard : For suggesting this game and helping in the testings
+    sbm : For helping in understanding upcodes
+    TheMotherBrains86 : For speedrunning this game and showing interest in the randomizer
+    Randomania discord channel for being a useful place to learn about randomizers.
+    Randomizers communities : This randomizer is inspired by their "ideas" of other randomizers.
