@@ -21,7 +21,7 @@ Future features :
         WIP
     -> Weapon randomizer
     -> Item randomizer
-        WIP^
+        WIP
     -> And much more!
 
 
