@@ -10,8 +10,8 @@ def getoptions():
                         help='Randomize the colors', dest="Rpalette")
     parser.add_argument("-a", "--astro", action="store_true", 
                         help="Randomize the Astronaut's properties", dest="Rastro")
-    parser.add_argument("-g", "--gravity", action="store_true",
-                        help="Randomize the gravity", dest="Rgrav"),
+    #parser.add_argument("-g", "--gravity", action="store_true",
+                        #help="Randomize the gravity", dest="Rgrav"),
     parser.add_argument("-r", "--rocket", action="store_true",
                         help="Randomize the pod's properties", dest="Rrocket")
     parser.add_argument("-f","--fuel", action="store_true",
@@ -33,14 +33,14 @@ if __name__ == "__main__":
             palette_randomizer(randogame, seed)
         if options.Rastro:
             astro_randomizer(randogame,seed)
-        if options.Rgrav:
-            gravity_randomizer(randogame,seed)
+        #if options.Rgrav:
+            #gravity_randomizer(randogame,seed)
         if options.Rrocket:
             rocket_randomizer(randogame,seed)
-        if options.Rfuel:
-            fuel_randomizer(randogame,seed)
-        if options.Rweapon:
-            weapon_randomizer(randogame,seed)
+        #if options.Rfuel:
+            #fuel_randomizer(randogame,seed)
+        #if options.Rweapon:
+            #weapon_randomizer(randogame,seed)
         if options.mode:
             if options.mode == "reckless":
                 disable_fuelloss_collisions(randogame)
