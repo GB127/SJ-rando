@@ -184,8 +184,3 @@ def weapon_randomizer(game, seed):
     game[0x03c3c7] = game[0x03c3c3]  # 14
     game[0x03c3c8] = game[0x03c3c4]  # 20
     game[0x03c3c9] = game[0x03c3c3]  # 14
-
-
-if __name__ == "__main__" :
-    infos = infos()
-    infos.listadresses("palette")
