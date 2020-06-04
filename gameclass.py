@@ -261,7 +261,16 @@ class infos:
                                     hex(0x11e3C) : "Item",
 
                                 # Planet 7:
-                                    
+                                    hex(0x011ad1) : "Item",
+                                    # Bonds de 5
+                                    hex(0x011b49) : "Item",
+
+                                # Planet 8:
+                                    hex(0x011CE8) : "Item",
+                                    # Bonds de 5
+                                    hex(0x011d56) : "Item",
+
+                                # Planet 9:
 
                     }
     def check(self,adress):
