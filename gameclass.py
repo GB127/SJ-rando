@@ -22,19 +22,17 @@ class infos:
                             hex(0x023E) : "Rockey subYpos",  # INFO
                             hex(0x02D9) : "Rocket Yspeed",  # INFO
                             hex(0x02F8) : "Rocket Yspeed * 256",  # INFO
-
+                        # REMOVED STUFFS
+                            hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2? (REMOVED FROM THE BASE GAME)",  # Done
+                            hex(0x00448F) : "Astronaut Xspeed max? (REMOVED FROM THE BASE GAME)",
 
 
                         # To verify and test
 
-                            hex(0x03B8A3) : "Rocket Xspeed * 256 max compare",
-                            hex(0x03B8AC) : "Rocket Xspeed * 256 max set if max",
                             hex(0x00454A) : "Astronaut Yacceleration",
                             hex(0x004559) : "Astronaut Yacceleration",
                             hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
                             hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
-                            hex(0x0048D3) : "Rocket Xspeed Yspeed 256 max speed 2",  # Done
-                            hex(0x00448F) : "Astronaut Xspeed max",  # DONE  FIXME
                             hex(0x003a25) : "Astronaut Xspeed max2",  # DONE
                             hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
                             hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
@@ -77,6 +75,9 @@ class infos:
 
 
                         # Rocket:
+                            hex(0x03B8A3) : "Rocket max Xspeed * 256",
+                            hex(0x03B8AC) : "Rocket max Xspeed * 256",
+
                             hex(0x0374)  : "Direction of the Rocket",  # INFO
 
                             hex(0x38866) : "Rocket accelerationx dir = 8, Default= 40",  #DONE
@@ -131,7 +132,7 @@ class infos:
                                 hex(0x03c3c8) : "Warhead accel def = 20",  # DONE
                                 hex(0x03c3c9) : "Warhead accel def = 14",  # DONe
 
-                        # Items:¸
+                        # Items:
                             hex(0x510) : "Planet's items are stored in this range, starting from here",
                             hex(0x37F) : "Item sprite display?",
                             hex(0x3BD) : "Item ID! or pointer....",
