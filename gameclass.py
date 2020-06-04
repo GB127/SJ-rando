@@ -5,17 +5,6 @@ class infos:
         Retrieve the things I need.
     """
     def __init__(self):
-        # List of infos:
-            # palette
-            # pos
-                # Xpos
-                # Ypos
-            # timer
-            # Rocket
-            # speed
-            # max
-            # fuel
-            # points
         self.infos = {
                         # Infos
                             hex(0x99)    : "Current Wall invicibility timer",  # INFO
@@ -272,7 +261,7 @@ class infos:
                                     hex(0x11e3C) : "Item",
 
                                 # Planet 7:
-                                
+                                    
 
                     }
     def check(self,adress):
