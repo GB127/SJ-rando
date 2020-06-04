@@ -1,5 +1,13 @@
 from gameclass import ROM, infos
 
+def remove_uselesscodes(game):
+    game.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
+    game.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
+    game.setmulti(0x4c47,0x004c6a,0xFF)  # Ceci semble fonctionner
+
+
+
+
 def disable_ohko(game):
     game[0x008403] = 234
     game[0x008404] = 234
