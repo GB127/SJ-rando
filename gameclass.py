@@ -131,7 +131,8 @@ class infos:
                                 hex(0x03c3c8) : "Warhead accel def = 20",  # DONE
                                 hex(0x03c3c9) : "Warhead accel def = 14",  # DONe
 
-                        # Items:
+                        # Items:¸
+                            hex(0x510) : "Planet's items are stored in this range, starting from here",
                             hex(0x37F) : "Item sprite display?",
                             hex(0x3BD) : "Item ID! or pointer....",
                                 # 1 : Extra life
@@ -282,7 +283,9 @@ class infos:
                                     hex(0x11bc6) : "Item",
 
                                 # Planet 13:
-
+                                    hex(0x11BCB) : "Item",
+                                    # ...
+                                    hex(0x11C2A) : "Item",
                     }
     def check(self,adress):
         if isinstance(adress,str):
