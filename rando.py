@@ -24,64 +24,7 @@ def palette_randomizer(game, seed):
 
 def item_randomizer(game,seed):
     random.seed(seed)
-
-    # Planet 1:
-    p1 = planetitem_shuffler("1")
-    game[0x11a4F] = p1["main"][0]  # minigame
-    game[0x11a54] = p1["main"][1]  # this is the shield
-    game[0x11a59] = p1["main"][2]  # Crystal of planet 1
-    game[0x11a5E] = p1["main"][3]  # Fuel of planet 1
-    game[0x11a63] = p1["main"][4]  # Warp for golden 
-
-    # Planet 2:
-    p2 = planetitem_shuffler("2",5)
-    game[0x11E46] = p2["main"][0]
-    game[0x11E4B] = p2["main"][1]
-    game[0x11E50] = p2["main"][2]
-    game[0x11E55] = p2["main"][3]
-    game[0x11E5A] = p2["main"][4]
-    game[0x11E5F] = p2["main"][5]
-    game[0x11E64] = p2["main"][6]
-    game[0x11E73] = p2["main"][7]
-    game[0x11E7D] = p2["main"][8]
-    game[0x11E82] = p2["main"][9]
-    game[0x11E87] = p2["main"][10]
-    game[0x11E91] = p2["main"][11]
-    game[0x11E9B] = p2["main"][12]
-    game[0x11EAA] = p2["main"][13]
-    game[0x11EAF] = p2["main"][14]
-    game[0x11EB4] = p2["main"][15]
-
-    game[0x11E8C] = p2["5"][0]
-    game[0x11E69] = p2["5"][1]
-    game[0x11E6E] = p2["5"][2]
-    game[0x11E78] = p2["5"][3]
-    game[0x11E96] = p2["5"][4]
-
-
-    # Planete 4:
-    p4 = planetitem_shuffler("2")
-    game[0x11a6D] = p4["main"][0]
-    game[0x11a72] = p4["main"][1]
-    game[0x11a77] = p4["main"][2]
-    game[0x11a7c] = p4["main"][3]
-    game[0x11a81] = p4["main"][4]
-    game[0x11a86] = p4["main"][5]
-    game[0x11a8B] = p4["main"][6]
-    game[0x11a90] = p4["main"][7]
-    game[0x11a95] = p4["main"][8]
-    game[0x11a9A] = p4["main"][9]
-    game[0x11a9F] = p4["main"][10]
-    game[0x11aA4] = p4["main"][11]
-    game[0x11aA9] = p4["main"][12]
-    game[0x11aAE] = p4["main"][13]
-    game[0x11aB3] = p4["main"][14]
-    game[0x11aB8] = p4["main"][15]
-    game[0x11aBD] = p4["main"][16]
-    game[0x11aC2] = p4["main"][17]
-    game[0x11aC7] = p4["main"][18]
-    game[0x11aCC] = p4["main"][19]
-
+    pass
 
 
 
