@@ -45,7 +45,7 @@ if __name__ == "__main__":
             if options.mode == "reckless":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
-            if options.mode == "improved":
+            elif options.mode == "improved":
                 disable_springeffect(randogame)
         with open("testing.nes", "wb") as newrom:
             newrom.write(randogame.data)
