@@ -122,8 +122,7 @@ def rocket_randomizer(game, seed):
 
 
         # NOTE : This randomize the max speed of the warhead things too!
-    game[0x048D3] = random.randint(3,8)  # both speed
-    game[0x3b8a3] = game[0x48D3]  # x speed
+    game[0x3b8a3] = random.randint(3,8)  # x speed
     game[0x3b8ac] = game[0x48D3]  # x speed
     game[0x3b909] = game[0x48D3]  # y speed
     game[0x3b912] = game[0x48D3]  # y speed
