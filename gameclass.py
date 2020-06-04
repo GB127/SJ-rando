@@ -31,12 +31,16 @@ class infos:
 
                             hex(0x00454A) : "Astronaut Yacceleration",
                             hex(0x004559) : "Astronaut Yacceleration",
+
+                        # Astronaut
                             hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
                             hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
-                            hex(0x003a25) : "Astronaut Xspeed max2",  # DONE
-                            hex(0x003a2e) : "Astronaut Xspeed max3",  # DONE
-                            hex(0x003a98) : "Astronaut fastfall Yspeed max",  # DONE
-                            hex(0x3a8f) : "Astronaut fastfall Yspeed max",  # DONE
+                            hex(0x003a98) : "Astronaut up Yspeed max",  # DONE
+                            hex(0x3a8f) : "Astronaut up Yspeed max",  # DONE
+                            hex(0x003a2e) : "Astronaut Xspeed max",  # DONE
+                            hex(0x003a25) : "Astronaut Xspeed max",  # DONE
+
+
 
                         # Fuel:
                             hex(0x8589) :  "Fuel tank refill amount",  # DONE
@@ -77,6 +81,9 @@ class infos:
                         # Rocket:
                             hex(0x03B8A3) : "Rocket max Xspeed * 256",
                             hex(0x03B8AC) : "Rocket max Xspeed * 256",
+                            hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
+                            hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
+
 
                             hex(0x0374)  : "Direction of the Rocket",  # INFO
 
