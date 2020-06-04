@@ -97,20 +97,11 @@ class infos:
                             hex(0x38875) : "Rocket accelerationx dir = 23, Default = 3E",  #DONE
 
 
-
-
-
-
                         # Gravity:
                             hex(0x01040D) : "Gravity AND for display",
                             hex(0x01040E) : "Gravity operand for AND for display",
                             hex(0x0107B3) : "Gravity AND for actual gravity",
                             hex(0x0107B4) : "Gravity operand for actual AND gravity",
-
-
-
-
-
 
                         # Weapons
                             #Smart bomb
@@ -270,7 +261,17 @@ class infos:
                                     # Bonds de 5
                                     hex(0x011d56) : "Item",
 
-                                # Planet 9:
+                                # Planet 9:¸
+                                    hex(0x11EB9) : "Item",
+                                    # Bonds de 5
+                                    hex(0x011F27) : "Item",
+
+                                # Planet 10:
+                                    hex(0x11d5b) : "Item",
+                                    # Bonds de 5
+                                    hex(0x011dbf) : "Item",
+                                
+                                # Planet 11:
 
                     }
     def check(self,adress):
