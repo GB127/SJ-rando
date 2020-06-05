@@ -20,15 +20,13 @@ def astro_randomizer(game,seed):
         # And the fast fall is distinct too.
         # So you could have a lower free fall max speed 
         # with this randomizer. But never higher.
-    game[0x3a25] = random.randint(5,10)  # X speed
+    game[0x3a25] = random.randint(3,10)  # X speed
     game[0x3a2E] = game[0x3a25]  # X speed
-        # X speed  can't be lower than 5 or it will mess with the last level
+
 
     # Y up max speed
-        # FIXME : This also alters the last level.
-        # So I'll leave it out from the randomizer until I fix it.
-    #game[0x3a8f] = random.randint(3,8)  # up maxspeed Y up
-    #game[0x3a98] = game[0x3a8f]
+    game[0x3a8f] = random.randint(3,8)  # up maxspeed Y up
+    game[0x3a98] = game[0x3a8f]
         #10 and 9 is too fast
 
     # X acceleration!
