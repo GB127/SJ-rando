@@ -18,7 +18,7 @@ def getoptions():
     #                    help="Randomize the weapons' properties", dest="Rweapon")
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
-    parser.add_argument("--mode", choices=[None, "reckless", "improved"],
+    parser.add_argument("--mode", choices=["normal", "reckless", "improved"],
                         default=None, dest="mode", help="Game mode")
 
     return parser.parse_args()
