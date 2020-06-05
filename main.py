@@ -3,7 +3,7 @@ from rando import *
 from changes import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer : Randomizers selected')
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer', epilog="test")
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
@@ -19,7 +19,7 @@ def getoptions():
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
     parser.add_argument("--mode", choices=["normal", "reckless", "improved"],
-                        default=None, dest="mode", help="Game mode")
+                        default="normal", dest="mode", help="Game mode")
 
     return parser.parse_args()
 
@@ -48,6 +48,8 @@ if __name__ == "__main__":
         #if options.Rweapon:
             #weapon_randomizer(randogame,seed)
         if options.mode:
+            if options.mode == "normal":
+                mode = "normal"
             if options.mode == "reckless":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
