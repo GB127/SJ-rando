@@ -1,7 +1,7 @@
 # Solar Jetman Randomizer
     This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship.
 
-    Current version : Beta version
+    Current version : Version 1.0
     Wrote by Niamek.
 
 # Getting started:
@@ -33,8 +33,6 @@
 
 # ROM modifications :
     To open up some randomization, I have removed some instructions in the code. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, the new "vanilla" maxspeed for the last level and the astronaut's are now 3. And the acceleration for the last level is now XX and YY for X and Y respectively. I've done this to allow astronaut maxspeed randomization. Since the last level use the same formula, they share the same max speed, if it's lower than 5. I've honestly not understood how it stays at 5. And since the last level is only one level among the 14 available levels and is completely different, I decided to go with this change.
-
-
 # Detailled descriptions of the randomizers:
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
         -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
@@ -73,6 +71,6 @@
     steve_hacks : For answering my multiples questions and being patient.
     MeleeWizard : For suggesting this game and helping in the testings
     sbm : For helping in understanding upcodes
-    TheMotherBrains86 : For speedrunning this game and showing interest in the randomizer. And running this for the Randomania superweek.
+    TheMotherBrains86 : For speedrunning this game, showing big interest in the randomizer, and running this for the Randomania superweek.
     Randomania discord channel for being a useful place to learn about randomizers.
-    Randomizers communities : This randomizer is inspired by their "ideas" of other randomizers.
+    Randomizers communities : This randomizer is inspired by other randomizers' "structure".
