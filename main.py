@@ -55,5 +55,5 @@ if __name__ == "__main__":
             elif options.mode == "improved":
                 disable_springeffect(randogame)
                 mode = "improved"
-        with open(f"Solar Jetman_{seed}_{flags}_{mode}.nes", "wb") as newrom:
+        with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
