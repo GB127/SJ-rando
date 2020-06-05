@@ -1,6 +1,6 @@
 import argparse
 from rando import *
-from qol import *
+from changes import *
 
 def getoptions():
     parser = argparse.ArgumentParser(description='Solar Jet Randomizer : Randomizers selected')
