@@ -47,6 +47,6 @@
     steve_hacks : For answering my multiples questions and being patient.
     MeleeWizard : For suggesting this game and helping in the testings
     sbm : For helping in understanding upcodes
-    TheMotherBrains86 : For speedrunning this game and showing interest in the randomizer
+    TheMotherBrains86 : For speedrunning this game and showing interest in the randomizer. And running this for the Randomania superweek.
     Randomania discord channel for being a useful place to learn about randomizers.
     Randomizers communities : This randomizer is inspired by their "ideas" of other randomizers.
