@@ -3,7 +3,7 @@ from rando import *
 from changes import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer', epilog="test")
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer')
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
