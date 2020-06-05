@@ -32,6 +32,8 @@ def astro_randomizer(game,seed):
         #10 and 9 is too fast
 
     # X acceleration!
+        # I have determined that the difference between these two must be at least 12
+        # to offer an enjoyable experience.
     game[0x4497] = random.randint(0,255 -12)
     game[0x44D9] = random.randint(game[0x4497 + 12],255)
 
