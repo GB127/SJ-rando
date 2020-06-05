@@ -5,6 +5,8 @@ def remove_uselesscodes(game):
     game.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
     game.setmulti(0x4c47,0x004c6a,0xFF)  # Ceci semble fonctionner
 
+
+    # this will be removed once I find a good compromise
     game[0x3a25] = 5
     game[0x3a2E] = game[0x3a25]  # X speed
 
