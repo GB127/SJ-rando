@@ -2,7 +2,11 @@
 
 This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship.
 
-Features :
+Current version : Beta version
+Wrote by Niamek.
+
+
+# Features :
     -> Palette randomizer
         -- Rocket's palettes
         -- Bars
@@ -16,7 +20,7 @@ Features :
         -- Astronaut's acceleration
 
 
-Future features :
+# Future features :
     -> Gravity randomizer
         WIP
     -> Weapon randomizer
@@ -26,12 +30,9 @@ Future features :
 
 
 
-Current version : Beta version
-Wrote by Niamek.
 
 
-
-ACKNOLEDGEMENTS:
+# ACKNOLEDGEMENTS:
     steve_hacks : For answering my multiples questions and being patient.
     MeleeWizard : For suggesting this game and helping in the testings
     sbm : For helping in understanding upcodes
