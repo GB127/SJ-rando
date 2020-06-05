@@ -17,7 +17,7 @@ def getoptions():
     #parser.add_argument("-w", "--weapon", action="store_true",
     #                    help="Randomize the weapons' properties", dest="Rweapon")
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
-                        dest="seed", default=str(random.random()), metavar="")
+                        dest="seed", default=random.random(), metavar="", type=int)
     parser.add_argument("--mode", choices=[None, "reckless", "improved"],
                         default=None, dest="mode", help="Game mode")
 
@@ -26,7 +26,9 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
-    seed = options.seed[2:]
+    seed = str(options.seed)[2:] if options.seed < 1 else options.seed
+    flags = ""
+    mode = ""
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = ROM(originaldata)
@@ -35,10 +37,12 @@ if __name__ == "__main__":
             palette_randomizer(randogame, seed)
         if options.Rastro:
             astro_randomizer(randogame,seed)
+            flags += "a"
         #if options.Rgrav:
             #gravity_randomizer(randogame,seed)
         if options.Rrocket:
             rocket_randomizer(randogame,seed)
+            flags += "r"
         #if options.Rfuel:
             #fuel_randomizer(randogame,seed)
         #if options.Rweapon:
@@ -47,7 +51,9 @@ if __name__ == "__main__":
             if options.mode == "reckless":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
+                mode = "reckless"
             elif options.mode == "improved":
                 disable_springeffect(randogame)
-        with open("testing.nes", "wb") as newrom:
+                mode = "improved"
+        with open(f"Solar Jetman_{seed}_{flags}_{mode}.nes", "wb") as newrom:
             newrom.write(randogame.data)
