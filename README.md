@@ -62,7 +62,7 @@
 
 # Modes:
     -> Normal : This is the normal mode. No major changes.
-    -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode!
+    -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode! Note that this doesn't remove the OHKO collisions from the last level.
         -> disable any rocket damage from enemies bullet.
         -> Disable any rocket damage from wall collisions.
 
