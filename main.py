@@ -54,8 +54,8 @@ if __name__ == "__main__":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
                 mode = "reckless"
-            elif options.mode == "improved":
-                disable_springeffect(randogame)
-                mode = "improved"
+            #elif options.mode == "improved":
+            #    disable_springeffect(randogame)
+            #    mode = "improved"
         with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
