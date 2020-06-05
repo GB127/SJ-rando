@@ -4,7 +4,7 @@ from qol import *
 
 def getoptions():
     parser = argparse.ArgumentParser(description='Solar Jet Randomizer : Randomizers selected')
-    parser.add_argument("-a", "--astro", action="store_true", 
+    parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
                         #help="Randomize the gravity", dest="Rgrav"),
@@ -17,7 +17,7 @@ def getoptions():
     #parser.add_argument("-w", "--weapon", action="store_true",
     #                    help="Randomize the weapons' properties", dest="Rweapon")
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
-                        dest="seed", default=random.random(), metavar="")
+                        dest="seed", default=str(random.random()), metavar="")
     parser.add_argument("--mode", choices=[None, "reckless", "improved"],
                         default=None, dest="mode", help="Game mode")
 
@@ -26,7 +26,7 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
-    seed = options.seed
+    seed = options.seed[2:]
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = ROM(originaldata)
@@ -51,5 +51,3 @@ if __name__ == "__main__":
                 disable_springeffect(randogame)
         with open("testing.nes", "wb") as newrom:
             newrom.write(randogame.data)
-
-
