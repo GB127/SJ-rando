@@ -49,20 +49,20 @@
             Y acceleration: 255 -> 100 ?
 # Detailled descriptions of the randomizers:
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
-    -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
-        - Vanilla value is 7, but actual vanilla behavior is a little bit over 3
-        - This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
-    -> Y max speed is randomized to a value of the following range: [3,4,5,6,7,8]
-        - Vanilla value is 3
-        - This has a side effect of altering the last level's y max speed. The vanilla speed in this level is 3. The maxpseed in the last level can go up to 5.
+        -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
+            - Vanilla value is 7, but actual vanilla behavior is a little bit over 3
+            - This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
+        -> Y max speed is randomized to a value of the following range: [3,4,5,6,7,8]
+            - Vanilla value is 3
+            - This has a side effect of altering the last level's y max speed. The vanilla speed in this level is 3. The maxpseed in the last level can go up to 5.
 
-    -> X acceleration is randomized: Note that there are two pieces : the friction that always reduce the speed of the astronaut and the acceleration.
-        - the friction is randomized. It can be any value from 0 to 243.
-            - Vanilla : 2
-        - The acceleration is randomized. It is always at least 12 over the friction, with a maximum of 255.
-    -> Y acceleration is randomized : currently only the jetpack power is randomized.
-        - Jetpack's power is randomized. It can be in the following range: [32,..., 255].
-            - Vanilla : 32
+        -> X acceleration is randomized: Note that there are two pieces : the friction that always reduce the speed of the astronaut and the acceleration.
+            - the friction is randomized. It can be any value from 0 to 243.
+                - Vanilla : 2
+            - The acceleration is randomized. It is always at least 12 over the friction, with a maximum of 255.
+        -> Y acceleration is randomized : currently only the jetpack power is randomized.
+            - Jetpack's power is randomized. It can be in the following range: [32,..., 255].
+                - Vanilla : 32
 
     -> Palette randomizer: colors
     I made a somewhat algorithm to make sure the rocket's colors make sense.
@@ -72,7 +72,16 @@
             -> This has a side effect of altering astronaut's max fallspeed as they share the same Y maxspeed.
         -- The acceleration is randomized:
             - The acceleration for X and Y speed depends on the rocket's direction. This dependency is randomized. It can be either : [vanilla, linearized, reversed]
-            - The max value of acceleration is randomized. it can be anything in the following range : [64,...,255]
+            - The max value of acceleration is randomized. it can be anything in the following range : [20,...,255]
+                -> Note that the speed of the rocket will determine the minimum of the range. Here are the minimum according to speed:
+                    speed => min acceleration
+                    3 => 20
+                    4 => 42
+                    5 => 64
+                    6 => 86
+                    7 => 108
+                    8 => 130
+
                 -> 64 is vanilla.
             - All the others acceleration of the distribution are adjusted with the same ratio of vanilla max accel vs. randomized max accel.
 

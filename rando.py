@@ -133,7 +133,7 @@ def rocket_randomizer(game, seed):
         # Doable.
 
         # NOTE : This randomize the max speed of the warhead things too!
-    game[0x3b8a3] = random.randint(3,8)  # x speed
+    game[0x3b8a3] = 3#random.randint(3,8)  # x speed
     game[0x3b8ac] = game[0x3B8a3]  # x speed
     game[0x3b909] = game[0x3B8a3]  # y speed
     game[0x3b912] = game[0x3B8a3]  # y speed
@@ -144,15 +144,15 @@ def rocket_randomizer(game, seed):
         # Either flip the acceleration table, linearize it or keep it.
         # Then randomize the highest, then keep the same ratio.
     randoaccel = getdistributionaccel()
-    game[0x38866] = random.randint(int(13.2 * game[0x3b8a3] + 24.5), 255)   # This is the max accel.
+    game[0x38866] = random.randint(int(22 * game[0x3b8a3] - 46), 255)   # This is the max accel.
         # MIN accels:
-            # 3 = 64 (Vanilla)
-            # 4 = 77
-            # 5 = 90
-            # 6 = 103
-            # 7 = 116
+            # 3 = 20
+            # 4 = 42
+            # 5 = 64
+            # 6 = 86
+            # 7 = 108
             # 8 = 130
-        # Wrote it ike that in case I change something
+    # Vanilla is 64
     ratio = game[0x38866] / 64
     game[0x38867] = int(randoaccel[-2] * ratio)
     game[0x38868] = int(randoaccel[-3] * ratio)
