@@ -29,8 +29,6 @@ class infos:
 
                         # To verify and test
 
-                            hex(0x00454A) : "Astronaut Yacceleration",
-                            hex(0x004559) : "Astronaut Yacceleration",
 
                         # Astronaut
                             hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
@@ -39,6 +37,9 @@ class infos:
                             hex(0x3a8f) : "Astronaut up Yspeed max",  # DONE
                             hex(0x003a2e) : "Astronaut Xspeed max",  # DONE
                             hex(0x003a25) : "Astronaut Xspeed max",  # DONE
+                            hex(0x00454A) : "Astronaut Yacceleration",  # DONE
+                            hex(0x004559) : "Astronaut Yacceleration",  # DONE
+
 
 
 

@@ -13,7 +13,6 @@ def astro_randomizer(game,seed):
     """
     random.seed(seed)
 
-
     # Randomize Astronaut's speedmaxs:
         # Like the rocket, the original value is 3.
         # One thing to note : down y speed is the same than the rocket)
@@ -21,13 +20,21 @@ def astro_randomizer(game,seed):
         # And the fast fall is distinct too.
         # So you could have a lower free fall max speed 
         # with this randomizer. But never higher.
-    game[0x3a25] = random.randint(5,10)
+    game[0x3a25] = random.randint(5,10)  # X speed
     game[0x3a2E] = game[0x3a25]  # X speed
         # X speed  can't be lower than 5 or it will mess with the last level
 
-    game[0x3a8f] = 8#random.randint(0,8)  # maxspeed Y up
-        #10 is too fast
-    game[0x3a98] = game[0x3a8f]
+    # Y up max speed
+        # FIXME : This also alters the last level.
+        # So I'll leave it out from the randomizer until I fix it.
+    #game[0x3a8f] = random.randint(3,8)  # up maxspeed Y up
+    #game[0x3a98] = game[0x3a8f]
+        #10 and 9 is too fast
+
+    # This is the Y acceleration for going up!
+    game[0x00454A] = random.randint(0x20, 0xFF)  # Default : 20  # Decceleration from going down to up
+    game[0x004559] = game[0x454A]  # default : 30  # Acceleration from down to up
+
 
 
 def fuel_randomizer(game, seed):
@@ -120,19 +127,26 @@ def rocket_randomizer(game, seed):
         # Can manage to a certain extent with the least powerful rocket. It's hard, but
         # Doable.
 
-
         # NOTE : This randomize the max speed of the warhead things too!
     game[0x3b8a3] = random.randint(3,8)  # x speed
-    game[0x3b8ac] = game[0x48D3]  # x speed
-    game[0x3b909] = game[0x48D3]  # y speed
-    game[0x3b912] = game[0x48D3]  # y speed
+    game[0x3b8ac] = game[0x3B8a3]  # x speed
+    game[0x3b909] = game[0x3B8a3]  # y speed
+    game[0x3b912] = game[0x3B8a3]  # y speed
+
 
 
     # Randomize acceleration!
         # Either flip the acceleration table, linearize it or keep it.
         # Then randomize the highest, then keep the same ratio.
     randoaccel = getdistributionaccel()
-    game[0x38866] = random.randint(randoaccel[-1], 255)   # This is the max accel.
+    game[0x38866] = random.randint(int(13.2 * game[0x3b8a3] + 24.5), 255)   # This is the max accel.
+        # MIN accels:
+            # 3 = 64 (Vanilla)
+            # 4 = 77
+            # 5 = 90
+            # 6 = 103
+            # 7 = 116
+            # 8 = 130
         # Wrote it ike that in case I change something
     ratio = game[0x38866] / 64
     game[0x38867] = int(randoaccel[-2] * ratio)
