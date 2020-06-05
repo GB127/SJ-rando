@@ -31,6 +31,11 @@ class infos:
 
 
                         # Astronaut
+
+
+
+                            hex(0x4497) : "Astronaut 'Horizontal gravity'",
+                            hex(0x44D9) : "Astronaut X acceleration",
                             hex(0x03B909) : "Rocket & Astronaut max Yspeed * 256 compare",  #  DONE
                             hex(0x03B912) : "Rocket & Astronaut max Yspeed * 256 set if max", # DONE
                             hex(0x003a98) : "Astronaut up Yspeed max",  # DONE

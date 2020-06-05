@@ -31,6 +31,11 @@ def astro_randomizer(game,seed):
     #game[0x3a98] = game[0x3a8f]
         #10 and 9 is too fast
 
+    # X acceleration!
+    game[0x4497] = random.randint(0,255 -12)
+    game[0x44D9] = random.randint(game[0x4497 + 12],255)
+
+
     # This is the Y acceleration for going up!
     game[0x00454A] = random.randint(0x20, 0xFF)  # Default : 20  # Decceleration from going down to up
     game[0x004559] = game[0x454A]  # default : 30  # Acceleration from down to up
