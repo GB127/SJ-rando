@@ -1,10 +1,19 @@
 # Solar Jetman Randomizer
+    This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship.
 
-This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship.
+    Current version : Beta version
+    Wrote by Niamek.
 
-Current version : Beta version
-Wrote by Niamek.
-
+# Getting started:
+    You need to download Python 3.8.
+        https://realpython.com/installing-python/
+    Drag the gamefile named Vanilla.nes in the same folder
+    Open the command line on the same folder.
+        For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
+    type the command : python main.py -h
+        then press return/ENTER on the keyboard.
+    type the command with the settings you want to use
+        EXAMPLE : python main.py -arp --seed 450 --mode reckless
 
 # Features :
     -> Palette randomizer
@@ -21,6 +30,7 @@ Wrote by Niamek.
 
 
 # Future features :
+    -> Better handling of filenames
     -> Gravity randomizer
         WIP
     -> Weapon randomizer
