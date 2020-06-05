@@ -13,6 +13,8 @@
         For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
     type the command : python main.py -h
         then press return/ENTER on the keyboard.
+        This will display what the randomizer supports.
+        You can skip this step.
     type the command with the settings you want to use
         EXAMPLE : python main.py -arp --seed 450 --mode reckless
 
@@ -62,6 +64,7 @@
 # Modes:
     -> Normal : This is the normal mode. No major changes.
     -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode! Note that this doesn't remove the OHKO collisions from the last level.
+        -> This mode highlight the rocket's randomizer
         -> disable any rocket damage from enemies bullet.
         -> Disable any rocket damage from wall collisions.
 
