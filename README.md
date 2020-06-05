@@ -8,6 +8,7 @@
     You need to download Python 3.8.
         https://realpython.com/installing-python/
     Drag the gamefile named Vanilla.nes in the same folder
+        Note : You can rename your file without any issue.
     Open the command line on the same folder.
         For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
     type the command : python main.py -h
