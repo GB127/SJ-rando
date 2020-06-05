@@ -43,7 +43,7 @@
 # Detailled descriptions of the randomizers:
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
         -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
-            - Vanilla value is 7, but actual vanilla is a little bit over 3
+            - Vanilla value is 7, but actual vanilla behavior is a little bit over 3
         -> Y max speed is randomized to a value of the following range: [3,4,5,6,7,8]
             - Vanilla value is 3
 
@@ -52,11 +52,11 @@
             - The acceleration is randomized. It is always at least 12 over the friction, with a maximum of 255.
         -> Y acceleration is randomized : currently only the jetpack power is randomized.
             - Jetpack's power is randomized from 32 to 255.
-             
+ 
     -> Palette randomizer: colors
         I made a somewhat algorithm to make sure the rocket's colors make sense.
     -> Rocket randomizer: X&Y maxspeed, acceleration
-        -- The X&Y max speed is randomized jointly : it can be any from the following value: [3,4,5,6,7,8]
+        -- The X&Y max speed is randomized together : it can be any from the following value: [3,4,5,6,7,8]
             -> Vanilla value is 3.
             -> This has a side effect of altering astronaut's max fallspeed as they share the same Y maxspeed.
         -- The acceleration is randomized:
