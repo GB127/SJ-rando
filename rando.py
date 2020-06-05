@@ -97,7 +97,6 @@ def palette_randomizer(game, seed):
     game[0x75E2] = random.choice(colors)  # Score palette
     game[0x753C] = game[0x75E2]  # Score palette too
     game[0x75E3] = random.choice(colors)  # Bars palette
-    game[0x75ac] = random.choice(colors)  # Title screen dots
     # Rocket palette
     game[0x75D8] = random.choice(colors[0:27])  # Main color
     game[0x75D7] = colors[getnewcolor(colors.index(game[0x75D8]), colors)]  # secondary color
@@ -105,8 +104,9 @@ def palette_randomizer(game, seed):
     game[0x00753B] = game[0x75D8]
     # game[0x75D6] = random.choice(colors)  # window color
 
-    game[0x0075ad] = random.choice(colors) # C'est le milieu
-    game[0x0075aE] = random.choice(colors)  # C'est l'autre
+    game[0x75ac] = random.choice(colors)  # Title screen dots + jetpack fire
+    #game[0x0075ad] = random.choice(colors) # C'est le milieu
+    #game[0x0075aE] = random.choice(colors)  # C'est l'autre
 
 
 def rocket_randomizer(game, seed):
