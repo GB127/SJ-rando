@@ -112,6 +112,7 @@
     steve_hacks : For answering my multiples questions and being patient.
     MeleeWizard : For suggesting this game and helping in the testings. Also big thanks for answering lots of my questions.
     TheMotherBrains86 : For speedrunning this game, showing big interest in the randomizer, and running this for the Randomania superweek.
+    FATRATKNIGHT : for his lua script that gave me some useful infos to start everything. Here is the link of the lua script: http://tasvideos.org/userfiles/info/12531497925152203
     Randomania discord channel for being a useful place to learn about randomizers.
     Randomizers communities : This randomizer is inspired by other randomizers' "structure".
     sbm : For helping in understanding upcodes
