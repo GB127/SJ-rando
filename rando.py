@@ -1,4 +1,4 @@
-from gameclass import ROM, infos
+from gameclass import infos
 from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, planetitem_shuffler
 import random
 

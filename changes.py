@@ -1,4 +1,4 @@
-from gameclass import ROM, infos
+from gameclass import ROM
 
 def remove_uselesscodes(game):
     game.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
