@@ -51,7 +51,7 @@
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
         -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
             - Vanilla value is 7, but actual vanilla behavior is a little bit over 3
-            - This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
+            - This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla X maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
         -> Y max speed is randomized to a value of the following range: [3,4,5,6,7,8]
             - Vanilla value is 3
             - This has a side effect of altering the last level's y max speed. The vanilla speed in this level is 3. The maxpseed in the last level can go up to 5.
@@ -59,9 +59,9 @@
         -> X acceleration is randomized: Note that there are two pieces : the friction that always reduce the speed of the astronaut and the acceleration.
             - the friction is randomized. It can be any value from 0 to 243.
                 - Vanilla : 2
-            - The acceleration is randomized. It is always at least 12 over the friction, with a maximum of 255.
-        -> Y acceleration is randomized : currently only the jetpack power is randomized.
-            - Jetpack's power is randomized. It can be in the following range: [32,..., 255].
+            - The acceleration is randomized. It is always at least 12 over the friction to make sure it's playable, with a maximum of 255.
+        -> Jetpack's power is randomized (Y acceleration for going up is randomized)
+            - It can be in the following range: [32,..., 255].
                 - Vanilla : 32
 
     -> Palette randomizer: colors
@@ -81,7 +81,6 @@
                     6 => 86
                     7 => 108
                     8 => 130
-
                 -> 64 is vanilla.
             - All the others acceleration of the distribution are adjusted with the same ratio of vanilla max accel vs. randomized max accel.
 
@@ -95,8 +94,8 @@
 
 # ACKNOLEDGEMENTS:
     steve_hacks : For answering my multiples questions and being patient.
-    MeleeWizard : For suggesting this game and helping in the testings
-    sbm : For helping in understanding upcodes
+    MeleeWizard : For suggesting this game and helping in the testings. Also big thanks for answering lots of my questions.
     TheMotherBrains86 : For speedrunning this game, showing big interest in the randomizer, and running this for the Randomania superweek.
     Randomania discord channel for being a useful place to learn about randomizers.
     Randomizers communities : This randomizer is inspired by other randomizers' "structure".
+    sbm : For helping in understanding upcodes

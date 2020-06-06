@@ -12,8 +12,6 @@ def remove_uselesscodes(game):
     game[0x3a98] = game[0x3a8f]
 
 
-
-
 def disable_ohko(game):
     game[0x008403] = 234
     game[0x008404] = 234
