@@ -170,153 +170,152 @@ class infos:
                                 # 1A : Warp for planet 2 middle section
                                 # 1B : Minigame Warp
 
-                                # Planet 1:
-                                    hex(0x11a4a) : "Fuel bar planet 1 (Default = 0x18)",  # Do not change
-                                    hex(0x11a4F) : "Minigame warp planet 1 left mother ship",  # Warp left of mother ship
-                                    hex(0x11a54) : "Shield planet 1",  # Shield (Down left of mother ship)
-                                    hex(0x11a59) : "Crystal planet 1",  # Crystal of planet 1
-                                    hex(0x11a5E) : "Fuel planet 1",  # Fuel of planet 1
-                                    hex(0x11a63) : "Warp for golden ship planet 1",  # Warp for golden ship
+                            # Planet 1:
+                                hex(0x11a4a) : "Fuel bar planet 1 (Default = 0x18)",  # Do not change
+                                hex(0x11a4F) : "Minigame warp planet 1 left mother ship",  # Warp left of mother ship
+                                hex(0x11a54) : "Shield planet 1",  # Shield (Down left of mother ship)
+                                hex(0x11a59) : "Crystal planet 1",  # Crystal of planet 1
+                                hex(0x11a5E) : "Fuel planet 1",  # Fuel of planet 1
+                                hex(0x11a63) : "Warp for golden ship planet 1",  # Warp for golden ship
 
+                            # Planet 2 :
+                                    hex(0x11E41) : "Planet 2 (Default : 0x16)",  # Fuel sprite
 
-                                # Planet 2 :
-                                        hex(0x11E41) : "Planet 2 (Default : 0x16)",  # Fuel sprite
- 
-                                        hex(0x11E46) : "Planet 2 (Default : 0x1A",  # It's the warp to the center
-                                        hex(0x11E4B) : "Planet 2 (Default : 0x12",  # It's the warp to the golden ship
-                                        hex(0x11E50) : "Planet 2 (Default : 0x4",  # Booster
-                                        hex(0x11E55) : "Planet 2 (Default : 0x6",  # Map
-                                        hex(0x11E5A) : "Planet 2 (Default : 0xA",  # Fuel on the right of mother ship
+                                    hex(0x11E46) : "Planet 2 (Default : 0x1A",  # It's the warp to the center
+                                    hex(0x11E4B) : "Planet 2 (Default : 0x12",  # It's the warp to the golden ship
+                                    hex(0x11E50) : "Planet 2 (Default : 0x4",  # Booster
+                                    hex(0x11E55) : "Planet 2 (Default : 0x6",  # Map
+                                    hex(0x11E5A) : "Planet 2 (Default : 0xA",  # Fuel on the right of mother ship
 
-                                        hex(0x11E5F) : "Planet 2 (Default : 0xF",  # Crystal in the left tunnel
-                                        hex(0x11E64) : "Planet 2 (Default : 0xA",  # Bottom fuel
-                                        hex(0x11E69) : "Planet 2 (Default : 0x9",  # Middle section bottom points
-                                        hex(0x11E6E) : "Planet 2 (Default : 0xF",  # Middle section crystal
-                                        hex(0x11E73) : "Planet 2 (Default : 0xA",  # Fuel on the left of mother ship
+                                    hex(0x11E5F) : "Planet 2 (Default : 0xF",  # Crystal in the left tunnel
+                                    hex(0x11E64) : "Planet 2 (Default : 0xA",  # Bottom fuel
+                                    hex(0x11E69) : "Planet 2 (Default : 0x9",  # Middle section bottom points
+                                    hex(0x11E6E) : "Planet 2 (Default : 0xF",  # Middle section crystal
+                                    hex(0x11E73) : "Planet 2 (Default : 0xA",  # Fuel on the left of mother ship
 
-                                        hex(0x11E78) : "Planet 2 (Default : 0xC",  # Middle section radioactive item (Upper left section)
-                                        hex(0x11E7D) : "Planet 2 (Default : 0x9",  # Points on the far right of mother ship
-                                        hex(0x11E82) : "Planet 2 (Default : 0xA",  # Fuel left tunnel
-                                        hex(0x11E87) : "Planet 2 (Default : 0x11", # Astro warp left tunnel
-                                        hex(0x11E8C) : "Planet 2 (Default : 0x9", # Middle section points item upper section
+                                    hex(0x11E78) : "Planet 2 (Default : 0xC",  # Middle section radioactive item (Upper left section)
+                                    hex(0x11E7D) : "Planet 2 (Default : 0x9",  # Points on the far right of mother ship
+                                    hex(0x11E82) : "Planet 2 (Default : 0xA",  # Fuel left tunnel
+                                    hex(0x11E87) : "Planet 2 (Default : 0x11", # Astro warp left tunnel
+                                    hex(0x11E8C) : "Planet 2 (Default : 0x9", # Middle section points item upper section
 
-                                        hex(0x11E91) : "Planet 2 (Default : 0xB",  # Fuel tank bottom section
-                                        hex(0x11E96) : "Planet 2 (Default : 0x11",  # Middle section astro warp
-                                        hex(0x11E9B) : "Planet 2 (Default : 0x11",  # Astro warp right tunnel
-                                        hex(0x11EA0) : "Planet 2 (Default : 0xB",  # Unused item?
-                                        hex(0x11EA5) : "Planet 2 (Default : 0x11",  # Unused item?
+                                    hex(0x11E91) : "Planet 2 (Default : 0xB",  # Fuel tank bottom section
+                                    hex(0x11E96) : "Planet 2 (Default : 0x11",  # Middle section astro warp
+                                    hex(0x11E9B) : "Planet 2 (Default : 0x11",  # Astro warp right tunnel
+                                    hex(0x11EA0) : "Planet 2 (Default : 0xB",  # Unused item?
+                                    hex(0x11EA5) : "Planet 2 (Default : 0x11",  # Unused item?
 
-                                        hex(0x11EAA) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
-                                        hex(0x11EAF) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
-                                        hex(0x11EB4) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                    hex(0x11EAA) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                    hex(0x11EAF) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                    hex(0x11EB4) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
 
-                                # Planet 3:
-                                    hex(0x11C93) : "Fuel mothership, Default value = 0x15",
-                                    hex(0x11C98) : "Default value : 0x12",
-                                    hex(0x11C9D) : "Default value : 0xA",
-                                    hex(0x11CA2) : "Default value : 0xF",
-                                    hex(0x11CA7) : "Default value : 0xA",
-                                    hex(0x11CAC) : "Default value : 0xA",
+                            # Planet 3:
+                                hex(0x11C93) : "Fuel mothership, Default value = 0x15",
+                                hex(0x11C98) : "Default value : 0x12",
+                                hex(0x11C9D) : "Default value : 0xA",
+                                hex(0x11CA2) : "Default value : 0xF",
+                                hex(0x11CA7) : "Default value : 0xA",
+                                hex(0x11CAC) : "Default value : 0xA",
 
-                                    hex(0x11CB1) : "Default value : 0x10",
-                                    hex(0x11CB6) : "Default value : 0xA",
-                                    hex(0x11CBB) : "Default value : 0x5",
-                                    hex(0x11CC0) : "Default value : 0x9",
-                                    hex(0x11CC5) : "Default value : 0xC",
-                                    
-                                    hex(0x11CCA) : "Default value : 0x9",
-                                    hex(0x11CCF) : "Default value : 0x11",
-                                    hex(0x11CD4) : "Default value : 0xB",
-                                    hex(0x11CD9) : "Default value : 0x11",
-                                    hex(0x11CDE) : "Default value : 0x1",
-                                    
-                                    hex(0x11CE3) : "Default value : 0x1",
-
-                                # Planet 4:
-                                    hex(0x11a68) : "Mother ship fuel sprite (Default 0x16)",
-                                    hex(0x11a6D) : "Default value : 0x12",
-                                    hex(0x11a72) : "Default value : 0xA",
-                                    hex(0x11a77) : "Default value : 0x10",
-                                    hex(0x11a7c) : "Default value : 0xA",
-                                    hex(0x11a81) : "Default value : 0xA",
-                                    hex(0x11a86) : "Default value : 0xF",
-                                    hex(0x11a8B) : "Default value : 0x9",
-                                    hex(0x11a90) : "Default value : 0xC",
-                                    hex(0x11a95) : "Default value : 0x5",
-                                    hex(0x11a9A) : "Default value : 0x5",
-                                    hex(0x11a9F) : "Default value : 0xB",
-                                    hex(0x11aA4) : "Default value : 0xB",
-                                    hex(0x11aA9) : "Default value : 0x9",
-                                    hex(0x11aAE) : "Default value : 0xB",
-                                    hex(0x11aB3) : "Default value : 0x11",
-                                    hex(0x11aB8) : "Default value : 0x11",
-                                    hex(0x11aBD) : "Default value : 0x11",
-                                    hex(0x11aC2) : "Default value : 0x1",
-                                    hex(0x11aC7) : "Default value : 0x1",
-                                    hex(0x11aCC) : "Default value : 0x1",
-
-                                # Planet 5
-                                    hex(0x11c2f) : "Default : 0x15",
-                                    hex(0x11c34) : "Default : 0x12",
-                                    hex(0x11c39) : "Default : 0x1B",
-                                    hex(0x11c3E) : "Default : 0x10",
-                                    hex(0x11c43) : "Default : 0xA",
-                                    hex(0x11c48) : "Default : 0xF",
-                                    hex(0x11c4D) : "Default : 0xA",
-                                    hex(0x11c52) : "Default : 0xA",
-                                    hex(0x11c57) : "Default : 0xA",
-                                    hex(0x11c5C) : "Default : 0x9",
-                                    hex(0x11c61) : "Default : 0x9",
-                                    hex(0x11c66) : "Default : 0xC",
-                                    hex(0x11c6B) : "Default : 0xC",
-                                    hex(0x11c70) : "Default : 0xB",
-                                    hex(0x11c75) : "Default : 0x11",
-                                    hex(0x11c7A) : "Default : 0x11",
-                                    hex(0x11c7F) : "Default : 0xB",
-                                    hex(0x11c84) : "Default : 0xB",
-                                    hex(0x11c89) : "Default : 0x1",
-                                    hex(0x11c8E) : "Default : 0x1",
-
-
-                                # Planet 6:
-                                    hex(0x11dc4) : "Item",
-                                    # Bonds de 5
-                                    hex(0x11e3C) : "Item",
-
-                                # Planet 7:
-                                    hex(0x011ad1) : "Item",
-                                    # Bonds de 5
-                                    hex(0x011b49) : "Item",
-
-                                # Planet 8:
-                                    hex(0x011CE8) : "Item",
-                                    # Bonds de 5
-                                    hex(0x011d56) : "Item",
-
-                                # Planet 9:¸
-                                    hex(0x11EB9) : "Item",
-                                    # Bonds de 5
-                                    hex(0x011F27) : "Item",
-
-                                # Planet 10:
-                                    hex(0x11d5b) : "Item",
-                                    # Bonds de 5
-                                    hex(0x011dbf) : "Item",
+                                hex(0x11CB1) : "Default value : 0x10",
+                                hex(0x11CB6) : "Default value : 0xA",
+                                hex(0x11CBB) : "Default value : 0x5",
+                                hex(0x11CC0) : "Default value : 0x9",
+                                hex(0x11CC5) : "Default value : 0xC",
                                 
-                                # Planet 11:
-                                    hex(0x11F2C) : "Item",
-                                    # ...
-                                    hex(0x11f9f) : "Item",
+                                hex(0x11CCA) : "Default value : 0x9",
+                                hex(0x11CCF) : "Default value : 0x11",
+                                hex(0x11CD4) : "Default value : 0xB",
+                                hex(0x11CD9) : "Default value : 0x11",
+                                hex(0x11CDE) : "Default value : 0x1",
+                                
+                                hex(0x11CE3) : "Default value : 0x1",
 
-                                # Planet 12:
-                                    hex(0x11B4E) : "Item",
-                                    # ...
-                                    hex(0x11bc6) : "Item",
+                            # Planet 4:
+                                hex(0x11a68) : "Mother ship fuel sprite (Default 0x16)",
+                                hex(0x11a6D) : "Default value : 0x12",
+                                hex(0x11a72) : "Default value : 0xA",
+                                hex(0x11a77) : "Default value : 0x10",
+                                hex(0x11a7c) : "Default value : 0xA",
+                                hex(0x11a81) : "Default value : 0xA",
+                                hex(0x11a86) : "Default value : 0xF",
+                                hex(0x11a8B) : "Default value : 0x9",
+                                hex(0x11a90) : "Default value : 0xC",
+                                hex(0x11a95) : "Default value : 0x5",
+                                hex(0x11a9A) : "Default value : 0x5",
+                                hex(0x11a9F) : "Default value : 0xB",
+                                hex(0x11aA4) : "Default value : 0xB",
+                                hex(0x11aA9) : "Default value : 0x9",
+                                hex(0x11aAE) : "Default value : 0xB",
+                                hex(0x11aB3) : "Default value : 0x11",
+                                hex(0x11aB8) : "Default value : 0x11",
+                                hex(0x11aBD) : "Default value : 0x11",
+                                hex(0x11aC2) : "Default value : 0x1",
+                                hex(0x11aC7) : "Default value : 0x1",
+                                hex(0x11aCC) : "Default value : 0x1",
 
-                                # Planet 13:
-                                    hex(0x11BCB) : "Item",
-                                    # ...
-                                    hex(0x11C2A) : "Item",
+                            # Planet 5
+                                hex(0x11c2f) : "Default : 0x15",
+                                hex(0x11c34) : "Default : 0x12",
+                                hex(0x11c39) : "Default : 0x1B",
+                                hex(0x11c3E) : "Default : 0x10",
+                                hex(0x11c43) : "Default : 0xA",
+                                hex(0x11c48) : "Default : 0xF",
+                                hex(0x11c4D) : "Default : 0xA",
+                                hex(0x11c52) : "Default : 0xA",
+                                hex(0x11c57) : "Default : 0xA",
+                                hex(0x11c5C) : "Default : 0x9",
+                                hex(0x11c61) : "Default : 0x9",
+                                hex(0x11c66) : "Default : 0xC",
+                                hex(0x11c6B) : "Default : 0xC",
+                                hex(0x11c70) : "Default : 0xB",
+                                hex(0x11c75) : "Default : 0x11",
+                                hex(0x11c7A) : "Default : 0x11",
+                                hex(0x11c7F) : "Default : 0xB",
+                                hex(0x11c84) : "Default : 0xB",
+                                hex(0x11c89) : "Default : 0x1",
+                                hex(0x11c8E) : "Default : 0x1",
+
+
+                            # Planet 6:
+                                hex(0x11dc4) : "Item",
+                                # Bonds de 5
+                                hex(0x11e3C) : "Item",
+
+                            # Planet 7:
+                                hex(0x011ad1) : "Item",
+                                # Bonds de 5
+                                hex(0x011b49) : "Item",
+
+                            # Planet 8:
+                                hex(0x011CE8) : "Item",
+                                # Bonds de 5
+                                hex(0x011d56) : "Item",
+
+                            # Planet 9:¸
+                                hex(0x11EB9) : "Item",
+                                # Bonds de 5
+                                hex(0x011F27) : "Item",
+
+                            # Planet 10:
+                                hex(0x11d5b) : "Item",
+                                # Bonds de 5
+                                hex(0x011dbf) : "Item",
+                            
+                            # Planet 11:
+                                hex(0x11F2C) : "Item",
+                                # ...
+                                hex(0x11f9f) : "Item",
+
+                            # Planet 12:
+                                hex(0x11B4E) : "Item",
+                                # ...
+                                hex(0x11bc6) : "Item",
+
+                            # Planet 13:
+                                hex(0x11BCB) : "Item",
+                                # ...
+                                hex(0x11C2A) : "Item",
                     }
     def check(self,adress):
         if isinstance(adress,str):
