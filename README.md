@@ -1,5 +1,5 @@
 # Solar Jetman Randomizer
-    This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship."
+    This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warpship."
 
     You will need a version of the game. I cannot help you on this.
 
