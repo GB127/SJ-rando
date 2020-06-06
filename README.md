@@ -36,10 +36,10 @@
         EXAMPLE : python main.py -arp --seed 450 --mode reckless
 
 # Features :
+    -> Some modes: normal, reckless
+    -> Astronaut randomizer
     -> Palette randomizer
     -> Rocket's randomizer
-    -> Astronaut randomizer
-    -> Some modes: normal, reckless
 
 # Future features :
     -> Better handling of filenames
@@ -81,7 +81,7 @@
                 - Vanilla : 32
 
     -> Palette randomizer: colors
-    I made a somewhat algorithm to make sure the rocket's colors make sense.
+        I made a somewhat algorithm to make sure the rocket's colors make sense.
     -> Rocket randomizer: X&Y maxspeed, acceleration
         -- The X&Y max speed is randomized together : it can be any from the following value: [3,4,5,6,7,8]
             -> Vanilla value is 3.
@@ -102,7 +102,7 @@
 
 # Modes:
     -> Normal : This is the normal mode. No major changes.
-    -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode! Note that this doesn't remove the OHKO collisions from the last level.
+    -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode! This doesn't remove the OHKO collisions from the last level.
         -> This mode highlight the rocket's randomizer
         -> disable any rocket damage from enemies bullet.
         -> Disable any rocket damage from wall collisions.
