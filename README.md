@@ -49,7 +49,7 @@
     -> And much more!
 
 # ROM modifications :
-    To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's.
+    To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's. If I understand FATRATKNIGHT's notes, my changes may have changed interactions between the pod and the thetered item. I did not notice this prior of Version 1. I'll leave it as is, since it's not that noticeable or huge.
 
     I've done this to allow astronaut maxspeed randomization. Since the last level use the same formula, they share the same max speed, if it's lower than 5. I've honestly not understood how it stays at 5. And since the last level is only one level among the 14 available levels and is completely different, I decided to go with this change.
 
