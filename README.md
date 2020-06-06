@@ -10,7 +10,7 @@
 
 
 # Files included:
-    - .gitignore : You can delete this, it's for github.
+    - .gitignore : You can delete this, it's for github and me.
     - README.md : infos about the randomizer, please read at least the Getting started section
     - assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk.
     - changes.py : This file includes some code that will change very specific stuffs. For example, the code that disables the OHKO bullets is in this file.
@@ -22,7 +22,7 @@
 # Getting started:
     You need to download Python 3.8.
         https://realpython.com/installing-python/
-    Drag the gamefile named Vanilla.nes in the same folder
+    Drag the game named Vanilla.nes in the same folder
         Note : You can rename your file without any issue.
         Note : The capital is important. I've never worked with anything that let you select your file or something. I personally prefer it with a capital, so for now, I settled with this. This is something I'll fix eventually.
     Open the command line on the same folder.
@@ -48,7 +48,7 @@
     -> And much more!
 
 # ROM modifications :
-    To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" maxspeed for the last level and the astronaut's and changed the acceleration for the last level. is now XX and YY for X and Y respectively.
+    To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's.
 
     I've done this to allow astronaut maxspeed randomization. Since the last level use the same formula, they share the same max speed, if it's lower than 5. I've honestly not understood how it stays at 5. And since the last level is only one level among the 14 available levels and is completely different, I decided to go with this change.
 
@@ -60,17 +60,16 @@
 
         Last level vanilla :
             X max speed: 5 -> 3
-            X acceleration: 128 -> 128 ?
             Y max speed: 3 -> 3
-            Y acceleration: 255 -> 100 ?
+
 # Detailled descriptions of the randomizers:
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
         -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]
             - Vanilla value is 7, but actual vanilla behavior is a little bit over 3
-            - This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla X maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
+            - NOTE: This has a side effect of altering the max speed of the last level if the new maxspeed is 3-4-5. Vanilla X maxspeed is 5. The new "vanilla" value following forementionned modification is 3.
         -> Y max speed is randomized to a value of the following range: [3,4,5,6,7,8]
             - Vanilla value is 3
-            - This has a side effect of altering the last level's y max speed. The vanilla speed in this level is 3. The maxpseed in the last level can go up to 5.
+            - NOTE: This has a side effect of altering the last level's y max speed. The vanilla speed in this level is 3. The maxpseed in the last level can go up to 5.
 
         -> X acceleration is randomized: Note that there are two pieces : the friction that always reduce the speed of the astronaut and the acceleration.
             - the friction is randomized. It can be any value from 0 to 243.
