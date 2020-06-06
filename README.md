@@ -12,7 +12,7 @@
 # Files included:
     - .gitignore : You can delete this, it's for github and me.
     - README.md : infos about the randomizer, please read at least the Getting started section
-    - assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk.
+    - assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk. You can delete this if you want, none of the script need this file.
     - changes.py : This file includes some code that will change very specific stuffs. For example, the code that disables the OHKO bullets is in this file.
     - gameclass.py : this is a file I made that containt both the infos I noted from the game, but also the codes for changing the game (and thus everything relies on this file). I'll split in two files eventually.
     - main.py : the one and only script to run. All the other scripts don't do anything interesting.
