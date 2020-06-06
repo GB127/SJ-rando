@@ -1,5 +1,4 @@
-from gameclass import infos
-from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, planetitem_shuffler
+from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
 import random
 
 

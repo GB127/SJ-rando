@@ -1,23 +1,4 @@
 import random
-from gameclass import planetitems
-
-
-def planetitem_shuffler(planet,*groups):
-    dicto = {}
-    if len(groups) != 0:
-        random.shuffle(planetitems[planet])
-        for _ in range(len(groups)):
-            planetitems[planet].pop(planetitems[planet].index(0x11))
-        for i in groups:
-            dicto.update({str(i) : planetitems[planet][-(i-1):] + [0x11]})
-            for _ in range(i-1):
-                planetitems[planet].pop()
-            dicto.update({"main" : planetitems[planet]})
-    else:
-        dicto.update({"main" : planetitems[planet]})
-    for x in dicto.keys():
-        random.shuffle(dicto[x])
-    return dicto
 
 def nescolors():
     liste = list(range(0x1, 0x0D))
