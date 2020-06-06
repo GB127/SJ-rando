@@ -1,0 +1,21 @@
+life = 0x1
+crash = 0x2
+shield = 0x3
+booster = 0x4
+warp = 0x11
+fuel = 0xA
+fueltank = 0xB
+map = 0x6
+radio = 0xC
+crystal1 = 0xF
+crystal2 = 0x10
+minigame = 0x1B
+goldenship = 0x13
+goldenwarp = 0x12
+lvl2warp = 0x1A
+points = 0x5
+points2 = 0x9
+
+# 7 : Garbled sprite?
+# 8 : Garbled
+# 18 : Fuel (I'm sure there is a range for this)
