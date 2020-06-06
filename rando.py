@@ -37,7 +37,7 @@ def astro_randomizer(game,seed):
 
 
     # This is the Y acceleration for going up!
-    game[0x00454A] = random.randint(0x20, 0xFF)  # Default : 20  # Decceleration from going down to up
+    game[0x00454A] = random.randint(22, 0xFF)  # Default : 20  # Decceleration from going down to up
     game[0x004559] = game[0x454A]  # default : 30  # Acceleration from down to up
 
 

@@ -61,7 +61,7 @@
                 - Vanilla : 2
             - The acceleration is randomized. It is always at least 12 over the friction to make sure it's playable, with a maximum of 255.
         -> Jetpack's power is randomized (Y acceleration for going up is randomized)
-            - It can be in the following range: [32,..., 255].
+            - It can be in the following range: [22,..., 255].
                 - Vanilla : 32
 
     -> Palette randomizer: colors
