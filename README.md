@@ -9,6 +9,7 @@
         https://realpython.com/installing-python/
     Drag the gamefile named Vanilla.nes in the same folder
         Note : You can rename your file without any issue.
+        Note : The capital is important. I've never worked with anything that let you select your file or something. I personally prefer it with a capital, so for now, I settled with this. This is something I'll fix eventually.
     Open the command line on the same folder.
         For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
     type the command : python main.py -h
