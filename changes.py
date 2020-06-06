@@ -3,13 +3,13 @@ from gameclass import ROM, infos
 def remove_uselesscodes(game):
     game.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
     game.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
-    game.setmulti(0x4c47,0x004c6a,0xFF)  # Ceci semble fonctionner
+    game.setmulti(0x4c47,0x004c6a,0xEA)  # Ceci semble fonctionner
 
-
-    # this will be removed once I find a good compromise
-    game[0x3a25] = 5
+    # This is the new "vanilla max speed"
+    game[0x3a25] = 3
     game[0x3a2E] = game[0x3a25]  # X speed
-
+    game[0x3a8f] = 3  # up maxspeed Y up
+    game[0x3a98] = game[0x3a8f]
 
 
 
