@@ -87,12 +87,6 @@ def gravity_randomizer(game,seed, test):
     game[0x0107B3] = 169
     game[0x0107B4] = gravity
 
-
-def item_randomizer(game,seed):
-    random.seed(seed)
-    pass
-
-
 def palette_randomizer(game, seed):
     random.seed(seed)
     colors = nescolors()
