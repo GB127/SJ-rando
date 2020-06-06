@@ -3,8 +3,7 @@ from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadacc
 import random
 
 
-
-def astro_randomizer(game,seed):
+def astro_randomizer(game, seed):
     """
         This function will randomize these elements:
         - X Speed max of the astronaut
@@ -39,8 +38,6 @@ def astro_randomizer(game,seed):
     # This is the Y acceleration for going up!
     game[0x00454A] = random.randint(22, 0xFF)  # Default : 20  # Decceleration from going down to up
     game[0x004559] = game[0x454A]  # default : 30  # Acceleration from down to up
-
-
 
 def fuel_randomizer(game, seed):
     """ 
@@ -79,8 +76,7 @@ def fuel_randomizer(game, seed):
         # 255 being the max value of a byte
     game[0x11011] = random.randint(1,255)
 
-
-def gravity_randomizer(game,seed, test):
+def gravity_randomizer(game, seed, test):
     gravity = test# random.randint(0,255)  # FIXME
     game[0x01040D] = 169  # This is the opperation
     game[0x01040E] = gravity # This is the operand. Normally it's F8.
@@ -106,7 +102,6 @@ def palette_randomizer(game, seed):
     game[0x75ac] = random.choice(colors)  # Title screen dots + jetpack fire
     #game[0x0075ad] = random.choice(colors) # C'est le milieu
     #game[0x0075aE] = random.choice(colors)  # C'est l'autre
-
 
 def rocket_randomizer(game, seed):
     """
@@ -156,7 +151,6 @@ def rocket_randomizer(game, seed):
     game[0x3886C] = int(randoaccel[-7] * ratio)
     game[0x3886D] = int(randoaccel[-8] * ratio)
     game[0x3886E] = 0 # I don't change this, but just to "Know that it's considered" I'm writting it down.
-
 
 def weapon_randomizer(game, seed):
     random.seed(seed)
