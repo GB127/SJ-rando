@@ -1,8 +1,23 @@
 # Solar Jetman Randomizer
     This is a randomizer for the NES game "Solar Jetman : Hunt for the Golden Warship."
 
+    You will need a version of the game. I cannot help you on this.
+
     Current version : Version 1.0
     Wrote by Niamek.
+
+    Discord channel : https://discord.gg/HNDEnvz
+
+
+# Files included:
+    - .gitignore : You can delete this, it's for github.
+    - README.md : infos about the randomizer, please read at least the Getting started section
+    - assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk.
+    - changes.py : This file includes some code that will change very specific stuffs. For example, the code that disables the OHKO bullets is in this file.
+    - gameclass.py : this is a file I made that containt both the infos I noted from the game, but also the codes for changing the game (and thus everything relies on this file). I'll split in two files eventually.
+    - main.py : the one and only script to run. All the other scripts don't do anything interesting.
+    - rando.py : the module that contains all randomizers of the program.
+    - subrando.py : a module that containt fragment of the rando.py file. Created to lighten the code of rando.py
 
 # Getting started:
     You need to download Python 3.8.
