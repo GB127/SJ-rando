@@ -2,19 +2,19 @@ life = 0x1
 crash = 0x2
 shield = 0x3
 booster = 0x4
-warp = 0x11
+points = 0x5
+map = 0x6
+points2 = 0x9
 fuel = 0xA
 fueltank = 0xB
-map = 0x6
 radio = 0xC
 crystal = 0xF
 crystal2 = 0x10
+warp = 0x11
 minigame = 0x1B
-goldenship = 0x13
 gwarp = 0x12
+goldenship = 0x13
 lvl2warp = 0x1A
-points = 0x5
-points2 = 0x9
 
 # 7 : Garbled sprite?
 # 8 : Garbled
@@ -38,7 +38,7 @@ planetitems ={
            crystal,     points2,    radio,      points,     points,
            fueltank,    fueltank,   points2,    fueltank,   warp,
            warp,        warp,       life,       life,       life],
-    "5" : [],
+    "5" : [gwarp,minigame,crystal2,fuel,crystal,fuel,fuel, fuel,points2, points2,radio,radio,fueltank,warp, warp, fueltank, fueltank,life, life],
     "6" : [],
     "7" : [],
     "8" : [],
@@ -49,3 +49,11 @@ planetitems ={
     "13" : [],
     "14" : []
 }
+
+"""
+# Planet items randomizer / Subplanet items randomizer
+    # With a logic
+    # Without a logic
+# Planet items + "Subplanet" items randomizer
+# ALL items randomizer (Golden warpship still isolated)
+"""

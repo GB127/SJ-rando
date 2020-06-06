@@ -256,9 +256,26 @@ class infos:
                                     hex(0x11aCC) : "Default value : 0x1",
 
                                 # Planet 5
-                                    hex(0x11c2f) : "Item",
-                                    # Bonds de 5
-                                    hex(0x11c8E) : "Item",
+                                    hex(0x11c2f) : "Default : 0x15",
+                                    hex(0x11c34) : "Default : 0x12",
+                                    hex(0x11c39) : "Default : 0x1B",
+                                    hex(0x11c3E) : "Default : 0x10",
+                                    hex(0x11c43) : "Default : 0xA",
+                                    hex(0x11c48) : "Default : 0xF",
+                                    hex(0x11c4D) : "Default : 0xA",
+                                    hex(0x11c52) : "Default : 0xA",
+                                    hex(0x11c57) : "Default : 0xA",
+                                    hex(0x11c5C) : "Default : 0x9",
+                                    hex(0x11c61) : "Default : 0x9",
+                                    hex(0x11c66) : "Default : 0xC",
+                                    hex(0x11c6B) : "Default : 0xC",
+                                    hex(0x11c70) : "Default : 0xB",
+                                    hex(0x11c75) : "Default : 0x11",
+                                    hex(0x11c7A) : "Default : 0x11",
+                                    hex(0x11c7F) : "Default : 0xB",
+                                    hex(0x11c84) : "Default : 0xB",
+                                    hex(0x11c89) : "Default : 0x1",
+                                    hex(0x11c8E) : "Default : 0x1",
 
 
                                 # Planet 6:
