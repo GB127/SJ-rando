@@ -28,7 +28,7 @@ if __name__ == "__main__":
     options = getoptions()
     seed = str(options.seed)[2:] if options.seed < 1 else options.seed
     flags = ""
-    mode = ""
+    mode = "normal"
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = ROM(originaldata)
@@ -48,8 +48,6 @@ if __name__ == "__main__":
         #if options.Rweapon:
             #weapon_randomizer(randogame,seed)
         if options.mode:
-            if options.mode == "normal":
-                mode = "normal"
             if options.mode == "reckless":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
