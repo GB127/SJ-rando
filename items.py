@@ -1,3 +1,5 @@
+import random
+
 life = 0x1
 crash = 0x2
 shield = 0x3
@@ -20,6 +22,20 @@ lvl2warp = 0x1A
 # 7 : Garbled sprite?
 # 8 : Garbled
 # 18 : Fuel (I'm sure there is a range for this)
+planetad = {
+    "1":[],
+    "2":[],
+    "3":[],
+    "4":[],
+    "5":[],
+    "6":[],
+    "7":[],
+    "8":[],
+    "9":[],
+    "10":[],
+    "11":[],
+    "12":[],
+    "13":[]}
 
 planetitems ={
     "1" : [minigame,    shield,     crystal2,   fuel,       gwarp],
@@ -92,14 +108,29 @@ planetitems ={
            warp,        warp,       life,       life]
 }
 
+def item_randomizer_nologic(game,seed):
+    random.seed(seed)
+    planets = ["1","2","3","4","5","6","7","8","9","10","11","12","13"]
+    for i in planets:
+        planetad[i] = random.shuffle(planetitems[i])
+
+
 """
 # Planet items randomizer / Subplanet items randomizer
     # With a logic
     # Without a logic
 # Planet items + "Subplanet" items randomizer
-# ALL items randomizer (Golden warpship still isolated)
+# ALL items randomizer (Golden warpship still isolated in the subplanets)
 
 modes idea:
-    goldmining : No fuel to gather, only the goldparts.
-    no goldship : No goldenship to gather, only the fuels
+    goldhunt : No fuel to gather needed to gather, only the goldparts.
+    refuel : No goldenship to gather, only the fuels
+        the fuels can't be on subplanet.
+
+Approach:
+    Check if I flag is on
+        Check if mode goldhunt is on:
+            if yes, shuffle accordingly
+        Check if logic
+            shuffle accordingly
 """
