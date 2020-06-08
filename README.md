@@ -21,32 +21,32 @@
 * subrando.py : a module that containt fragment of the rando.py file. Created to lighten the code of rando.py.
 
 # Getting started:
-You need to download Python 3.8.
-    https://realpython.com/installing-python/
-Drag the game named Vanilla.nes in the same folder.
-    Note : You can rename your file without any issue.
-    Note : The capital is important. I've never worked with anything that let you select your file or something. I personally prefer it with a capital, so for now, I settled with this. This is something I'll fix eventually.
-Open the command line on the same folder.
-    For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
-type the command : python main.py -h
-    then press return/ENTER on the keyboard.
-    This will display what the randomizer supports.
-    You can skip this step.
-type the command with the settings you want to use.
-    EXAMPLE : python main.py -arp --seed 450 --mode reckless
+    You need to download Python 3.8.
+        https://realpython.com/installing-python/
+    Drag the game named Vanilla.nes in the same folder.
+        Note : You can rename your file without any issue.
+        Note : The capital is important. I've never worked with anything that let you select your file or something. I personally prefer it with a capital, so for now, I settled with this. This is something I'll fix eventually.
+    Open the command line on the same folder.
+        For windows : https://www.thewindowsclub.com/how-to-open-command-prompt-from-right-click-menu/
+    type the command : python main.py -h
+        then press return/ENTER on the keyboard.
+        This will display what the randomizer supports.
+        You can skip this step.
+    type the command with the settings you want to use.
+        EXAMPLE : python main.py -arp --seed 450 --mode reckless
 
 # Features :
-    * Some modes: normal, reckless
-    * Astronaut randomizer
-    * Palette randomizer
-    * Rocket's randomizer
+* Some modes: normal, reckless
+* Astronaut randomizer
+* Palette randomizer
+* Rocket's randomizer
 
 ## Future features :
-    * Better handling of filenames
-    * Gravity randomizer
-    * Weapon randomizer
-    * Item randomizer
-    * And much more!
+* Better handling of filenames
+* Gravity randomizer
+* Weapon randomizer
+* Item randomizer
+* And much more!
 
 # ROM modifications :
     To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's. If I understand FATRATKNIGHT's notes, my changes may have changed interactions between the pod and the thetered item. I did not notice this prior of Version 1. I'll leave it as is, since it's not that noticeable or huge.
