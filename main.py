@@ -1,5 +1,6 @@
 import argparse
 from rando import *
+from items import *
 from changes import *
 
 def getoptions():
@@ -43,9 +44,6 @@ if __name__ == "__main__":
         if options.Rrocket:
             rocket_randomizer(randogame,seed)
             flags += "r"
-        if options.Ritems:
-            flags += "i"
-            pass
         #if options.Rfuel:
             #fuel_randomizer(randogame,seed)
         #if options.Rweapon:
