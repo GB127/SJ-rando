@@ -163,13 +163,12 @@ planetitems ={
            warp,        warp,       life,       life]
 }
 
-def item_randomizer_nologic(game,seed):
-    random.seed(seed)
-    planets = ["1","2","3","4","5","6","7","8","9","10","11","12","13"]
-    for i in planets:
-        random.shuffle(planetitems[i])
-        for ad,item in zip(planetad[i], planetitems[i]):
-            game[ad] = item
+
+
+
+
+
+
 
 
 """
