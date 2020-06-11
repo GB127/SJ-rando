@@ -172,21 +172,20 @@ planetitems ={
 
 
 """
-# Planet items randomizer / Subplanet items randomizer
-    # With a logic
-    # Without a logic
-# Planet items + "Subplanet" items randomizer
-# ALL items randomizer (Golden warpship still isolated in the subplanets)
+Item randomizer without logic
+    subplanet + planet shuffled together  (golden warpship could be on regular planet)
+    subplanet + planet seperated (golden warpship will always be on subplanet)
+Item randomizer with logic
+    subplanet + planet shuffled together  (golden warpship could be on regular planet)
+    subplanet + planet seperated (golden warpship will always be on subplanet)
 
 modes idea:
     goldhunt : No fuel to gather needed to gather, only the goldparts.
+        fuels -> Change them to points items
+        warps -> Change all of them to fuel tank except for the subplanet and planet 2
+        No fuel needed -> Done
     refuel : No goldenship to gather, only the fuels
-        the fuels can't be on subplanet.
-
-Approach:
-    Check if I flag is on
-        Check if mode goldhunt is on:
-            if yes, shuffle accordingly
-        Check if logic
-            shuffle accordingly
+        Open warp : Don't require all fuels to go "to subplanet"
+        Allow blast of once enough fuel is gathered
+        golden warpship -> points (the most valuable item)
 """
