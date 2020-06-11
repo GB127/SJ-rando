@@ -61,4 +61,4 @@ def mode_goldhunt(game):
     game[0x11b4e] = 0x19
     game[0x11bcb] = 0x19
 
-    # change *all fuels and warps to something else
+    # change *all fuels
