@@ -34,6 +34,7 @@ if __name__ == "__main__":
         originaldata = original.read()
         randogame = ROM(originaldata)
         disable_max4(randogame)
+        disable_p2_timeditem(randogame)
         if options.Rpalette:
             palette_randomizer(randogame, seed)
         if options.Rastro:
