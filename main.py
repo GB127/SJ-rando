@@ -53,10 +53,17 @@ if __name__ == "__main__":
                 disable_fuelloss_collisions(randogame)
                 disable_ohko(randogame)
                 mode = "reckless"
+
             #elif options.mode == "improved":
             #    disable_springeffect(randogame)
             #    mode = "improved"
-            if options.mode == "goldhunt":
+
+
+            # What I want to add:
+                # fixed damage instead of OHKO from enemies bullet
+                # Easier to transport golden warship
+                # No planet 13 labyrinth
+            elif options.mode == "goldhunt":
                 mode_goldhunt(randogame)
                 mode = "goldhunt"
         with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
