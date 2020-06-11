@@ -177,6 +177,10 @@ class infos:
                                 hex(0x11a59) : "Crystal planet 1",  # Crystal of planet 1
                                 hex(0x11a5E) : "Fuel planet 1",  # Fuel of planet 1
                                 hex(0x11a63) : "Warp for golden ship planet 1",  # Warp for golden ship
+                                # Sub planet
+                                    hex(0x11FA4): "Subplanet item",
+                                    hex(0x11FA9): "Subplanet item",
+                                    hex(0x11FAE): "Subplanet item",
 
                             # Planet 2 :
                                     hex(0x11E41) : "Planet 2 (Default : 0x16)",  # Fuel sprite
@@ -202,13 +206,16 @@ class infos:
                                     hex(0x11E91) : "Planet 2 (Default : 0xB",  # Fuel tank bottom section
                                     hex(0x11E96) : "Planet 2 (Default : 0x11",  # Middle section astro warp
                                     hex(0x11E9B) : "Planet 2 (Default : 0x11",  # Astro warp right tunnel
-                                    hex(0x11EA0) : "Planet 2 (Default : 0xB",  # Unused item?
-                                    hex(0x11EA5) : "Planet 2 (Default : 0x11",  # Unused item?
+                                    hex(0x11EA0) : "Planet 2 (Default : 0xB, unused",  # Unused item?
+                                    hex(0x11EA5) : "Planet 2 (Default : 0x11, unused",  # Unused item?
 
                                     hex(0x11EAA) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
                                     hex(0x11EAF) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
                                     hex(0x11EB4) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
-
+                                    #subplanet:
+                                        hex(0x11FEF) : "Subplanet item, default 0x11",
+                                        hex(0x11FF4) : "Subplanet item, default 0x12",
+                                        hex(0x11FF9) : "Subplanet item, default 0x13",
                             # Planet 3:
                                 hex(0x11C93) : "Fuel mothership, Default value = 0x15",
                                 hex(0x11C98) : "Default value : 0x12",
@@ -450,8 +457,8 @@ class infos:
                                 hex(0x11bc1) : 'default = 0x1',
                                 hex(0x11bc6) : 'default = 0x1',
                             # Planet 13:
-                                hex(0x11bcb) : 'default = 0x15',
-                                hex(0x11bd0) : 'default = 0x12',
+                                hex(0x11bcb) : 'default = 0x15', # mother ship
+                                hex(0x11bd0) : 'default = 0x12',  # Warp
                                 hex(0x11bd5) : 'default = 0x10',
                                 hex(0x11bda) : 'default = 0xa',
                                 hex(0x11bdf) : 'default = 0xf',
