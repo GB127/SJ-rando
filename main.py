@@ -19,7 +19,7 @@ def getoptions():
     #                    help="Randomize the weapons' properties", dest="Rweapon")
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
-    parser.add_argument("--mode", choices=["normal", "reckless", "improved"],
+    parser.add_argument("--mode", choices=["normal", "reckless", "improved", "goldhunt"],
                         default="normal", dest="mode", help="Game mode")
 
     return parser.parse_args()
@@ -56,5 +56,8 @@ if __name__ == "__main__":
             #elif options.mode == "improved":
             #    disable_springeffect(randogame)
             #    mode = "improved"
+            if options.mode == "goldhunt":
+                mode_goldhunt(randogame)
+                mode = "goldhunt"
         with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
