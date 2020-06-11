@@ -33,7 +33,7 @@ if __name__ == "__main__":
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = ROM(originaldata)
-        remove_uselesscodes(randogame)
+        disable_max4(randogame)
         if options.Rpalette:
             palette_randomizer(randogame, seed)
         if options.Rastro:
@@ -57,7 +57,6 @@ if __name__ == "__main__":
             #elif options.mode == "improved":
             #    disable_springeffect(randogame)
             #    mode = "improved"
-
 
             # What I want to add:
                 # fixed damage instead of OHKO from enemies bullet

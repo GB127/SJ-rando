@@ -1,6 +1,6 @@
 from gameclass import ROM
 
-def remove_uselesscodes(game):
+def disable_max4(game):
     game.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
     game.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
     game.setmulti(0x4c47,0x004c6a,0xEA)  # Ceci semble fonctionner
@@ -10,6 +10,9 @@ def remove_uselesscodes(game):
     game[0x3a2E] = game[0x3a25]  # X speed
     game[0x3a8f] = 3  # up maxspeed Y up
     game[0x3a98] = game[0x3a8f]
+
+def disable_p2_timeditem(game):
+    game.setmulti(0x2A69, 0x2A8E, 0xEA)
 
 def disable_ohko(game):
     game[0x008403] = 234
@@ -43,7 +46,8 @@ def disable_springeffect(game):
     game[0x48A9] = 0xEA
 
 def mode_goldhunt(game):
-    game[0x11a4a] = 0x19  # Ceci marche
+    # These codes will make it that the fuel is no longer needed
+    game[0x11a4a] = 0x19
     game[0x11E41] = 0x19
     game[0x11C93] = 0x19
     game[0x11a68] = 0x19
@@ -56,3 +60,5 @@ def mode_goldhunt(game):
     game[0x11f2c] = 0x19
     game[0x11b4e] = 0x19
     game[0x11bcb] = 0x19
+
+    # change *all fuels and warps to something else
