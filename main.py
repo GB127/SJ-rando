@@ -19,7 +19,7 @@ def getoptions():
 
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
-    parser.add_argument("--mode", choices=["normal", "reckless", "improved"],
+    parser.add_argument("--mode", choices=["normal", "reckless"],
                         default="normal", dest="mode", help="Game mode")
 
     return parser.parse_args()
