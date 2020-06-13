@@ -1,10 +1,9 @@
 import argparse
 from rando import *
-from items import *
 from changes import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.01, written by Niamek', epilog="If you want more details about the flas or mode, the README details everything.")
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.01, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
@@ -17,6 +16,7 @@ def getoptions():
     #                    help="Randomize things related to the fuel", dest="Rfuel")
     #parser.add_argument("-w", "--weapon", action="store_true",
     #                    help="Randomize the weapons' properties", dest="Rweapon")
+
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
     parser.add_argument("--mode", choices=["normal", "reckless", "improved", "goldhunt"],

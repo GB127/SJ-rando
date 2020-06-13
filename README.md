@@ -20,6 +20,7 @@
 * rando.py : the module that contains all randomizers of the program.
 * subrando.py : a module that containt fragment of the rando.py file. Created to lighten the code of rando.py.
 
+* Any other files are dev files. You can delete them.
 # Getting started:
     You need to download Python 3.8.
         https://realpython.com/installing-python/
