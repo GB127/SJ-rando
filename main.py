@@ -3,7 +3,7 @@ from rando import *
 from changes import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.01, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.02, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
@@ -34,7 +34,6 @@ if __name__ == "__main__":
         originaldata = original.read()
         randogame = ROM(originaldata)
         disable_max4(randogame)
-        disable_p2_timeditem(randogame)
         if options.Rpalette:
             palette_randomizer(randogame, seed)
         if options.Rastro:
@@ -63,6 +62,7 @@ if __name__ == "__main__":
                 # fixed damage instead of OHKO from enemies bullet
                 # Easier to transport golden warship
                 # No planet 13 labyrinth
+                # last level no ohko walls please
             elif options.mode == "goldhunt":
                 mode_goldhunt(randogame)
                 mode = "goldhunt"
