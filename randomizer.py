@@ -208,9 +208,7 @@ class Rando(ROM):
         self[0x03c3c7] = self[0x03c3c3]  # 14
         self[0x03c3c8] = self[0x03c3c4]  # 20
         self[0x03c3c9] = self[0x03c3c3]  # 14
-########################Randomizer##################################
-
-########################CHANGES##################################
+##########################CHANGES###################################
     def disable_max4(self):
         self.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
         self.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
@@ -255,6 +253,7 @@ class Rando(ROM):
         self[0x48A7] = 0xEA
         self[0x48A8] = 0xEA
         self[0x48A9] = 0xEA
+###########################MODES####################################
 
     def mode_goldhunt(self):
         # fuel is no longer needed
@@ -275,4 +274,3 @@ class Rando(ROM):
 
 
         # change *all fuels
-########################CHANGES##################################
