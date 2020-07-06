@@ -32,17 +32,17 @@ if __name__ == "__main__":
     mode = "normal"
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
-        randogame = ROM(originaldata)
-        disable_max4(randogame)
+        randogame = Rando(originaldata)
+        randogame.disable_max4()
         if options.Rpalette:
-            palette_randomizer(randogame, seed)
+            randogame.palette_randomizer(seed)
         if options.Rastro:
-            astro_randomizer(randogame,seed)
+            randogame.astro_randomizer(seed)
             flags += "a"
         #if options.Rgrav:
             #gravity_randomizer(randogame,seed)
         if options.Rrocket:
-            rocket_randomizer(randogame,seed)
+            randogame.rocket_randomizer(seed)
             flags += "r"
         #if options.Rfuel:
             #fuel_randomizer(randogame,seed)
@@ -50,8 +50,8 @@ if __name__ == "__main__":
             #weapon_randomizer(randogame,seed)
         if options.mode:
             if options.mode == "reckless":
-                disable_fuelloss_collisions(randogame)
-                disable_ohko(randogame)
+                randogame.disable_fuelloss_collisions()
+                randogame.disable_ohko()
                 mode = "reckless"
 
             #elif options.mode == "improved":
@@ -64,7 +64,7 @@ if __name__ == "__main__":
                 # No planet 13 labyrinth
                 # last level no ohko walls please
             elif options.mode == "goldhunt":
-                mode_goldhunt(randogame)
+                randogame.mode_goldhunt()
                 mode = "goldhunt"
         with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
