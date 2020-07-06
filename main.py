@@ -1,6 +1,6 @@
 import argparse
 from rando import *
-from changes import *
+from randomizer import *
 
 def getoptions():
     parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.03, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
