@@ -184,34 +184,29 @@ class infos:
 
                             # Planet 2 :
                                     hex(0x11E41) : "Planet 2 (Default : 0x16)",  # Fuel sprite
-
-                                    hex(0x11E46) : "Planet 2 (Default : 0x1A",  # It's the warp to the center
-                                    hex(0x11E4B) : "Planet 2 (Default : 0x12",  # It's the warp to the golden ship
-                                    hex(0x11E50) : "Planet 2 (Default : 0x4",  # Booster
-                                    hex(0x11E55) : "Planet 2 (Default : 0x6",  # Map
-                                    hex(0x11E5A) : "Planet 2 (Default : 0xA",  # Fuel on the right of mother ship
-
-                                    hex(0x11E5F) : "Planet 2 (Default : 0xF",  # Crystal in the left tunnel
-                                    hex(0x11E64) : "Planet 2 (Default : 0xA",  # Bottom fuel
-                                    hex(0x11E69) : "Planet 2 (Default : 0x9",  # Middle section bottom points
-                                    hex(0x11E6E) : "Planet 2 (Default : 0xF",  # Middle section crystal
-                                    hex(0x11E73) : "Planet 2 (Default : 0xA",  # Fuel on the left of mother ship
-
-                                    hex(0x11E78) : "Planet 2 (Default : 0xC",  # Middle section radioactive item (Upper left section)
-                                    hex(0x11E7D) : "Planet 2 (Default : 0x9",  # Points on the far right of mother ship
-                                    hex(0x11E82) : "Planet 2 (Default : 0xA",  # Fuel left tunnel
-                                    hex(0x11E87) : "Planet 2 (Default : 0x11", # Astro warp left tunnel
-                                    hex(0x11E8C) : "Planet 2 (Default : 0x9", # Middle section points item upper section
-
-                                    hex(0x11E91) : "Planet 2 (Default : 0xB",  # Fuel tank bottom section
-                                    hex(0x11E96) : "Planet 2 (Default : 0x11",  # Middle section astro warp
-                                    hex(0x11E9B) : "Planet 2 (Default : 0x11",  # Astro warp right tunnel
-                                    hex(0x11EA0) : "Planet 2 (Default : 0xB, unused",  # Unused item?
-                                    hex(0x11EA5) : "Planet 2 (Default : 0x11, unused",  # Unused item?
-
-                                    hex(0x11EAA) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
-                                    hex(0x11EAF) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
-                                    hex(0x11EB4) : "Planet 2 (Default : 0x1",  # One of the lives on the bottom area
+                                    hex(0x11E46) : "Planet 2 warp to the center, near mothership",
+                                    hex(0x11E4B) : "Planet 2 Warp to GS, Right tunnel",
+                                    hex(0x11E50) : "Planet 2 Booster, to the left of Mother Ship",
+                                    hex(0x11E55) : "Planet 2 Map, Bottom left of planet",
+                                    hex(0x11E5A) : "Planet 2 Fuel on the right of mother ship",
+                                    hex(0x11E5F) : "Planet 2 Crystal left tunnel",
+                                    hex(0x11E64) : "Planet 2 Bottom section fuel",
+                                    hex(0x11E69) : "Planet 2 Middle section points",  
+                                    hex(0x11E6E) : "Planet 2 Middle section crystal",
+                                    hex(0x11E73) : "Planet 2 Fuel mothership section",
+                                    hex(0x11E78) : "Planet 2 Middle section pts item",
+                                    hex(0x11E7D) : "Planet 2 Pts mothership section",
+                                    hex(0x11E82) : "Planet 2 Fuel left tunnel",
+                                    hex(0x11E87) : "Planet 2 Left tunnel astro warp",
+                                    hex(0x11E8C) : "Planet 2 Middle section pts item",
+                                    hex(0x11E91) : "Planet 2 Bottom section fuel tank",
+                                    hex(0x11E96) : "Planet 2 Middle section astro warp",
+                                    hex(0x11E9B) : "Planet 2 Right tunnel astro warp",
+                                    hex(0x11EA0) : "Planet 2 item, unused",
+                                    hex(0x11EA5) : "Planet 2 item, unused",
+                                    hex(0x11EAA) : "Planet 2 Bottom area life",
+                                    hex(0x11EAF) : "Planet 2 Bottom area life",
+                                    hex(0x11EB4) : "Planet 2 Bottom area life",
                                     #subplanet:
                                         hex(0x11FEF) : "Subplanet item, default 0x11",
                                         hex(0x11FF4) : "Subplanet item, default 0x12",
