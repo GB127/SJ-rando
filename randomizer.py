@@ -259,6 +259,15 @@ class Rando(ROM):
     def mode_reckless(self):
         self.disable_ohko()
         self.disable_fuelloss_collisions()
+    def mode_improved(self):
+        self.disable_springeffect()
+
+        # What I want to add:
+            # fixed damage instead of OHKO from enemies bullet
+            # Easier to transport golden warship
+            # No planet 13 labyrinth
+            # last level no ohko walls please
+
     def mode_goldhunt(self):
         # fuel is no longer needed
         self[0x11a4a] = 0x19

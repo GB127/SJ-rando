@@ -54,14 +54,9 @@ if __name__ == "__main__":
                 mode = "reckless"
 
             #elif options.mode == "improved":
-            #    disable_springeffect(randogame)
-            #    mode = "improved"
+                # self.mode_improved()
+                # mode = "improved"
 
-            # What I want to add:
-                # fixed damage instead of OHKO from enemies bullet
-                # Easier to transport golden warship
-                # No planet 13 labyrinth
-                # last level no ohko walls please
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
                 mode = "goldhunt"
