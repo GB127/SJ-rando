@@ -172,19 +172,20 @@ class Rando(ROM):
     def weapon_randomizer(self, seed):
         random.seed(seed)
         # Smart bombs:
-            # There isn't much to be done with them. 
+            # There isn't much to be done with them.
             # They instantly remove enemies on screen.
-            # Could be potentially broken if really cheap Wusage 
-        self[0x4EBC] = random.randint(1,255)
+            # Could be potentially broken if really cheap Wusage
+        self[0x4EBC] = random.randint(1,255)  # Weapon usage
+            #TODO: Finetune this randomizer so it's not broken all the time
 
         # Anti Gravity:
             # There isn't much to be done with them. 
             # They simply remove gravity, 
             # at the expense of Wusage per frame
-        self[0x3ED7] = random.randint(1,255)
+        self[0x3ED7] = random.randint(1,255) # Wusage
 
         # Time Bomb
-        self[0x4EBE] = random.randint(1,255)  # Time bomb
+        self[0x4EBE] = random.randint(1,255)  # Wusage
 
 
         # Star Bullet
@@ -193,9 +194,10 @@ class Rando(ROM):
         # Warhead / Homing missile:
             # They are the same thing, but the warhead don't leave after one hit
             # The prices are split though.
-        self[0x4EBA] = random.randint(1,255)  # Homing Miss
-        self[0x4EBF] = random.randint(1,255)  # Multi Warhead
-        self[0x004dc1] = random.randint(1,255)  # Timer
+        self[0x4EBA] = random.randint(1,255)  # Homing Missile Wusage
+        self[0x4EBF] = random.randint(1,255)  # Multi Warhead Wusage
+        self[0x004dc1] = random.randint(1,255)  # Timer for Warhead stay
+            #TODO: Make sure they stay long enough to be bearable.
 
         # Randomize the acceleration (So their behaviour aren't always the same :o) )
         distri = getwarheadaccel()
@@ -254,7 +256,9 @@ class Rando(ROM):
         self[0x48A8] = 0xEA
         self[0x48A9] = 0xEA
 ###########################MODES####################################
-
+    def mode_reckless(self):
+        self.disable_ohko()
+        self.disable_fuelloss_collisions()
     def mode_goldhunt(self):
         # fuel is no longer needed
         self[0x11a4a] = 0x19

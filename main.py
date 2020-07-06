@@ -50,8 +50,7 @@ if __name__ == "__main__":
             #weapon_randomizer(randogame,seed)
         if options.mode:
             if options.mode == "reckless":
-                randogame.disable_fuelloss_collisions()
-                randogame.disable_ohko()
+                randogame.mode_reckless()
                 mode = "reckless"
 
             #elif options.mode == "improved":
