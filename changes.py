@@ -19,7 +19,7 @@ class ROM:
         for i in range(offset1, offset2+1):
             self.data[i] = value
 class Rando(ROM):
-
+########################Randomizer##################################
     def astro_randomizer(self, seed):
         """
             This function will randomize these elements:
@@ -208,8 +208,9 @@ class Rando(ROM):
         self[0x03c3c7] = self[0x03c3c3]  # 14
         self[0x03c3c8] = self[0x03c3c4]  # 20
         self[0x03c3c9] = self[0x03c3c3]  # 14
+########################Randomizer##################################
 
-    
+########################CHANGES##################################
     def disable_max4(self):
         self.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
         self.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
@@ -274,3 +275,4 @@ class Rando(ROM):
 
 
         # change *all fuels
+########################CHANGES##################################
