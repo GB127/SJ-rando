@@ -1,5 +1,10 @@
 from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
 import random
+from items import *
+    # Thank to this items module, items have their correct value 
+    # (fuel = 0xA for example) and I have 
+    # 2 giant dicto with all items offsets and their 
+    # value seperated by planets
 
 class ROM:
     def __init__(self,data):
@@ -270,6 +275,9 @@ class Rando(ROM):
     def mode_lateral(self):
         self.mode = "lateral"
         self.disable_springeffect()
+
+        # These codes will change the code so that gravity 
+        # will affect X speed instead of Y speed
         self[0x388A6] = 0x36
         self[0x388BE] = 0x86
         self[0x388BF] = 0xB8  
@@ -290,7 +298,9 @@ class Rando(ROM):
 
     def mode_goldhunt(self):
         self.mode = "goldhunt"
-        # fuel is no longer needed
+
+        # With these codes, the fuel is no longer needed
+        # to complete the planets
         self[0x11a4a] = 0x19
         self[0x11E41] = 0x19
         self[0x11C93] = 0x19
@@ -305,4 +315,8 @@ class Rando(ROM):
         self[0x11b4e] = 0x19
         self[0x11bcb] = 0x19
 
-        # change *all fuels to fueltanks
+
+        planetads = dicto_to_list(planetad)
+        for offset in planetads:
+            if self[offset] == fuel:
+                self[offset] = fueltank
