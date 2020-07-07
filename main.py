@@ -34,27 +34,27 @@ if __name__ == "__main__":
         randogame.disable_max4()
         if options.Rpalette:
             randogame.palette_randomizer()
+
+
         if options.Rastro:
             randogame.astro_randomizer()
-        #if options.Rgrav:
-            #gravity_randomizer(randogame,seed)
         if options.Rrocket:
             randogame.rocket_randomizer()
-        #if options.Rfuel:
-            #fuel_randomizer(randogame,seed)
-        #if options.Rweapon:
-            #weapon_randomizer(randogame,seed)
+
+
+
+
+
         if options.mode:
             if options.mode == "reckless":
                 randogame.mode_reckless()
                 mode = "reckless"
-
-            #elif options.mode == "improved":
-                # self.mode_improved()
-                # mode = "improved"
-
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
                 mode = "goldhunt"
+
+
+
+
         with open(f"Solar Jetman_{randogame.flags}_{mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
