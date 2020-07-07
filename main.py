@@ -28,8 +28,7 @@ if __name__ == "__main__":
     options = getoptions()
     mode = "normal"
     with open("Vanilla.nes", "rb") as original:
-        originaldata = original.read()
-        randogame = Rando(originaldata)
+        randogame = Rando(original.read())
         randogame.seed = str(options.seed)[2:] if options.seed < 1 else options.seed
 
         randogame.disable_max4()
