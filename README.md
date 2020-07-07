@@ -81,6 +81,10 @@
             Y max speed: 3 -> 3
 
 
+    And to make sure the game is still doable with these modifications, the rock damages of the last level are toned down. This is done to give more leverage because of the different controls (and that can change from a seed to an another if the astronaut's randomizer is on).
+        Vanille damage : 64
+        New damage : 32
+
 # Detailled descriptions of the randomizers:
     -> Astro randomizer: X maxspeed, Y up maxspeed, jetpack acceleration, X acceleration
         -> X max speed is randomized with a value of the following range: [3,4,5,6,7,8,9,10]

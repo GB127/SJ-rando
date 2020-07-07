@@ -249,7 +249,7 @@ class Rando(ROM):
         self[0x3a98] = self[0x3a8f]
 
     def lastlevel_rocks_lessdamage(self):
-        self[0x83F7] = 0x25
+        self[0x83F7] = 0x20 # Vanilla is 0x40
 
     def disable_p2_timeditem(self):
         self.setmulti(0x2A69, 0x2A8E, 0xEA)
