@@ -41,13 +41,13 @@
 # Features :
 * Some modes: normal, reckless
 * Astronaut randomizer
+* Item randomizer
 * Palette randomizer
 * Rocket's randomizer
 
 ## Future features :
 * Gravity randomizer
 * Weapon randomizer
-* Item randomizer
 * And much more!
 
 # Modes:
@@ -117,7 +117,12 @@
                     8 => 130
                 -> 64 is vanilla.
             - All the others acceleration of the distribution are adjusted with the same ratio of vanilla max accel vs. randomized max accel.
+    -> Item randomizer: Currently, there is no logic.
 
+        -> No logic : Randomizes items without regarding of items warps proximity
+        -> Logic : Make sure there is at least one "items warp" per arbritrary groups.
+        -> The timer for that warp that leads to the middle section is disabled, regardless of logic.
+        -> There is a check for the planet 2 to ensure you can at least reach the middle section in case the golden ship warp is in that section. This check is present regardless of logic
 
 
 # ACKNOLEDGEMENTS:
