@@ -113,6 +113,17 @@ class Rando(ROM):
         self[0x0107B3] = 169
         self[0x0107B4] = gravity
 
+    def items_randomizer(self, logic=True):
+        if logic is False:
+            self.flags += "i"
+            for planet in planetitems.keys():
+                random.shuffle(planetitems[planet])
+                for no,offset in enumerate(planetad[planet]):
+                    self[offset] = planetitems[planet][no]
+
+            # Do something for planet 2!
+
+
     def palette_randomizer(self):
         random.seed(self.seed)
         colors = nescolors()
