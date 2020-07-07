@@ -2,7 +2,7 @@ import argparse
 from randomizer import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.1, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.3, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
@@ -18,7 +18,7 @@ def getoptions():
 
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
-    parser.add_argument("--mode", choices=["normal", "reckless"],
+    parser.add_argument("--mode", choices=["normal", "reckless", "lateral", "goldhunt"],
                         default="normal", dest="mode", help="Game mode")
 
     return parser.parse_args()
@@ -30,7 +30,6 @@ if __name__ == "__main__":
         randogame = Rando(original.read())
         randogame.seed = str(options.seed)[2:] if options.seed < 1 else options.seed
 
-        randogame.disable_max4()
         if options.Rpalette:
             randogame.palette_randomizer()
 
@@ -49,6 +48,8 @@ if __name__ == "__main__":
                 randogame.mode_reckless()
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
+            elif options.mode == "lateral":
+                randogame.mode_lateral()
 
 
 

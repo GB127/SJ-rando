@@ -29,6 +29,8 @@ class Rando(ROM):
         self.flags = ""
         self.mode = "normal"
         super().__init__(data)
+        self.disable_max4()
+
 ########################Randomizer##################################
     def astro_randomizer(self):
         """
@@ -267,12 +269,12 @@ class Rando(ROM):
         self[0x48A8] = 0xEA
         self[0x48A9] = 0xEA
 ###########################MODES####################################
-    def mode_reckless(self):
+    def mode_reckless(self):  # COMPLETE
         self.mode = "reckless"
         self.disable_ohko()
         self.disable_fuelloss_collisions()
 
-    def mode_lateral(self):
+    def mode_lateral(self):  # COMPLETE
         self.mode = "lateral"
         self.disable_springeffect()
 
@@ -296,7 +298,7 @@ class Rando(ROM):
             # No planet 13 labyrinth
             # last level no ohko walls please
 
-    def mode_goldhunt(self):
+    def mode_goldhunt(self):  # COMPLETE
         self.mode = "goldhunt"
 
         # With these codes, the fuel is no longer needed
