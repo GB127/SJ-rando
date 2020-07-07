@@ -12,15 +12,17 @@
 # Files included:
 * .gitignore : You can delete this, it's for github and me.
 * README.md : infos about the randomizer, please read at least the Getting started section.
-* assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk. You can delete this if you want, none of the scripts need this file.
-* changes.py : This file includes some code that will change very specific stuffs. For example, the code that disables the OHKO bullets is in this file.
-* gameclass.py : this is a file I made that contains the codes for changing the game (and thus everything relies on this file).
-* infos.py : This is a file I use to store infos I found. You can delete this as the randomizer don't use it.
-* main.py : the one and only script to run. All the other scripts don't do anything interesting.
-* rando.py : the module that contains all randomizers of the program.
-* subrando.py : a module that containt fragment of the rando.py file. Created to lighten the code of rando.py.
+* main.py : the one and only script to run. All the other scripts don't do anything interesting by themself.
+* randomizer.py : This file includes everything:
+** The codes for changing the game (and thus everything relies on this file).
+** some code that will change very specific stuffs. 
+** Includes all randomizers of the program.
+* subrando.py : a module that containt fragments of codes needed for the randomizer.py file. Created to lighten the code of randomizer.py.
 
 * Any other files are dev files. You can delete them.
+** assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk. You can delete this: none of the scripts need this file.
+** infos.py : This is a file I use to store infos I found. You can delete this as the randomizer don't use it.
+
 # Getting started:
     You need to download Python 3.8.
         https://realpython.com/installing-python/
