@@ -21,6 +21,7 @@ class ROM:
 class Rando(ROM):
     def __init__(self,data):
         self.seed = None
+        self.flags = ""
         super().__init__(data)
 ########################Randomizer##################################
     def astro_randomizer(self):
@@ -31,6 +32,7 @@ class Rando(ROM):
             - X/Y Acceleration of the astornaut
         """
         random.seed(self.seed)
+        self.flags += "a"
 
         # Randomize Astronaut's speedmaxs:
             # Like the rocket, the original value is 3.
@@ -130,7 +132,7 @@ class Rando(ROM):
                 - Speed max of the rocket
         """
         random.seed(self.seed)
-
+        self.flags += "r"
         # Randomize Rocket speedmaxs:
             # The original value is 3, which is slow IMO.
             # So the randomizer will randomize to something higher.

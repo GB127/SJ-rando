@@ -26,7 +26,6 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
-    flags = ""
     mode = "normal"
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
@@ -38,12 +37,10 @@ if __name__ == "__main__":
             randogame.palette_randomizer()
         if options.Rastro:
             randogame.astro_randomizer()
-            flags += "a"
         #if options.Rgrav:
             #gravity_randomizer(randogame,seed)
         if options.Rrocket:
             randogame.rocket_randomizer()
-            flags += "r"
         #if options.Rfuel:
             #fuel_randomizer(randogame,seed)
         #if options.Rweapon:
@@ -60,5 +57,5 @@ if __name__ == "__main__":
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
                 mode = "goldhunt"
-        with open(f"Solar Jetman_{flags}_{mode}_{randogame.seed}.nes", "wb") as newrom:
+        with open(f"Solar Jetman_{randogame.flags}_{mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
