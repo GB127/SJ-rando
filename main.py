@@ -48,13 +48,11 @@ if __name__ == "__main__":
         if options.mode:
             if options.mode == "reckless":
                 randogame.mode_reckless()
-                mode = "reckless"
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
-                mode = "goldhunt"
 
 
 
 
-        with open(f"Solar Jetman_{randogame.flags}_{mode}_{randogame.seed}.nes", "wb") as newrom:
+        with open(f"Solar Jetman_{randogame.flags}_{randogame.mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
