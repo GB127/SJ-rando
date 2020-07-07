@@ -267,6 +267,17 @@ class Rando(ROM):
         self.disable_ohko()
         self.disable_fuelloss_collisions()
 
+    def mode_lateral(self):
+        self.mode = "lateral"
+        self.disable_springeffect()
+        self[0x388A6] = 0x36
+        self[0x388BE] = 0x86
+        self[0x388BF] = 0xB8  
+        self[0x388AD] = 0xA1
+        self[0x388AE] = 0xB8
+        self[0x388b2] = 0x36
+        self[0x388B7] = 0x36
+
     def mode_improved(self):
         self.disable_springeffect()
         self.disable_p2_timeditem()
@@ -294,4 +305,4 @@ class Rando(ROM):
         self[0x11b4e] = 0x19
         self[0x11bcb] = 0x19
 
-        # change *all fuels
+        # change *all fuels to fueltanks
