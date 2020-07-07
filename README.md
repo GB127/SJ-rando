@@ -45,18 +45,21 @@
 * Rocket's randomizer
 
 ## Future features :
-* Better handling of filenames
 * Gravity randomizer
 * Weapon randomizer
 * Item randomizer
 * And much more!
 
 # Modes:
-    -> Normal : This is the normal mode. No major changes.
+    -> normal : This is the normal mode. No major changes.
     -> reckless : This mode will remove the constraints that block you from being a true bulldozer. Fear not of the walls nor enemies with this mode! This doesn't remove the OHKO collisions from the last level.
         -> This mode highlight the rocket's randomizer
-        -> disable any rocket damage from enemies bullet.
+        -> Disable any rocket damage from enemies bullet.
         -> Disable any rocket damage from wall collisions.
+    -> goldhunt : This mode will remove the need of gathering the fuels before hunting the gold warpship. Ideal for a quick hunting game.
+        -> This mode highlights the item randomizer.
+        -> Set all planets' initial mothership's fuel to full.
+        -> Change all fuels to fueltanks
 
 # ROM modifications :
     To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's. If I understand FATRATKNIGHT's notes, my changes may have changed interactions between the pod and the thetered item. I did not notice this prior of Version 1. I'll leave it as is, since it's not that noticeable or huge.
