@@ -22,6 +22,7 @@ class Rando(ROM):
     def __init__(self,data):
         self.seed = None
         self.flags = ""
+        self.mode = "normal"
         super().__init__(data)
 ########################Randomizer##################################
     def astro_randomizer(self):
@@ -262,6 +263,7 @@ class Rando(ROM):
         self[0x48A9] = 0xEA
 ###########################MODES####################################
     def mode_reckless(self):
+        self.mode = "reckless"
         self.disable_ohko()
         self.disable_fuelloss_collisions()
 
@@ -276,6 +278,7 @@ class Rando(ROM):
             # last level no ohko walls please
 
     def mode_goldhunt(self):
+        self.mode = "goldhunt"
         # fuel is no longer needed
         self[0x11a4a] = 0x19
         self[0x11E41] = 0x19
