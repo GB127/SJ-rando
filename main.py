@@ -2,7 +2,7 @@ import argparse
 from randomizer import *
 
 def getoptions():
-    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.03, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
+    parser = argparse.ArgumentParser(description='Solar Jet Randomizer, Version 1.1, written by Niamek', epilog="If you want more details about the flags or modes, the README details everything.")
     parser.add_argument("-a", "--astro", action="store_true",
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
@@ -26,7 +26,6 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
-    mode = "normal"
     with open("Vanilla.nes", "rb") as original:
         randogame = Rando(original.read())
         randogame.seed = str(options.seed)[2:] if options.seed < 1 else options.seed
