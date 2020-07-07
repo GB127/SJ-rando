@@ -7,6 +7,10 @@ def getoptions():
                         help="Randomize the Astronaut's properties", dest="Rastro")
     #parser.add_argument("-g", "--gravity", action="store_true",
                         #help="Randomize the gravity", dest="Rgrav"),
+    parser.add_argument("-i", "--items", action="store_true",
+                        help="Randomize the items with no logic", dest="Ritems_no")
+    parser.add_argument("-I", "--Items", action="store_true",
+                        help="Randomize the items with logic", dest="Ritems")
     parser.add_argument('-p', "--palette", action="store_true",
                         help='Randomize the colors', dest="Rpalette")
     parser.add_argument("-r", "--rocket", action="store_true",
@@ -18,11 +22,6 @@ def getoptions():
 
 
 
-    parser.add_argument("-I", "--Items", action="store_true",
-                        help="Randomize the items", dest="Ritems")
-
-    parser.add_argument("-i", "--items", action="store_true",
-                        help="Randomize the items with no logic", dest="Ritems_no")
 
 
 
@@ -54,7 +53,6 @@ if __name__ == "__main__":
         if options.Ritems_no:
             randogame.items_randomizer(logic=False)
 
-
         if options.mode:
             if options.mode == "reckless":
                 randogame.mode_reckless()
@@ -62,9 +60,6 @@ if __name__ == "__main__":
                 randogame.mode_goldhunt()
             elif options.mode == "lateral":
                 randogame.mode_lateral()
-
-
-
 
         with open(f"Solar Jetman_{randogame.flags}_{randogame.mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
