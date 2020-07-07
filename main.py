@@ -19,16 +19,6 @@ def getoptions():
     #                    help="Randomize things related to the fuel", dest="Rfuel")
     #parser.add_argument("-w", "--weapon", action="store_true",
     #                    help="Randomize the weapons' properties", dest="Rweapon")
-
-
-
-
-
-
-
-
-
-
     parser.add_argument("--seed", action="store", help="Seed for the randomization",
                         dest="seed", default=random.random(), metavar="", type=int)
     parser.add_argument("--mode", choices=["normal", "reckless", "lateral", "goldhunt"],

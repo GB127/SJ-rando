@@ -172,9 +172,4 @@ planetitems ={
     "13": [gwarp,       crystal2,   fuel,       crystal,    crystal2,
            fuel,        fuel,       crystal2,   fuel,       points2,
            points2,     radio,      radio,      fueltank,   warp,
-           warp,        warp,       life,       life]
-}
-
-
-
-
+           warp,        warp,       life,       life]}
