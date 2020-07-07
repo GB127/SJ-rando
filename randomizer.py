@@ -19,15 +19,18 @@ class ROM:
         for i in range(offset1, offset2+1):
             self.data[i] = value
 class Rando(ROM):
+    def __init__(self,data):
+        self.seed = None
+        super().__init__(data)
 ########################Randomizer##################################
-    def astro_randomizer(self, seed):
+    def astro_randomizer(self):
         """
             This function will randomize these elements:
             - X Speed max of the astronaut
             - Y speed max of the FAST falling
             - X/Y Acceleration of the astornaut
         """
-        random.seed(seed)
+        random.seed(self.seed)
 
         # Randomize Astronaut's speedmaxs:
             # Like the rocket, the original value is 3.
@@ -56,13 +59,13 @@ class Rando(ROM):
         self[0x00454A] = random.randint(22, 0xFF)  # Default : 20  # Decceleration from going down to up
         self[0x004559] = self[0x454A]  # default : 30  # Acceleration from down to up
 
-    def fuel_randomizer(self, seed):
+    def fuel_randomizer(self):
         """ 
             This function will randomize the following stuffs:
                 - Fuel related stuffs
                 - Invicibility timer
         """
-        random.seed(seed)
+        random.seed(self.seed)
 
         # This is for the fuel consumption.
             # On press A
@@ -100,8 +103,8 @@ class Rando(ROM):
         self[0x0107B3] = 169
         self[0x0107B4] = gravity
 
-    def palette_randomizer(self, seed):
-        random.seed(seed)
+    def palette_randomizer(self):
+        random.seed(self.seed)
         colors = nescolors()
         #Create the pool of colors
 
@@ -120,13 +123,13 @@ class Rando(ROM):
         #self[0x0075ad] = random.choice(colors) # C'est le milieu
         #self[0x0075aE] = random.choice(colors)  # C'est l'autre
 
-    def rocket_randomizer(self, seed):
+    def rocket_randomizer(self):
         """
             This function will randomize these elements:
                 - X/Y Acceleration of the rocket
                 - Speed max of the rocket
         """
-        random.seed(seed)
+        random.seed(self.seed)
 
         # Randomize Rocket speedmaxs:
             # The original value is 3, which is slow IMO.
@@ -169,8 +172,8 @@ class Rando(ROM):
         self[0x3886D] = int(randoaccel[-8] * ratio)
         self[0x3886E] = 0 # I don't change this, but just to "Know that it's considered" I'm writting it down.
 
-    def weapon_randomizer(self, seed):
-        random.seed(seed)
+    def weapon_randomizer(self):
+        random.seed(self.seed)
         # Smart bombs:
             # There isn't much to be done with them.
             # They instantly remove enemies on screen.
@@ -259,8 +262,10 @@ class Rando(ROM):
     def mode_reckless(self):
         self.disable_ohko()
         self.disable_fuelloss_collisions()
+
     def mode_improved(self):
         self.disable_springeffect()
+        self.disable_p2_timeditem()
 
         # What I want to add:
             # fixed damage instead of OHKO from enemies bullet
@@ -283,7 +288,5 @@ class Rando(ROM):
         self[0x11f2c] = 0x19
         self[0x11b4e] = 0x19
         self[0x11bcb] = 0x19
-
-
 
         # change *all fuels

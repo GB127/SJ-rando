@@ -1,5 +1,4 @@
 import argparse
-from rando import *
 from randomizer import *
 
 def getoptions():
@@ -27,22 +26,23 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
-    seed = str(options.seed)[2:] if options.seed < 1 else options.seed
     flags = ""
     mode = "normal"
     with open("Vanilla.nes", "rb") as original:
         originaldata = original.read()
         randogame = Rando(originaldata)
+        randogame.seed = str(options.seed)[2:] if options.seed < 1 else options.seed
+
         randogame.disable_max4()
         if options.Rpalette:
-            randogame.palette_randomizer(seed)
+            randogame.palette_randomizer()
         if options.Rastro:
-            randogame.astro_randomizer(seed)
+            randogame.astro_randomizer()
             flags += "a"
         #if options.Rgrav:
             #gravity_randomizer(randogame,seed)
         if options.Rrocket:
-            randogame.rocket_randomizer(seed)
+            randogame.rocket_randomizer()
             flags += "r"
         #if options.Rfuel:
             #fuel_randomizer(randogame,seed)
@@ -60,5 +60,5 @@ if __name__ == "__main__":
             elif options.mode == "goldhunt":
                 randogame.mode_goldhunt()
                 mode = "goldhunt"
-        with open(f"Solar Jetman_{flags}_{mode}_{seed}.nes", "wb") as newrom:
+        with open(f"Solar Jetman_{flags}_{mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
