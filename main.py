@@ -56,14 +56,13 @@ if __name__ == "__main__":
             randogame.rocket_randomizer()
         if options.Ritems_no:
             randogame.items_randomizer(logic=False)
-
-        if options.mode:
-            if options.mode == "reckless":
-                randogame.mode_reckless()
-            elif options.mode == "goldhunt":
-                randogame.mode_goldhunt()
-            elif options.mode == "lateral":
-                randogame.mode_lateral()
-
+#############################MODES######################################
+        if options.mode == "reckless":
+            randogame.mode_reckless()
+        elif options.mode == "goldhunt":
+            randogame.mode_goldhunt()
+        elif options.mode == "lateral":
+            randogame.mode_lateral()
+#########END of the randomizer program : Write the new file############
         with open(f"Solar Jetman_{randogame.flags}_{randogame.mode}_{randogame.seed}.nes", "wb") as newrom:
             newrom.write(randogame.data)
