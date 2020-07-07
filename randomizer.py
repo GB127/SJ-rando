@@ -30,6 +30,7 @@ class Rando(ROM):
         self.mode = "normal"
         super().__init__(data)
         self.disable_max4()
+        self.lastlevel_rocks_lessdamage()
 
 ########################Randomizer##################################
     def astro_randomizer(self):
@@ -108,7 +109,7 @@ class Rando(ROM):
 
     def gravity_randomizer(self, seed, test):
         gravity = test# random.randint(0,255)  # FIXME
-        self[0x01040D] = 169  # This is the opperation
+        self[0x01040D] = 169  # This is the operation
         self[0x01040E] = gravity # This is the operand. Normally it's F8.
         self[0x0107B3] = 169
         self[0x0107B4] = gravity
@@ -246,6 +247,9 @@ class Rando(ROM):
         self[0x3a2E] = self[0x3a25]  # X speed
         self[0x3a8f] = 3  # up maxspeed Y up
         self[0x3a98] = self[0x3a8f]
+
+    def lastlevel_rocks_lessdamage(self):
+        self[0x83F7] = 0x25
 
     def disable_p2_timeditem(self):
         self.setmulti(0x2A69, 0x2A8E, 0xEA)
