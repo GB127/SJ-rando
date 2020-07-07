@@ -114,6 +114,7 @@ class Rando(ROM):
         self[0x0107B4] = gravity
 
     def items_randomizer(self, logic=True):
+        self.disable_p2_timeditem()
         if logic is False:
             self.flags += "i"
             for planet in planetitems.keys():
