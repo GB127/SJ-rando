@@ -316,7 +316,7 @@ class Rando(ROM):
         self[0x11bcb] = 0x19
 
 
-        planetads = dicto_to_list(planetad)
+        planetads = items_offsets_all()
         for offset in planetads:
             if self[offset] == fuel:
                 self[offset] = fueltank

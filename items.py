@@ -20,11 +20,19 @@ lvl2warp = 0x1A
 # 7 : Garbled sprite?
 # 8 : Garbled
 # 18 : Fuel (I'm sure there is a range for this)
-def dicto_to_list(dicto):
+def items_offsets_all():
     liste = []
-    for key in dicto.keys():
-        liste += (dicto[key])
+    for key in planetad.keys():
+        liste += (planetad[key])
     return liste
+
+def items_values_all():
+    liste = []
+    for key in planetitems.keys():
+        liste += (planetitems[key])
+    return liste
+
+
 
 planetad = {
     "1":[0x11a4f,   0x11a54,    0x11a59,    0x11a5e,    0x11a63],
