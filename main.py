@@ -39,6 +39,10 @@ def getoptions():
 
 if __name__ == "__main__":
     options = getoptions()
+
+    if options.Ritems_no and options.Ritems:
+        raise BaseException("Item randomizer can't do both logic & no logic")
+
     with open("Vanilla.nes", "rb") as original:
         randogame = Rando(original.read())
         randogame.seed = str(options.seed)[2:] if options.seed < 1 else options.seed
