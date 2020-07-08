@@ -18,6 +18,7 @@
 ** some code that will change very specific stuffs. 
 ** Includes all randomizers of the program.
 * subrando.py : a module that containt fragments of codes needed for the randomizer.py file. Created to lighten the code of randomizer.py.
+* items.py : This contains informations used by randomizer.py. Don't delete this
 
 * Any other files are dev files. You can delete them.
 ** assembly.txt : This is a file I made to better understand some portion of the game. It's really a mess, so read at your own risk. You can delete this: none of the scripts need this file.
@@ -39,7 +40,7 @@
         EXAMPLE : python main.py -arp --seed 450 --mode reckless
 
 # Features :
-* Some modes: normal, reckless
+* Some modes: normal, reckless, goldhunt, lateral
 * Astronaut randomizer
 * Item randomizer
 * Palette randomizer
@@ -82,7 +83,7 @@
 
 
     And to make sure the game is still doable with these modifications, the rock damages of the last level are toned down. This is done to give more leverage because of the different controls (and that can change from a seed to an another if the astronaut's randomizer is on).
-        Vanille damage : 64
+        Vanilla damage : 64
         New damage : 32
 
 # Detailled descriptions of the randomizers:
