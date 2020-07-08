@@ -336,3 +336,41 @@ B919 : reverse_Yspeed()
     $B92E:9D F8 02  STA $02F8,X @ $02F8 = #$FF                   A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
     $B931:A9 00     LDA #$00                                     A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
     $B933:60        RTS (from $B907) --------------------------- A:00 X:00 Y:00 S:F2 P:nvUBdiZc 
+
+8626 : place_item()
+    $8626:B9 13 05  LDA $0513,Y @ $0515 = #$03                   A:01 X:2C Y:02 S:F8 P:NvUBdizc 
+    $8629:48        PHA                                          A:03 X:2C Y:02 S:F8 P:nvUBdizc 
+    $865B:A6 04     LDX $0004 = #$0B                             A:00 X:0F Y:02 S:F7 P:nvUBdiZC 
+    $865D:68        PLA                                          A:00 X:0B Y:02 S:F7 P:nvUBdizC 
+    $865E:9D B2 03  STA $03B2,X @ $03BD = #$18                   A:03 X:0B Y:02 S:F8 P:nvUBdizC 
+    $8661:A8        TAY                                          A:03 X:0B Y:02 S:F8 P:nvUBdizC 
+    $8662:B9 B1 86  LDA $86B1,Y @ $86B4 = #$59                   A:03 X:0B Y:03 S:F8 P:nvUBdizC 
+    $8665:9D 74 03  STA $0374,X @ $037F = #$8C                   A:59 X:0B Y:03 S:F8 P:nvUBdizC 
+    $8668:B9 CD 86  LDA $86CD,Y @ $86D0 = #$0A                   A:59 X:0B Y:03 S:F8 P:nvUBdizC 
+    $866B:9D 17 03  STA $0317,X @ $0322 = #$00                   A:0A X:0B Y:03 S:F8 P:nvUBdizC 
+    $866E:A9 00     LDA #$00                                     A:0A X:0B Y:03 S:F8 P:nvUBdizC 
+    $8670:9D 36 03  STA $0336,X @ $0341 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8673:9D 55 03  STA $0355,X @ $0360 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8676:9D 9B 02  STA $029B,X @ $02A6 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8679:9D BA 02  STA $02BA,X @ $02C5 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $867C:9D D9 02  STA $02D9,X @ $02E4 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $867F:9D F8 02  STA $02F8,X @ $0303 = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8682:24 9B     BIT $009B = #$00                             A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8684:30 03     BMI $8689                                    A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8686:9D 22 04  STA $0422,X @ $042D = #$00                   A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $8689:A5 BB     LDA $00BB = #$02                             A:00 X:0B Y:03 S:F8 P:nvUBdiZC 
+    $868B:A8        TAY                                          A:02 X:0B Y:03 S:F8 P:nvUBdizC 
+    $868C:9D 93 03  STA $0393,X @ $039E = #$00                   A:02 X:0B Y:02 S:F8 P:nvUBdizC 
+    $868F:B9 2D 05  LDA $052D,Y @ $052F = #$F9                   A:02 X:0B Y:02 S:F8 P:nvUBdizC 
+    $8692:9D 00 02  STA $0200,X @ $020B = #$7B                   A:F9 X:0B Y:02 S:F8 P:NvUBdizC 
+    $8695:B9 61 05  LDA $0561,Y @ $0563 = #$00                   A:F9 X:0B Y:02 S:F8 P:NvUBdizC 
+    $8698:9D 1F 02  STA $021F,X @ $022A = #$02                   A:00 X:0B Y:02 S:F8 P:nvUBdiZC 
+    $869B:B9 47 05  LDA $0547,Y @ $0549 = #$52                   A:00 X:0B Y:02 S:F8 P:nvUBdiZC 
+    $869E:9D 5D 02  STA $025D,X @ $0268 = #$C2                   A:52 X:0B Y:02 S:F8 P:nvUBdizC 
+    $86A1:B9 7B 05  LDA $057B,Y @ $057D = #$03                   A:52 X:0B Y:02 S:F8 P:nvUBdizC 
+    $86A4:9D 7C 02  STA $027C,X @ $0287 = #$00                   A:03 X:0B Y:02 S:F8 P:nvUBdizC 
+    $86A7:C8        INY                                          A:03 X:0B Y:02 S:F8 P:nvUBdizC 
+    $86A8:C4 BA     CPY $00BA = #$06                             A:03 X:0B Y:03 S:F8 P:nvUBdizC 
+    $86AA:D0 02     BNE $86AE                                    A:03 X:0B Y:03 S:F8 P:NvUBdizc 
+    $86AE:84 BB     STY $00BB = #$02                             A:03 X:0B Y:03 S:F8 P:NvUBdizc 
+    $86B0:60        RTS (from $FFC8) --------------------------- A:03 X:0B Y:03 S:F8 P:NvUBdizc 
