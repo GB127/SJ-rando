@@ -31,7 +31,7 @@ if __name__ == "__main__":
     options = getoptions()
 
     if options.Ritems_no and options.Ritems:
-        raise BaseException("Item randomizer can't do both logic & no logic")
+        raise BaseException("Item randomizer can't do both logic & no logic (flags i & I)")
 
     with open("Vanilla.nes", "rb") as original:
         randogame = Rando(original.read())
@@ -39,7 +39,6 @@ if __name__ == "__main__":
 
         if options.Rpalette:
             randogame.palette_randomizer()
-
         if options.Rastro:
             randogame.astro_randomizer()
         if options.Rrocket:
