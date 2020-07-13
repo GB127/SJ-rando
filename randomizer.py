@@ -33,7 +33,7 @@ class Rando(ROM):
         self.lastlevel_rocks_lessdamage()
 
 ########################Randomizer##################################
-    def astro_randomizer(self):
+    def astro_randomizer(self):  # COMPLETE
         """
             This function will randomize these elements:
             - X Speed max of the astronaut
@@ -67,8 +67,8 @@ class Rando(ROM):
 
 
         # This is the Y acceleration for going up!
-        self[0x00454A] = random.randint(22, 0xFF)  # Default : 20  # Decceleration from going down to up
-        self[0x004559] = self[0x454A]  # default : 30  # Acceleration from down to up
+        self[0x454A] = random.randint(22, 0xFF)  # Default : 20  # Decceleration from going down to up
+        self[0x4559] = self[0x454A]  # default : 30  # Acceleration from down to up
 
     def fuel_randomizer(self):
         """ 
@@ -109,10 +109,10 @@ class Rando(ROM):
 
     def gravity_randomizer(self, seed, test):
         gravity = test# random.randint(0,255)  # FIXME
-        self[0x01040D] = 169  # This is the operation
-        self[0x01040E] = gravity # This is the operand. Normally it's F8.
-        self[0x0107B3] = 169
-        self[0x0107B4] = gravity
+        self[0x1040D] = 169  # This is the operation
+        self[0x1040E] = gravity # This is the operand. Normally it's F8.
+        self[0x107B3] = 169
+        self[0x107B4] = gravity
 
     def items_randomizer(self, logic=True):
         self.disable_p2_timeditem()
@@ -124,7 +124,6 @@ class Rando(ROM):
                     self[offset] = planetitems[planet][no]
 
             # Do something for planet 2!
-
 
     def palette_randomizer(self):
         random.seed(self.seed)
@@ -139,14 +138,14 @@ class Rando(ROM):
         self[0x75D8] = random.choice(colors[0:27])  # Main color
         self[0x75D7] = colors[getnewcolor(colors.index(self[0x75D8]), colors)]  # secondary color
         self[0x75E1] = self[0x75D8] # Icon color is the same as the main color
-        self[0x00753B] = self[0x75D8]
+        self[0x753B] = self[0x75D8]
         # self[0x75D6] = random.choice(colors)  # window color
 
         self[0x75ac] = random.choice(colors)  # Title screen dots + jetpack fire
         #self[0x0075ad] = random.choice(colors) # C'est le milieu
         #self[0x0075aE] = random.choice(colors)  # C'est l'autre
 
-    def rocket_randomizer(self):
+    def rocket_randomizer(self):  # COMPLETE
         """
             This function will randomize these elements:
                 - X/Y Acceleration of the rocket
@@ -222,20 +221,20 @@ class Rando(ROM):
             # The prices are split though.
         self[0x4EBA] = random.randint(1,255)  # Homing Missile Wusage
         self[0x4EBF] = random.randint(1,255)  # Multi Warhead Wusage
-        self[0x004dc1] = random.randint(1,255)  # Timer for Warhead stay
+        self[0x4dc1] = random.randint(1,255)  # Timer for Warhead stay
             #TODO: Make sure they stay long enough to be bearable.
 
         # Randomize the acceleration (So their behaviour aren't always the same :o) )
         distri = getwarheadaccel()
-        self[0x03c3c2] = 0
-        self[0x03c3c4] = random.randint(1, 255)  #20
-        self[0x03c3c3] = int(distri[-2] * (self[0x03c3c4] / distri[-1])) # 14
+        self[0x3c3c2] = 0
+        self[0x3c3c4] = random.randint(1, 255)  #20
+        self[0x3c3c3] = int(distri[-2] * (self[0x03c3c4] / distri[-1])) # 14
 
-        self[0x03c3c5] = self[0x03c3c3] # 14
-        self[0x03c3c6] = self[0x03c3c2]  # 0
-        self[0x03c3c7] = self[0x03c3c3]  # 14
-        self[0x03c3c8] = self[0x03c3c4]  # 20
-        self[0x03c3c9] = self[0x03c3c3]  # 14
+        self[0x3c3c5] = self[0x3c3c3] # 14
+        self[0x3c3c6] = self[0x3c3c2]  # 0
+        self[0x3c3c7] = self[0x3c3c3]  # 14
+        self[0x3c3c8] = self[0x3c3c4]  # 20
+        self[0x3c3c9] = self[0x3c3c3]  # 14
 ##########################CHANGES###################################
     def disable_max4(self):
         self.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
@@ -336,5 +335,4 @@ class Rando(ROM):
 
         planetads = items_offsets_all()
         for offset in planetads:
-            if self[offset] == fuel:
-                self[offset] = fueltank
+            if self[offset] == fuel: self[offset] = fueltank
