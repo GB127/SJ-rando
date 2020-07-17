@@ -236,7 +236,7 @@ class Rando(ROM):
         self[0x3c3c8] = self[0x3c3c4]  # 20
         self[0x3c3c9] = self[0x3c3c3]  # 14
 ##########################CHANGES###################################
-    def disable_max4(self):
+    def disable_max4(self):  # COMPLETE
         self.setmulti(0x0048D4, 0x0048D6, 0xEA)  # For the pod
         self.setmulti(0x4490,0x4492, 0xEA)  # For the astronaut
         self.setmulti(0x4c47,0x004c6a,0xEA)  # Ceci semble fonctionner
@@ -247,33 +247,33 @@ class Rando(ROM):
         self[0x3a8f] = 3  # up maxspeed Y up
         self[0x3a98] = self[0x3a8f]
 
-    def lastlevel_rocks_lessdamage(self):
+    def lastlevel_rocks_lessdamage(self):  # COMPLETE
         self[0x83F7] = 0x20 # Vanilla is 0x40
 
-    def disable_p2_timeditem(self):
+    def disable_p2_timeditem(self):  # COMPLETE
         self.setmulti(0x2A69, 0x2A8E, 0xEA)
 
-    def disable_ohko(self):
+    def disable_ohko(self):  # COMPLETE
         self[0x008403] = 234
         self[0x008404] = 234
         self[0x008405] = 234
         self[0x008406] = 234
 
-    def disable_fuelloss_collisions(self):
+    def disable_fuelloss_collisions(self):  # COMPLETE
         self[0x11030] = 234
         self[0x11031] = 234
         self[0x11036] = 234
         self[0x11037] = 234
 
-    def disable_shield_fuelusage(self):
+    def disable_shield_fuelusage(self):  # COMPLETE
         self[0x0049f0] = 0
         self[0x0049f1] = 0
 
-    def disable_fuelusage(self):
+    def disable_fuelusage(self):  # COMPLETE
         self[0x386B7] = 0  # Normal
         self[0x386AF] = 0
 
-    def disable_springeffect(self):
+    def disable_springeffect(self):  # COMPLETE
         self[0x48A1] = 0xEA
         self[0x48A2] = 0xEA
         self[0x48A3] = 0xEA
@@ -333,6 +333,5 @@ class Rando(ROM):
         self[0x11bcb] = 0x19
 
 
-        planetads = items_offsets_all()
-        for offset in planetads:
+        for offset in items_offsets_all():
             if self[offset] == fuel: self[offset] = fueltank
