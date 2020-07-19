@@ -1,4 +1,4 @@
-from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, swap
+from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
 import random
 from items import *
     # Thank to this items module, items have their correct value 
