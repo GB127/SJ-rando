@@ -3,7 +3,7 @@
 
     You will need a version of the game. I cannot help you on this.
 
-    Current version : Version 1.5
+    Current version : Version 2
     Wrote by Niamek.
 
     Discord channel : https://discord.gg/HNDEnvz
@@ -42,11 +42,12 @@
 # Features :
 * Some modes: normal, reckless, goldhunt, lateral
 * Astronaut randomizer
-* Item randomizer
+* Item randomizer (with no logic yet)
 * Palette randomizer
 * Rocket's randomizer
 
 ## Future features :
+* Logic for item randomizer
 * Gravity randomizer
 * Weapon randomizer
 * And much more!
@@ -61,10 +62,6 @@
         -> This mode highlights the item randomizer.
         -> Set all planets' initial mothership's fuel to full.
         -> Change all fuels to fueltanks
-    -> lateral : The gravity is now on the side!
-        -> This mode highlights the gravity randomizer.
-        -> The gravity now affect the X speed instead of Y speed
-        -> Disable the spring effect
 
 # ROM modifications :
     To open up some randomization, some instructions in the code were removed. As a side effect, alongside with some other randomizations, the last level is altered. To compromise, I've set a new "vanilla" X maxspeed for the last level and the astronaut's. If I understand FATRATKNIGHT's notes, my changes may have changed interactions between the pod and the thetered item. I did not notice this prior of Version 1. I'll leave it as is, since it's not that noticeable or huge.
@@ -123,11 +120,8 @@
                 -> 64 is vanilla.
             - All the others acceleration of the distribution are adjusted with the same ratio of vanilla max accel vs. randomized max accel.
     -> Item randomizer: Currently, there is no logic.
-
-        -> No logic : Randomizes items without regarding of items warps proximity
-        -> Logic : Make sure there is at least one "items warp" per arbritrary groups.
-        -> The timer for that warp that leads to the middle section is disabled, regardless of logic.
-        -> There is a check for the planet 2 to ensure you can at least reach the middle section in case the golden ship warp is in that section. This check is present regardless of logic
+        -> The timer for that planet 2 warp that leads to the middle section is disabled, regardless of logic.
+        -> There is a check for the planet 2 to ensure you can at least reach the middle section in case the golden ship warp is in that section. This check is present regardless of logic to ensure completable seeds.
 
 
 # ACKNOLEDGEMENTS:

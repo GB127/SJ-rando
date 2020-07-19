@@ -1,4 +1,4 @@
-from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel
+from subrando import nescolors, getnewcolor, getdistributionaccel, getwarheadaccel, swap
 import random
 from items import *
     # Thank to this items module, items have their correct value 
@@ -115,6 +115,23 @@ class Rando(ROM):
         self[0x107B4] = gravity
 
     def items_randomizer(self, logic=True):
+        def p2_check(self):
+            middle = [0x11E69, 0x11E6E, 0x11E78, 0x11E8C, 0x11E96]
+            notmiddle = list(set(planetad["2"]) - set(middle))
+            for x in middle:  # This works
+                if self[x] == lvl2warp:
+                    tempo = random.choice(notmiddle)
+                    self[x], self[tempo] = self[tempo], self[x]
+            if warp not in [self[x] for x in middle]:  # This fix is temporary
+                random.shuffle(middle)
+                random.shuffle(notmiddle)
+                index = [self[x] for x in notmiddle].index(warp)
+                if self[middle[0]] == lvl2warp:
+                    self[middle[1]],self[notmiddle[index]] = self[notmiddle[index]], self[middle[1]]
+                else:
+                    self[middle[0]],self[notmiddle[index]] = self[notmiddle[index]], self[middle[0]]
+
+
         self.disable_p2_timeditem()
         if logic is False:
             self.flags += "i"
@@ -124,6 +141,8 @@ class Rando(ROM):
                     self[offset] = planetitems[planet][no]
 
             # Do something for planet 2!
+        if logic is True:
+            raise BaseException("This feature is not ready yet! Coming soon.")
 
     def palette_randomizer(self):
         random.seed(self.seed)
@@ -289,7 +308,7 @@ class Rando(ROM):
         self.disable_ohko()
         self.disable_fuelloss_collisions()
 
-    def mode_lateral(self):  # COMPLETE
+    def mode_lateral(self):
         self.mode = "lateral"
         self.disable_springeffect()
 
