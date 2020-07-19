@@ -130,8 +130,6 @@ class Rando(ROM):
                     self[middle[1]],self[notmiddle[index]] = self[notmiddle[index]], self[middle[1]]
                 else:
                     self[middle[0]],self[notmiddle[index]] = self[notmiddle[index]], self[middle[0]]
-
-
         self.disable_p2_timeditem()
         if logic is False:
             self.flags += "i"
@@ -139,8 +137,7 @@ class Rando(ROM):
                 random.shuffle(planetitems[planet])
                 for no,offset in enumerate(planetad[planet]):
                     self[offset] = planetitems[planet][no]
-
-            # Do something for planet 2!
+            p2_check()
         if logic is True:
             raise BaseException("This feature is not ready yet! Coming soon.")
 
