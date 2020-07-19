@@ -115,7 +115,7 @@ class Rando(ROM):
         self[0x107B4] = gravity
 
     def items_randomizer(self, logic=True):
-        def p2_check(self):
+        def p2_check():
             middle = [0x11E69, 0x11E6E, 0x11E78, 0x11E8C, 0x11E96]
             notmiddle = list(set(planetad["2"]) - set(middle))
             for x in middle:  # This works
