@@ -13,6 +13,8 @@ def getoptions():
                         help="Randomize the items with logic", dest="Ritems")
     parser.add_argument('-p', "--palette", action="store_true",
                         help='Randomize the colors', dest="Rpalette")
+    parser.add_argument('-l', "--lateral", action="store_true",
+                        help='Randomize the colors', dest="Rpalette")
     parser.add_argument("-r", "--rocket", action="store_true",
                         help="Randomize the pod's properties", dest="Rrocket")
     #parser.add_argument("-f","--fuel", action="store_true",
@@ -47,6 +49,8 @@ if __name__ == "__main__":
             randogame.items_randomizer(logic=False)
         if options.Ritems:
             randogame.items_randomizer(logic=True)
+        if options.lateral:
+            randogame.mode_lateral()
 
 #############################MODES######################################
         if options.mode == "reckless":
